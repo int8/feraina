@@ -1,0 +1,1488 @@
+{
+  "title": "sesja",
+  "budget_limit": 100,
+  "areas": {
+    "research": "Research",
+    "reklama": "Reklama",
+    "leady": "Klienci",
+    "www": "Strona",
+    "tresci": "Treści",
+    "faktury": "Faktury i sprzedaż"
+  },
+  "columns": [
+    {
+      "id": "firma",
+      "title": "Firma",
+      "hint": "Liczby i dokumenty, które Ferajna pilnuje za Ciebie."
+    },
+    {
+      "id": "zadania",
+      "title": "Zadania",
+      "hint": "Co robi w tej chwili i co już skończyła."
+    },
+    {
+      "id": "kanaly",
+      "title": "Kanały",
+      "hint": "Reklamy, posty, skrzynka i faktury w jednym miejscu."
+    },
+    {
+      "id": "dzis",
+      "title": "Dla Ciebie",
+      "hint": "Tylko decyzje i raport. Reszta dzieje się sama."
+    }
+  ],
+  "dashboard": {
+    "status": {
+      "label": "WDROŻONE",
+      "text": "zmiany są na żywo"
+    }
+  },
+  "sessions": [
+    {
+      "company": "Hydro-Sojka, Gdańsk",
+      "intro": [
+        "Dzień dobry. Zaczynam sesję dla Hydro-Sojka.",
+        "Sprawdzam, co się zmieniło od ostatniego raportu."
+      ],
+      "metrics": [
+        {
+          "id": "visitors",
+          "label": "Odwiedziny dziś",
+          "value": 212
+        },
+        {
+          "id": "leads",
+          "label": "Nowe zapytania",
+          "value": 4
+        },
+        {
+          "id": "revenue",
+          "label": "Przychód (mies.)",
+          "value": 18340,
+          "unit": "zł"
+        }
+      ],
+      "documents": [
+        {
+          "title": "Profil firmy i oferta",
+          "when": "wczoraj"
+        },
+        {
+          "title": "Plan na tydzień 43",
+          "when": "wczoraj"
+        },
+        {
+          "title": "Cennik usług 2026",
+          "when": "2 dni temu"
+        }
+      ],
+      "channels": {
+        "ads": {
+          "title": "Google Ads",
+          "line": "dziś 38,20 zł z 50 zł · 2 telefony"
+        },
+        "social": {
+          "title": "Facebook i Instagram",
+          "post": "Wymiana instalacji w kamienicy na Oruni. Dwa dni, zero kucia w ścianach sąsiadów.",
+          "meta": "zaplanowane na 9:00"
+        },
+        "inbox": {
+          "title": "Skrzynka",
+          "line": "3 odebrane · 3 odpowiedzi · 1 do Ciebie"
+        },
+        "invoices": {
+          "title": "Faktury",
+          "line": "FV/2026/10/117 → KSeF ✓"
+        }
+      },
+      "tasks": [
+        {
+          "area": "leady",
+          "start": "Nowe zapytanie z Messengera",
+          "done": "Wycena wysłana, lead zapisany",
+          "outcome": "„Ile za wymianę baterii?” → 180–250 zł, wolne terminy wt 10:00 i śr 14:00.",
+          "log": [
+            {
+              "t": "out",
+              "s": "Messenger: „ile za wymianę baterii?”"
+            },
+            {
+              "t": "tool",
+              "s": "cennik.szukaj --usluga=\"wymiana baterii\""
+            },
+            {
+              "t": "tool",
+              "s": "kalendarz.wolne --najblizsze=3"
+            },
+            {
+              "t": "done",
+              "s": "odpowiedź po polsku, lead w CRM"
+            }
+          ]
+        },
+        {
+          "area": "www",
+          "start": "Test A/B nagłówka zakończony",
+          "done": "Nowy nagłówek wdrożony",
+          "outcome": "Wariant B dał 12% więcej kliknięć w „Zadzwoń”. Zmianę można cofnąć jednym kliknięciem.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "analytics.ab --test=naglowek"
+            },
+            {
+              "t": "out",
+              "s": "wariant B: +12,4%"
+            },
+            {
+              "t": "tool",
+              "s": "site.deploy --wariant=B"
+            },
+            {
+              "t": "done",
+              "s": "wdrożono, wpis w logu"
+            }
+          ]
+        },
+        {
+          "area": "reklama",
+          "start": "Przegląd kampanii Google Ads",
+          "done": "Wstrzymano słabą frazę",
+          "outcome": "„hydraulik tanio” kosztowała 9,40 zł bez konwersji. Oszczędność ok. 9 zł dziennie.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "ads.google.report --dzis"
+            },
+            {
+              "t": "out",
+              "s": "38,20 zł, 11 kliknięć, 2 telefony"
+            },
+            {
+              "t": "tool",
+              "s": "ads.google.pause --kw=\"hydraulik tanio\""
+            },
+            {
+              "t": "done",
+              "s": "−9 zł/dzień"
+            }
+          ],
+          "spend": 38.2
+        },
+        {
+          "area": "research",
+          "start": "Research cen konkurencji",
+          "done": "3 propozycje cen gotowe",
+          "outcome": "Mediana w okolicy 220 zł, Ty masz 180 zł. Proponuję 210 zł.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "rynek.ceny --usluga=\"przegląd pieca\" --20km"
+            },
+            {
+              "t": "out",
+              "s": "7 firm, mediana 220 zł"
+            },
+            {
+              "t": "ask",
+              "s": "zmiana ceny czeka na Twoją decyzję"
+            }
+          ],
+          "decision": true
+        }
+      ]
+    },
+    {
+      "company": "Pracownia Lniana, Kraków",
+      "intro": [
+        "Dzień dobry. Sesja dla Pracowni Lnianej.",
+        "Patrzę na sklep, Allegro i magazyn."
+      ],
+      "metrics": [
+        {
+          "id": "visitors",
+          "label": "Odwiedziny dziś",
+          "value": 1480
+        },
+        {
+          "id": "leads",
+          "label": "Zamówienia dziś",
+          "value": 23
+        },
+        {
+          "id": "revenue",
+          "label": "Przychód (mies.)",
+          "value": 64200,
+          "unit": "zł"
+        }
+      ],
+      "documents": [
+        {
+          "title": "Opis marki i ton komunikacji",
+          "when": "wczoraj"
+        },
+        {
+          "title": "Plan kolekcji jesień",
+          "when": "3 dni temu"
+        },
+        {
+          "title": "Polityka zwrotów",
+          "when": "tydzień temu"
+        }
+      ],
+      "channels": {
+        "ads": {
+          "title": "Google Ads",
+          "line": "dziś 92,10 zł ze 120 zł · 6 zamówień"
+        },
+        "social": {
+          "title": "Facebook i Instagram",
+          "post": "Pościel z lnu w kolorze szałwii wróciła na stan. Prana w 60°, miękka od pierwszej nocy.",
+          "meta": "zaplanowane na 12:00"
+        },
+        "inbox": {
+          "title": "Skrzynka",
+          "line": "11 odebranych · 11 odpowiedzi"
+        },
+        "invoices": {
+          "title": "Faktury",
+          "line": "8 faktur → KSeF ✓"
+        }
+      },
+      "tasks": [
+        {
+          "area": "faktury",
+          "start": "2 oferty Allegro bez stanu",
+          "done": "Oferty wstrzymane, kupujący poinformowani",
+          "outcome": "Trzy osoby dostały wiadomość o terminie dostawy, zanim zdążyły zapytać.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "allegro.oferty --stan=0"
+            },
+            {
+              "t": "out",
+              "s": "2 oferty"
+            },
+            {
+              "t": "tool",
+              "s": "allegro.wstrzymaj --id=1402,1407"
+            },
+            {
+              "t": "done",
+              "s": "3 kupujących powiadomionych"
+            }
+          ]
+        },
+        {
+          "area": "tresci",
+          "start": "Opis produktu dla nowego koloru",
+          "done": "Opis i 6 zdjęć opublikowane",
+          "outcome": "Kolor „szałwia” ma opis, tabelę rozmiarów i zdjęcia z Twojej sesji.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "shoper.produkt.utworz --kolor=szalwia"
+            },
+            {
+              "t": "tool",
+              "s": "zdjecia.wybierz --sesja=10-2026 --n=6"
+            },
+            {
+              "t": "done",
+              "s": "opublikowano"
+            }
+          ]
+        },
+        {
+          "area": "leady",
+          "start": "Pytanie o zwrot po 20 dniach",
+          "done": "Zwrot przyjęty zgodnie z regulaminem",
+          "outcome": "Klientka dostała etykietę InPost i termin zwrotu pieniędzy do 14 dni.",
+          "log": [
+            {
+              "t": "out",
+              "s": "mail: „czy mogę zwrócić po 20 dniach?”"
+            },
+            {
+              "t": "tool",
+              "s": "regulamin.sprawdz --zwroty"
+            },
+            {
+              "t": "tool",
+              "s": "inpost.etykieta-zwrotna --zamowienie=5531"
+            },
+            {
+              "t": "done",
+              "s": "odpowiedź wysłana"
+            }
+          ]
+        },
+        {
+          "area": "reklama",
+          "start": "Black Friday za 5 tygodni",
+          "done": "Plan kampanii do akceptacji",
+          "outcome": "Proponowany budżet 400 zł na tydzień, 3 kreacje. To 3× Twój obecny limit.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "ads.meta.plan --okres=BF --budzet=400zl"
+            },
+            {
+              "t": "out",
+              "s": "3 kreacje, 2 grupy odbiorców"
+            },
+            {
+              "t": "ask",
+              "s": "budżet ponad limit, czeka na decyzję"
+            }
+          ],
+          "decision": true,
+          "spend": 92.1
+        }
+      ]
+    },
+    {
+      "company": "Kancelaria Nowak, Poznań",
+      "intro": [
+        "Dzień dobry, pani mecenas. Zaczynam sesję.",
+        "Sprawdzam zapytania i terminy."
+      ],
+      "metrics": [
+        {
+          "id": "visitors",
+          "label": "Odwiedziny dziś",
+          "value": 96
+        },
+        {
+          "id": "leads",
+          "label": "Nowe zapytania",
+          "value": 3
+        },
+        {
+          "id": "revenue",
+          "label": "Przychód (mies.)",
+          "value": 41500,
+          "unit": "zł"
+        }
+      ],
+      "documents": [
+        {
+          "title": "Zakres usług i stawki",
+          "when": "wczoraj"
+        },
+        {
+          "title": "Wzór umowy o obsługę prawną",
+          "when": "tydzień temu"
+        },
+        {
+          "title": "Plan treści: prawo pracy",
+          "when": "2 dni temu"
+        }
+      ],
+      "channels": {
+        "ads": {
+          "title": "Google Ads",
+          "line": "dziś 21,00 zł z 40 zł · 1 formularz"
+        },
+        "social": {
+          "title": "Facebook i Instagram",
+          "post": "Zmiany w prawie pracy od stycznia: co musi zrobić mały pracodawca. Pięć punktów, bez żargonu.",
+          "meta": "LinkedIn, 8:00"
+        },
+        "inbox": {
+          "title": "Skrzynka",
+          "line": "4 odebrane · 3 odpowiedzi · 1 do Ciebie"
+        },
+        "invoices": {
+          "title": "Faktury",
+          "line": "FV/2026/10/044 → KSeF ✓"
+        }
+      },
+      "tasks": [
+        {
+          "area": "tresci",
+          "start": "Artykuł o zmianach w prawie pracy",
+          "done": "Artykuł opublikowany",
+          "outcome": "1 100 słów, lista 5 obowiązków pracodawcy, link do kontaktu. Bez porady prawnej w treści.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "seo.tematy --branza=prawo-pracy"
+            },
+            {
+              "t": "tool",
+              "s": "blog.napisz --slow=1100 --ton=rzeczowy"
+            },
+            {
+              "t": "done",
+              "s": "opublikowano, LinkedIn zaplanowany"
+            }
+          ]
+        },
+        {
+          "area": "research",
+          "start": "Weryfikacja nowego klienta B2B",
+          "done": "Klient zweryfikowany",
+          "outcome": "Spółka aktywna od 2016, brak wpisów o zaległościach. Dane do umowy uzupełnione.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "krs.sprawdz --nip=7792***"
+            },
+            {
+              "t": "tool",
+              "s": "gus.regon"
+            },
+            {
+              "t": "done",
+              "s": "dane w szkicu umowy"
+            }
+          ]
+        },
+        {
+          "area": "www",
+          "start": "Formularz kontaktowy bez pola „rodzaj sprawy”",
+          "done": "Formularz rozszerzony",
+          "outcome": "Zapytania trafiają od razu do właściwej kategorii. Czas odpowiedzi krótszy.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "site.form --pole=\"rodzaj sprawy\" --opcje=5"
+            },
+            {
+              "t": "done",
+              "s": "wdrożono"
+            }
+          ]
+        },
+        {
+          "area": "leady",
+          "start": "Zapytanie o reprezentację w sporze",
+          "done": "Sprawa czeka na Ciebie",
+          "outcome": "Klient opisał spór z kontrahentem na 48 000 zł. Takie zapytania nie dostają automatycznej wyceny.",
+          "log": [
+            {
+              "t": "out",
+              "s": "formularz: spór o 48 000 zł"
+            },
+            {
+              "t": "tool",
+              "s": "crm.sprawa --priorytet=wysoki"
+            },
+            {
+              "t": "ask",
+              "s": "wycena należy do Ciebie"
+            }
+          ],
+          "decision": true
+        }
+      ]
+    },
+    {
+      "company": "Studio Loki, Wrocław",
+      "intro": [
+        "Cześć! Sesja dla Studia Loki.",
+        "Sprawdzam rezerwacje, opinie i Instagram."
+      ],
+      "metrics": [
+        {
+          "id": "visitors",
+          "label": "Odwiedziny dziś",
+          "value": 310
+        },
+        {
+          "id": "leads",
+          "label": "Rezerwacje dziś",
+          "value": 9
+        },
+        {
+          "id": "revenue",
+          "label": "Przychód (mies.)",
+          "value": 22800,
+          "unit": "zł"
+        }
+      ],
+      "documents": [
+        {
+          "title": "Cennik i czas zabiegów",
+          "when": "wczoraj"
+        },
+        {
+          "title": "Opis salonu i zespołu",
+          "when": "tydzień temu"
+        },
+        {
+          "title": "Plan postów na październik",
+          "when": "5 dni temu"
+        }
+      ],
+      "channels": {
+        "ads": {
+          "title": "Google Ads",
+          "line": "dziś 15,40 zł z 30 zł · 3 rezerwacje"
+        },
+        "social": {
+          "title": "Facebook i Instagram",
+          "post": "Balejaż na ciemnej bazie, 4 godziny pracy. Efekt na zdjęciu bez filtra.",
+          "meta": "Instagram, 18:00"
+        },
+        "inbox": {
+          "title": "Skrzynka",
+          "line": "6 odebranych · 6 odpowiedzi"
+        },
+        "invoices": {
+          "title": "Faktury",
+          "line": "FV/2026/10/201 → KSeF ✓"
+        }
+      },
+      "tasks": [
+        {
+          "area": "leady",
+          "start": "Nowa opinia w Google",
+          "done": "Odpowiedź opublikowana",
+          "outcome": "★★★★★ „najlepsza koloryzacja w mieście”. Podziękowanie po imieniu, bez szablonu.",
+          "log": [
+            {
+              "t": "out",
+              "s": "Google: ★★★★★"
+            },
+            {
+              "t": "tool",
+              "s": "gbp.odpowiedz --ton=serdeczny"
+            },
+            {
+              "t": "done",
+              "s": "opublikowano"
+            }
+          ]
+        },
+        {
+          "area": "www",
+          "start": "Wolne terminy w czwartek",
+          "done": "Pasek „wolne terminy” na stronie",
+          "outcome": "Trzy wolne okienka w czwartek pokazują się na stronie i w Google.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "kalendarz.wolne --dzien=czwartek"
+            },
+            {
+              "t": "out",
+              "s": "3 okienka"
+            },
+            {
+              "t": "tool",
+              "s": "site.banner --wolne-terminy"
+            },
+            {
+              "t": "done",
+              "s": "wdrożono"
+            }
+          ]
+        },
+        {
+          "area": "tresci",
+          "start": "Post z realizacji",
+          "done": "Post zaplanowany",
+          "outcome": "Zdjęcie z Twojej galerii, krótki opis zabiegu, godzina największego ruchu.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "social.plan --zdjecie=balejaz-07.jpg"
+            },
+            {
+              "t": "done",
+              "s": "Instagram 18:00"
+            }
+          ]
+        },
+        {
+          "area": "reklama",
+          "start": "Promocja na pierwszą wizytę",
+          "done": "Promocja do akceptacji",
+          "outcome": "Rabat 20% dla nowych klientek w listopadzie. Decyzja o rabacie jest Twoja.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "ads.meta.draft --rabat=20% --nowi"
+            },
+            {
+              "t": "ask",
+              "s": "rabat czeka na decyzję"
+            }
+          ],
+          "decision": true,
+          "spend": 15.4
+        }
+      ]
+    },
+    {
+      "company": "Marta Kowal, grafika",
+      "intro": [
+        "Cześć Marta. Zaczynam sesję.",
+        "Sprawdzam skrzynkę, Behance i faktury."
+      ],
+      "metrics": [
+        {
+          "id": "visitors",
+          "label": "Odwiedziny portfolio",
+          "value": 140
+        },
+        {
+          "id": "leads",
+          "label": "Nowe zapytania",
+          "value": 2
+        },
+        {
+          "id": "revenue",
+          "label": "Przychód (mies.)",
+          "value": 12600,
+          "unit": "zł"
+        }
+      ],
+      "documents": [
+        {
+          "title": "Portfolio 2026",
+          "when": "wczoraj"
+        },
+        {
+          "title": "Cennik: logo, identyfikacja, www",
+          "when": "2 tyg. temu"
+        },
+        {
+          "title": "Wzór umowy i licencji",
+          "when": "miesiąc temu"
+        }
+      ],
+      "channels": {
+        "ads": {
+          "title": "Google Ads",
+          "line": "brak kampanii"
+        },
+        "social": {
+          "title": "Facebook i Instagram",
+          "post": "Nowa identyfikacja dla piekarni rzemieślniczej. Od szkicu do szyldu w 3 tygodnie.",
+          "meta": "LinkedIn, 10:00"
+        },
+        "inbox": {
+          "title": "Skrzynka",
+          "line": "3 odebrane · 2 odpowiedzi · 1 do Ciebie"
+        },
+        "invoices": {
+          "title": "Faktury",
+          "line": "FV/2026/10/12 → KSeF ✓ · 1 po terminie"
+        }
+      },
+      "tasks": [
+        {
+          "area": "faktury",
+          "start": "Faktura 14 dni po terminie",
+          "done": "Przypomnienie wysłane",
+          "outcome": "Grzeczny mail z linkiem do przelewu. Bez odsetek, bez windykacji.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "faktury.przeterminowane --dni>14"
+            },
+            {
+              "t": "out",
+              "s": "FV/2026/09/08, 3 200 zł"
+            },
+            {
+              "t": "tool",
+              "s": "mail.wyslij --szablon=przypomnienie"
+            },
+            {
+              "t": "done",
+              "s": "wysłano"
+            }
+          ]
+        },
+        {
+          "area": "tresci",
+          "start": "Case study z ostatniego projektu",
+          "done": "Case study opublikowane",
+          "outcome": "Trzy akapity, 8 zdjęć, link do kontaktu. Na stronie i LinkedIn.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "portfolio.case --projekt=piekarnia"
+            },
+            {
+              "t": "tool",
+              "s": "social.schedule --linkedin"
+            },
+            {
+              "t": "done",
+              "s": "opublikowano"
+            }
+          ]
+        },
+        {
+          "area": "research",
+          "start": "Stawki na rynku za identyfikację",
+          "done": "Porównanie stawek gotowe",
+          "outcome": "12 pracowni, mediana 6 500 zł za identyfikację. Ty: 4 800 zł.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "rynek.stawki --usluga=identyfikacja"
+            },
+            {
+              "t": "out",
+              "s": "mediana 6 500 zł"
+            },
+            {
+              "t": "done",
+              "s": "notatka w raporcie"
+            }
+          ]
+        },
+        {
+          "area": "leady",
+          "start": "Brief od nowego klienta",
+          "done": "Oferta do akceptacji",
+          "outcome": "Sklep z kawą chce logo i etykiety. Szkic oferty na 5 400 zł, 4 tygodnie.",
+          "log": [
+            {
+              "t": "out",
+              "s": "mail: brief, logo + etykiety"
+            },
+            {
+              "t": "tool",
+              "s": "oferta.szkic --godziny=48 --stawka"
+            },
+            {
+              "t": "ask",
+              "s": "oferta czeka na Twoje OK"
+            }
+          ],
+          "decision": true
+        }
+      ]
+    },
+    {
+      "company": "Biuro Rachunkowe Saldo, Łódź",
+      "intro": [
+        "Dzień dobry. Sesja dla biura Saldo.",
+        "Sprawdzam zapytania, KSeF i treści."
+      ],
+      "metrics": [
+        {
+          "id": "visitors",
+          "label": "Odwiedziny dziś",
+          "value": 180
+        },
+        {
+          "id": "leads",
+          "label": "Nowe zapytania",
+          "value": 5
+        },
+        {
+          "id": "revenue",
+          "label": "Przychód (mies.)",
+          "value": 38900,
+          "unit": "zł"
+        }
+      ],
+      "documents": [
+        {
+          "title": "Oferta i cennik obsługi",
+          "when": "wczoraj"
+        },
+        {
+          "title": "FAQ: KSeF dla klientów",
+          "when": "3 dni temu"
+        },
+        {
+          "title": "Checklista onboarding klienta",
+          "when": "tydzień temu"
+        }
+      ],
+      "channels": {
+        "ads": {
+          "title": "Google Ads",
+          "line": "dziś 28,00 zł z 40 zł · 2 formularze"
+        },
+        "social": {
+          "title": "Facebook i Instagram",
+          "post": "KSeF od lutego: trzy rzeczy, które musisz zrobić w swojej firmie. Krótko, bez straszenia.",
+          "meta": "Facebook, 9:00"
+        },
+        "inbox": {
+          "title": "Skrzynka",
+          "line": "9 odebranych · 8 odpowiedzi · 1 do Ciebie"
+        },
+        "invoices": {
+          "title": "Faktury",
+          "line": "54 faktury klientów → KSeF ✓"
+        }
+      },
+      "tasks": [
+        {
+          "area": "tresci",
+          "start": "Pytania klientów o KSeF",
+          "done": "Poradnik o KSeF opublikowany",
+          "outcome": "Odpowiedzi na 7 najczęstszych pytań z Twojej skrzynki z ostatniego miesiąca.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "skrzynka.tematy --30d"
+            },
+            {
+              "t": "out",
+              "s": "7 pytań o KSeF"
+            },
+            {
+              "t": "tool",
+              "s": "blog.napisz --faq"
+            },
+            {
+              "t": "done",
+              "s": "opublikowano"
+            }
+          ]
+        },
+        {
+          "area": "leady",
+          "start": "Zapytanie: JDG, 40 faktur miesięcznie",
+          "done": "Oferta wysłana",
+          "outcome": "Pakiet „JDG do 50 faktur”: 390 zł netto. Termin rozmowy zaproponowany.",
+          "log": [
+            {
+              "t": "out",
+              "s": "formularz: JDG, 40 faktur"
+            },
+            {
+              "t": "tool",
+              "s": "cennik.dopasuj"
+            },
+            {
+              "t": "tool",
+              "s": "kalendarz.wolne"
+            },
+            {
+              "t": "done",
+              "s": "oferta i termin wysłane"
+            }
+          ]
+        },
+        {
+          "area": "www",
+          "start": "Strona ładuje się 4,1 s",
+          "done": "Strona przyspieszona",
+          "outcome": "Zdjęcia zespołu skompresowane, wynik Lighthouse mobile 71 → 95.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "lighthouse --mobile"
+            },
+            {
+              "t": "out",
+              "s": "4,1 s, zdjęcia 6 MB"
+            },
+            {
+              "t": "tool",
+              "s": "site.obrazy --kompresja"
+            },
+            {
+              "t": "done",
+              "s": "1,3 s"
+            }
+          ]
+        },
+        {
+          "area": "reklama",
+          "start": "Sezon na zmianę biura rachunkowego",
+          "done": "Kampania do akceptacji",
+          "outcome": "Grudzień to miesiąc zmian biur. Proponuję 60 zł dziennie przez 3 tygodnie.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "ads.google.draft --okres=grudzien --60zl"
+            },
+            {
+              "t": "ask",
+              "s": "budżet czeka na decyzję"
+            }
+          ],
+          "decision": true,
+          "spend": 28
+        }
+      ]
+    },
+    {
+      "company": "Pizzeria Prosto, Gdynia",
+      "intro": [
+        "Dobry wieczór. Sesja dla Pizzerii Prosto.",
+        "Sprawdzam opinie, zamówienia i wizytówkę Google."
+      ],
+      "metrics": [
+        {
+          "id": "visitors",
+          "label": "Odwiedziny dziś",
+          "value": 520
+        },
+        {
+          "id": "leads",
+          "label": "Zamówienia online dziś",
+          "value": 41
+        },
+        {
+          "id": "revenue",
+          "label": "Przychód (mies.)",
+          "value": 87300,
+          "unit": "zł"
+        }
+      ],
+      "documents": [
+        {
+          "title": "Menu i alergeny",
+          "when": "wczoraj"
+        },
+        {
+          "title": "Godziny i dostawa",
+          "when": "tydzień temu"
+        },
+        {
+          "title": "Plan postów na październik",
+          "when": "4 dni temu"
+        }
+      ],
+      "channels": {
+        "ads": {
+          "title": "Google Ads",
+          "line": "dziś 44,00 zł z 60 zł · 12 zamówień"
+        },
+        "social": {
+          "title": "Facebook i Instagram",
+          "post": "Nowa pizza miesiąca: gruszka, gorgonzola, orzechy. Tylko do końca października.",
+          "meta": "Instagram, 17:30"
+        },
+        "inbox": {
+          "title": "Skrzynka",
+          "line": "14 odebranych · 14 odpowiedzi"
+        },
+        "invoices": {
+          "title": "Faktury",
+          "line": "FV/2026/10/318 → KSeF ✓"
+        }
+      },
+      "tasks": [
+        {
+          "area": "leady",
+          "start": "Opinia 2★ o zimnej dostawie",
+          "done": "Odpowiedź i rabat wysłane",
+          "outcome": "Przeprosiny bez wymówek i kod −30% na kolejne zamówienie. Zgodnie z Twoją zasadą.",
+          "log": [
+            {
+              "t": "out",
+              "s": "Google: 2★ „pizza zimna”"
+            },
+            {
+              "t": "tool",
+              "s": "gbp.odpowiedz --ton=przeprosiny"
+            },
+            {
+              "t": "tool",
+              "s": "kupon.utworz --30%"
+            },
+            {
+              "t": "done",
+              "s": "opublikowano, kod wysłany"
+            }
+          ]
+        },
+        {
+          "area": "www",
+          "start": "Menu w PDF nie działa na telefonie",
+          "done": "Menu jako strona",
+          "outcome": "Menu w HTML z cenami i alergenami. 70% gości wchodzi z telefonu.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "site.menu --z=menu.pdf --html"
+            },
+            {
+              "t": "done",
+              "s": "wdrożono"
+            }
+          ]
+        },
+        {
+          "area": "tresci",
+          "start": "Pizza miesiąca bez promocji",
+          "done": "Post i wpis Google gotowe",
+          "outcome": "Zdjęcie z Twojej galerii, opis, godzina szczytu.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "social.plan --zdjecie=pizza-gruszka.jpg"
+            },
+            {
+              "t": "tool",
+              "s": "gbp.post"
+            },
+            {
+              "t": "done",
+              "s": "zaplanowano 17:30"
+            }
+          ]
+        },
+        {
+          "area": "research",
+          "start": "Lokal konkurencji 200 m dalej",
+          "done": "Analiza konkurencji gotowa",
+          "outcome": "Nowa pizzeria ma ceny o 15% niższe i dowóz gratis od 60 zł. Propozycja odpowiedzi do decyzji.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "konkurencja.monitor --promien=500m"
+            },
+            {
+              "t": "out",
+              "s": "nowa pizzeria, −15%"
+            },
+            {
+              "t": "ask",
+              "s": "zmiana oferty czeka na decyzję"
+            }
+          ],
+          "decision": true,
+          "spend": 44
+        }
+      ]
+    },
+    {
+      "company": "Rowery Pietrzak, Toruń",
+      "intro": [
+        "Dzień dobry. Sesja dla Rowerów Pietrzak.",
+        "Sprawdzam serwis, Allegro i stany."
+      ],
+      "metrics": [
+        {
+          "id": "visitors",
+          "label": "Odwiedziny dziś",
+          "value": 260
+        },
+        {
+          "id": "leads",
+          "label": "Zgłoszenia serwisowe",
+          "value": 7
+        },
+        {
+          "id": "revenue",
+          "label": "Przychód (mies.)",
+          "value": 52400,
+          "unit": "zł"
+        }
+      ],
+      "documents": [
+        {
+          "title": "Cennik serwisu",
+          "when": "wczoraj"
+        },
+        {
+          "title": "Oferta: rowery elektryczne",
+          "when": "tydzień temu"
+        },
+        {
+          "title": "Regulamin gwarancji",
+          "when": "miesiąc temu"
+        }
+      ],
+      "channels": {
+        "ads": {
+          "title": "Google Ads",
+          "line": "dziś 19,50 zł z 40 zł · 1 telefon"
+        },
+        "social": {
+          "title": "Facebook i Instagram",
+          "post": "Przegląd przed zimą: 89 zł, w tym regulacja hamulców i przerzutek. Terminy w tym tygodniu.",
+          "meta": "Facebook, 8:30"
+        },
+        "inbox": {
+          "title": "Skrzynka",
+          "line": "5 odebranych · 5 odpowiedzi"
+        },
+        "invoices": {
+          "title": "Faktury",
+          "line": "FV/2026/10/090 → KSeF ✓"
+        }
+      },
+      "tasks": [
+        {
+          "area": "faktury",
+          "start": "Synchronizacja cen z Allegro",
+          "done": "Ceny spójne w 3 kanałach",
+          "outcome": "BaseLinker zwrócił błąd 429. Druga próba po minucie przeszła, 212 produktów.",
+          "log": [
+            {
+              "t": "out",
+              "s": "baselinker: HTTP 429"
+            },
+            {
+              "t": "tool",
+              "s": "baselinker.sync --retry --60s"
+            },
+            {
+              "t": "done",
+              "s": "212 produktów OK"
+            }
+          ]
+        },
+        {
+          "area": "leady",
+          "start": "Pytanie o serwis e-roweru",
+          "done": "Termin i wycena wysłane",
+          "outcome": "Przegląd e-roweru 149 zł, termin środa 11:00. Klient potwierdził.",
+          "log": [
+            {
+              "t": "out",
+              "s": "Messenger: „serwisujecie e-rowery?”"
+            },
+            {
+              "t": "tool",
+              "s": "cennik.szukaj --e-rower"
+            },
+            {
+              "t": "tool",
+              "s": "kalendarz.wolne"
+            },
+            {
+              "t": "done",
+              "s": "termin potwierdzony"
+            }
+          ]
+        },
+        {
+          "area": "reklama",
+          "start": "Sezon zimowy",
+          "done": "Budżet przeniesiony na serwis",
+          "outcome": "Reklamy rowerów wstrzymane do marca, 19,50 zł dziennie idzie na „przegląd przed zimą”.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "ads.google.pause --kampania=rowery"
+            },
+            {
+              "t": "tool",
+              "s": "ads.google.budget --przenies --serwis"
+            },
+            {
+              "t": "done",
+              "s": "w ramach limitu"
+            }
+          ],
+          "spend": 19.5
+        },
+        {
+          "area": "www",
+          "start": "Brak rezerwacji serwisu online",
+          "done": "Rezerwacja online do akceptacji",
+          "outcome": "Formularz z wyborem terminu zamiast telefonu. Zmienia sposób pracy warsztatu, więc pytam.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "site.rezerwacja --szkic"
+            },
+            {
+              "t": "ask",
+              "s": "nowa funkcja czeka na decyzję"
+            }
+          ],
+          "decision": true
+        }
+      ]
+    },
+    {
+      "company": "Szkoła Mówka, Lublin",
+      "intro": [
+        "Dzień dobry. Sesja dla Szkoły Mówka.",
+        "Sprawdzam zapisy, kampanię i posty."
+      ],
+      "metrics": [
+        {
+          "id": "visitors",
+          "label": "Odwiedziny dziś",
+          "value": 390
+        },
+        {
+          "id": "leads",
+          "label": "Zapisy na kurs",
+          "value": 6
+        },
+        {
+          "id": "revenue",
+          "label": "Przychód (mies.)",
+          "value": 46100,
+          "unit": "zł"
+        }
+      ],
+      "documents": [
+        {
+          "title": "Oferta kursów i cennik",
+          "when": "wczoraj"
+        },
+        {
+          "title": "Harmonogram semestru",
+          "when": "2 tyg. temu"
+        },
+        {
+          "title": "Regulamin zapisów",
+          "when": "miesiąc temu"
+        }
+      ],
+      "channels": {
+        "ads": {
+          "title": "Google Ads",
+          "line": "dziś 55,00 zł z 80 zł · 4 formularze"
+        },
+        "social": {
+          "title": "Facebook i Instagram",
+          "post": "Angielski dla dorosłych od zera. Grupa wtorek–czwartek 18:30, start 4 listopada, 3 miejsca.",
+          "meta": "Facebook, 19:00"
+        },
+        "inbox": {
+          "title": "Skrzynka",
+          "line": "12 odebranych · 11 odpowiedzi · 1 do Ciebie"
+        },
+        "invoices": {
+          "title": "Faktury",
+          "line": "FV/2026/10/150 → KSeF ✓"
+        }
+      },
+      "tasks": [
+        {
+          "area": "leady",
+          "start": "6 zapytań o kurs dla dorosłych",
+          "done": "Odpowiedzi i test poziomu wysłane",
+          "outcome": "Każda osoba dostała link do testu i wolne godziny grupy. 3 miejsca zostały.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "skrzynka.filtr --temat=kurs"
+            },
+            {
+              "t": "out",
+              "s": "6 zapytań"
+            },
+            {
+              "t": "tool",
+              "s": "mail.wyslij --test-poziomu --terminy"
+            },
+            {
+              "t": "done",
+              "s": "6 odpowiedzi"
+            }
+          ]
+        },
+        {
+          "area": "tresci",
+          "start": "Grupa od zera ma 3 wolne miejsca",
+          "done": "Post o ostatnich miejscach",
+          "outcome": "Konkret: dni, godzina, start, liczba miejsc. Bez „zapisz się już dziś!”.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "social.plan --grupa=A0 --miejsca=3"
+            },
+            {
+              "t": "done",
+              "s": "Facebook 19:00"
+            }
+          ]
+        },
+        {
+          "area": "www",
+          "start": "Zapisy przez mail trwają 2 dni",
+          "done": "Formularz zapisu z wyborem grupy",
+          "outcome": "Formularz pokazuje grupy z wolnymi miejscami i od razu wysyła potwierdzenie.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "site.form --zapisy --grupy=live"
+            },
+            {
+              "t": "done",
+              "s": "wdrożono"
+            }
+          ]
+        },
+        {
+          "area": "reklama",
+          "start": "Kampania przed semestrem",
+          "done": "Zwiększenie budżetu do akceptacji",
+          "outcome": "Zapisy idą dobrze. Proponuję 120 zł dziennie przez ostatni tydzień zapisów.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "ads.google.report --7d"
+            },
+            {
+              "t": "out",
+              "s": "koszt zapisu 42 zł"
+            },
+            {
+              "t": "ask",
+              "s": "120 zł/dzień czeka na decyzję"
+            }
+          ],
+          "decision": true,
+          "spend": 55
+        }
+      ]
+    },
+    {
+      "company": "Foto Studio Kadr, Białystok",
+      "intro": [
+        "Dzień dobry. Sesja dla Studia Kadr.",
+        "Sprawdzam zapytania o sesje, portfolio i faktury."
+      ],
+      "metrics": [
+        {
+          "id": "visitors",
+          "label": "Odwiedziny dziś",
+          "value": 170
+        },
+        {
+          "id": "leads",
+          "label": "Zapytania o sesje",
+          "value": 3
+        },
+        {
+          "id": "revenue",
+          "label": "Przychód (mies.)",
+          "value": 15800,
+          "unit": "zł"
+        }
+      ],
+      "documents": [
+        {
+          "title": "Cennik sesji i pakietów",
+          "when": "wczoraj"
+        },
+        {
+          "title": "Umowa i prawa do zdjęć",
+          "when": "2 tyg. temu"
+        },
+        {
+          "title": "Portfolio: śluby 2026",
+          "when": "tydzień temu"
+        }
+      ],
+      "channels": {
+        "ads": {
+          "title": "Google Ads",
+          "line": "dziś 12,00 zł z 30 zł · 1 formularz"
+        },
+        "social": {
+          "title": "Facebook i Instagram",
+          "post": "Sesja rodzinna w Parku Branickich. Godzina, 40 zdjęć, zero pozowania na siłę.",
+          "meta": "Instagram, 20:00"
+        },
+        "inbox": {
+          "title": "Skrzynka",
+          "line": "4 odebrane · 4 odpowiedzi"
+        },
+        "invoices": {
+          "title": "Faktury",
+          "line": "FV/2026/10/061 → KSeF ✓"
+        }
+      },
+      "tasks": [
+        {
+          "area": "leady",
+          "start": "Zapytanie o sesję ślubną w czerwcu",
+          "done": "Termin wstępnie zarezerwowany",
+          "outcome": "Pakiet „cały dzień” 4 900 zł, 20 czerwca wolny. Rezerwacja czeka na zaliczkę.",
+          "log": [
+            {
+              "t": "out",
+              "s": "formularz: ślub 20 czerwca"
+            },
+            {
+              "t": "tool",
+              "s": "kalendarz.sprawdz --2027-06-20"
+            },
+            {
+              "t": "tool",
+              "s": "oferta.wyslij --pakiet=dzien"
+            },
+            {
+              "t": "done",
+              "s": "oferta i umowa wysłane"
+            }
+          ]
+        },
+        {
+          "area": "faktury",
+          "start": "Zaliczka wpłynęła",
+          "done": "Faktura zaliczkowa w KSeF",
+          "outcome": "Zaliczka 1 500 zł, faktura wystawiona i wysłana do pary.",
+          "log": [
+            {
+              "t": "out",
+              "s": "Przelewy24: 1 500 zł"
+            },
+            {
+              "t": "tool",
+              "s": "fakturownia.zaliczka"
+            },
+            {
+              "t": "tool",
+              "s": "ksef.wyslij"
+            },
+            {
+              "t": "done",
+              "s": "mail wysłany"
+            }
+          ]
+        },
+        {
+          "area": "tresci",
+          "start": "Sesja rodzinna bez publikacji",
+          "done": "Galeria i post opublikowane",
+          "outcome": "6 zdjęć z sesji, zgoda rodziny potwierdzona mailem.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "zgoda.sprawdz --sesja=branickich"
+            },
+            {
+              "t": "tool",
+              "s": "portfolio.dodaj --n=6"
+            },
+            {
+              "t": "done",
+              "s": "Instagram 20:00"
+            }
+          ]
+        },
+        {
+          "area": "research",
+          "start": "Minisesje świąteczne u konkurencji",
+          "done": "Pomysł na minisesje do decyzji",
+          "outcome": "4 studia robią minisesje 15 min za 250 zł. Propozycja terminów i ceny czeka na Ciebie.",
+          "log": [
+            {
+              "t": "tool",
+              "s": "konkurencja.monitor --oferta=swieta"
+            },
+            {
+              "t": "out",
+              "s": "4 studia, 250 zł / 15 min"
+            },
+            {
+              "t": "ask",
+              "s": "oferta czeka na decyzję"
+            }
+          ],
+          "decision": true,
+          "spend": 12
+        }
+      ]
+    }
+  ]
+}

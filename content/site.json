@@ -1,0 +1,209 @@
+{
+  "product": {
+    "name": "Ferajna",
+    "tagline": "AI wspólnik dla polskich firm",
+    "domain": "[DOMENA]",
+    "beta_slots": "[X]",
+    "meta_description": "AI wspólnik, który codziennie buduje Twoją stronę, prowadzi marketing i odpowiada klientom. Po polsku, na polskich zasadach. Zapisz się do bety."
+  },
+  "company": {
+    "name": "[NAZWA FIRMY]",
+    "nip": "[NIP]",
+    "address": "[ADRES]",
+    "email": "[E-MAIL KONTAKTOWY]"
+  },
+  "nav": {
+    "links": [
+      {
+        "label": "Jak to działa",
+        "href": "#jak-to-dziala"
+      },
+      {
+        "label": "Integracje",
+        "href": "#integracje"
+      },
+      {
+        "label": "Cennik",
+        "href": "#cennik"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
+    ],
+    "cta": "Zapisz się do bety"
+  },
+  "hero": {
+    "heading": "Twoja firma rośnie, kiedy Ty śpisz",
+    "subheading": "AI wspólnik, który codziennie buduje Twoją stronę, prowadzi marketing i odpowiada klientom. Po polsku, na polskich zasadach.",
+    "cta_primary": "Zapisz się do bety",
+    "cta_secondary": "Zobacz przykładową noc",
+    "email_placeholder": "Twój adres e-mail",
+    "note": "Beta dla pierwszych [X] firm. Bez karty, bez zobowiązań.",
+    "facts": [
+      {
+        "label": "Język",
+        "value": "polski, natywnie"
+      },
+      {
+        "label": "Rozliczenie",
+        "value": "faktura VAT, ceny w PLN"
+      },
+      {
+        "label": "Dane",
+        "value": "serwery w UE, RODO"
+      },
+      {
+        "label": "Limit wydatków",
+        "value": "ustalasz Ty, co do złotówki"
+      },
+      {
+        "label": "KSeF · Przelewy24 · Allegro",
+        "stamp": "w planach"
+      },
+      {
+        "label": "Umowa",
+        "value": "brak, rezygnacja w każdej chwili"
+      }
+    ]
+  },
+  "night": {
+    "heading": "Tak wygląda jedna noc Twojego AI wspólnika",
+    "entries": [
+      {
+        "time": "02:14",
+        "text": "Opublikowano artykuł na blogu"
+      },
+      {
+        "time": "02:50",
+        "text": "Zaplanowano 3 posty na Facebooku i LinkedIn"
+      },
+      {
+        "time": "03:40",
+        "text": "Odpowiedziano na 4 zapytania klientów"
+      },
+      {
+        "time": "04:22",
+        "text": "Poprawiono nagłówek na stronie głównej"
+      },
+      {
+        "time": "06:00",
+        "text": "Raport dzienny czeka na Ciebie"
+      }
+    ],
+    "caption": "Przykład poglądowy"
+  },
+  "does": {
+    "heading": "Co robi za Ciebie",
+    "cards": [
+      {
+        "icon": "globe",
+        "title": "Strona",
+        "text": "Buduje, wdraża i poprawia stronę na podstawie danych o ruchu.",
+        "saved": "ok. [X] h tygodniowo"
+      },
+      {
+        "icon": "megaphone",
+        "title": "Marketing",
+        "text": "Posty w social mediach i artykuły SEO po polsku.",
+        "saved": "ok. [X] h tygodniowo"
+      },
+      {
+        "icon": "chat",
+        "title": "Klienci",
+        "text": "Odpowiada na maile i zapytania w Twoim imieniu.",
+        "saved": "ok. [X] h tygodniowo"
+      }
+    ]
+  },
+  "poland": {
+    "heading": "Zrobione pod Polskę",
+    "items": [
+      {
+        "icon": "flag",
+        "text": "Polski język natywnie, nie tłumaczenie."
+      },
+      {
+        "icon": "card",
+        "text": "Płatności Przelewy24 i BLIK na Twojej stronie.",
+        "status": "w planach"
+      },
+      {
+        "icon": "invoice",
+        "text": "Faktury z KSeF przez Fakturownię lub inFakt.",
+        "status": "w planach"
+      },
+      {
+        "icon": "shield",
+        "text": "Dane w UE, zgodność z RODO."
+      }
+    ]
+  },
+  "how": {
+    "heading": "Jak to działa",
+    "steps": [
+      {
+        "title": "Opisujesz biznes i cel",
+        "text": "Mówisz, czym się zajmujesz i co chcesz osiągnąć."
+      },
+      {
+        "title": "AI układa plan na tydzień",
+        "text": "Dostajesz plan działań do akceptacji."
+      },
+      {
+        "title": "Każdego ranka dostajesz raport",
+        "text": "Przeglądasz, co zrobiono, i decydujesz o ważnych sprawach."
+      }
+    ]
+  },
+  "control": {
+    "heading": "Ty decydujesz. AI wykonuje.",
+    "items": [
+      "AI nie wyda złotówki ponad Twój limit.",
+      "Każda akcja jest w logu i możesz ją cofnąć.",
+      "Wydatki i publikacje poza planem wymagają Twojej akceptacji.",
+      "Wyłączasz AI jednym kliknięciem."
+    ]
+  },
+  "pricing": {
+    "heading": "Cennik",
+    "plan_name": "Jeden plan. Wszystko w środku.",
+    "price": "[CENA] zł",
+    "period": "miesięcznie",
+    "vat_note": "[brutto/netto + VAT]",
+    "invoice_note": "Faktura VAT",
+    "comparison": "Mniej niż godzina pracy agencji marketingowej.",
+    "cancel_note": "Rezygnujesz w każdej chwili. Bez umowy na rok.",
+    "beta_label": "Cena dla uczestników bety: [CENA BETA] zł na zawsze",
+    "cta": "Zapisz się do bety",
+    "features": [
+      "Strona, marketing i obsługa klienta w jednym",
+      "Codzienna praca i poranny raport",
+      "Limit budżetu i log każdej akcji"
+    ]
+  },
+  "about": {
+    "heading": "Kim jesteśmy",
+    "founder_name": "[IMIĘ I NAZWISKO]",
+    "founder_photo": "",
+    "founder_bio": "[Dwa zdania o założycielu: kim jest i dlaczego buduje ten produkt.]",
+    "linkedin_url": "[LINK DO LINKEDIN]"
+  },
+  "beta": {
+    "heading": "Beta dla pierwszych [X] firm. Zapisz się, zanim zamkniemy listę.",
+    "subheading": "Zostaw e-mail, a w kolejnym kroku zapytamy o Twoją firmę i narzędzia, z których korzystasz. Zajmie to minutę.",
+    "cta": "Zapisz się do bety"
+  },
+  "footer": {
+    "links": [
+      {
+        "label": "Polityka prywatności",
+        "route": "privacy"
+      },
+      {
+        "label": "Regulamin bety",
+        "route": "terms"
+      }
+    ]
+  }
+}

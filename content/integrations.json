@@ -1,0 +1,89 @@
+{
+  "heading": "Łączymy się z narzędziami, których już używasz",
+  "subheading": "Działamy z narzędziami, z których korzystają polskie firmy",
+  "status_label": "w planach",
+  "max_selected": 3,
+  "groups": [
+    {
+      "id": "sprzedaz",
+      "name": "Sprzedaż i e-commerce",
+      "description": "Wystawia oferty, odpowiada kupującym, pilnuje stanów i cen.",
+      "tools": [
+        { "id": "allegro", "name": "Allegro" },
+        { "id": "baselinker", "name": "BaseLinker" },
+        { "id": "shopify", "name": "Shopify" },
+        { "id": "woocommerce", "name": "WooCommerce" },
+        { "id": "shoper", "name": "Shoper" },
+        { "id": "idosell", "name": "IdoSell" }
+      ]
+    },
+    {
+      "id": "platnosci",
+      "name": "Płatności",
+      "description": "Podpina płatności na stronie i śledzi wpłaty.",
+      "tools": [
+        { "id": "przelewy24", "name": "Przelewy24" },
+        { "id": "blik", "name": "BLIK" },
+        { "id": "payu", "name": "PayU" },
+        { "id": "stripe", "name": "Stripe" }
+      ]
+    },
+    {
+      "id": "faktury",
+      "name": "Faktury i księgowość",
+      "description": "Wystawia faktury po sprzedaży i wysyła je do KSeF.",
+      "tools": [
+        { "id": "ksef", "name": "KSeF" },
+        { "id": "fakturownia", "name": "Fakturownia" },
+        { "id": "infakt", "name": "inFakt" },
+        { "id": "wfirma", "name": "wFirma" },
+        { "id": "ifirma", "name": "iFirma" }
+      ]
+    },
+    {
+      "id": "wysylka",
+      "name": "Wysyłka",
+      "description": "Tworzy etykiety i informuje klientów o statusie paczki.",
+      "tools": [
+        { "id": "inpost", "name": "InPost" },
+        { "id": "dpd", "name": "DPD" },
+        { "id": "furgonetka", "name": "Furgonetka" },
+        { "id": "apaczka", "name": "Apaczka" }
+      ]
+    },
+    {
+      "id": "marketing",
+      "name": "Marketing",
+      "description": "Publikuje posty, odpowiada na opinie, prowadzi kampanie w ramach limitu.",
+      "tools": [
+        { "id": "facebook-instagram", "name": "Facebook i Instagram" },
+        { "id": "linkedin", "name": "LinkedIn" },
+        { "id": "google-business-profile", "name": "Google Business Profile" },
+        { "id": "google-ads", "name": "Google Ads" },
+        { "id": "meta-ads", "name": "Meta Ads" }
+      ]
+    },
+    {
+      "id": "komunikacja",
+      "name": "Komunikacja",
+      "description": "Odpowiada na wiadomości i przypomina o płatnościach.",
+      "tools": [
+        { "id": "gmail", "name": "Gmail" },
+        { "id": "outlook", "name": "Outlook" },
+        { "id": "messenger", "name": "Messenger" },
+        { "id": "whatsapp", "name": "WhatsApp" },
+        { "id": "smsapi", "name": "SMSAPI" }
+      ]
+    },
+    {
+      "id": "rejestry",
+      "name": "Rejestry",
+      "description": "Sprawdza kontrahentów i uzupełnia dane do faktur.",
+      "tools": [
+        { "id": "ceidg", "name": "CEIDG" },
+        { "id": "krs", "name": "KRS" },
+        { "id": "gus", "name": "GUS" }
+      ]
+    }
+  ]
+}

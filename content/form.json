@@ -1,0 +1,22 @@
+{
+  "heading": "Beta dla pierwszych [X] firm. Zapisz się, zanim zamkniemy listę.",
+  "business_types": [
+    { "id": "sklep", "label": "Sklep internetowy" },
+    { "id": "uslugi", "label": "Usługi lokalne" },
+    { "id": "b2b", "label": "B2B" },
+    { "id": "freelancer", "label": "Freelancer" },
+    { "id": "inne", "label": "Inne" }
+  ],
+  "spend_ranges": [
+    { "id": "0", "label": "0 zł" },
+    { "id": "do-500", "label": "do 500 zł" },
+    { "id": "500-2000", "label": "500–2000 zł" },
+    { "id": "2000-5000", "label": "2000–5000 zł" },
+    { "id": "powyzej-5000", "label": "powyżej 5000 zł" }
+  ],
+  "consents": {
+    "contact": "Zgadzam się na przetwarzanie mojego adresu e-mail przez [NAZWA FIRMY] (NIP [NIP]) w celu zapisu do bety i kontaktu w sprawie bety. Zgodę mogę wycofać w każdej chwili.",
+    "marketing": "Chcę otrzymywać od [NAZWA FIRMY] informacje o nowościach i ofertach (newsletter). Zgoda dobrowolna, mogę ją wycofać w każdej chwili."
+  },
+  "rodo_clause": "Administratorem Twoich danych jest [NAZWA FIRMY], NIP [NIP]. Dane przetwarzamy w celu zapisu do bety i kontaktu w sprawie bety, na podstawie Twojej zgody. Masz prawo do dostępu, poprawienia i usunięcia danych. Szczegóły w polityce prywatności."
+}
