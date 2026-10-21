@@ -73,6 +73,19 @@ export function initDemo(root) {
         }
     };
 
+    // Przejście między firmami: nazwa pisze się znak po znaku, jak w czacie.
+    const typeText = async (el, text) => {
+        if (!el) return;
+        el.textContent = '';
+        el.classList.add('is-typing');
+        for (const ch of text) {
+            el.textContent += ch;
+            await wait(ch === ' ' || ch === ',' ? 110 : rnd(35, 75));
+        }
+        await wait(700);
+        el.classList.remove('is-typing');
+    };
+
     const markNew = (el) => {
         el.classList.add('is-new');
         setTimeout(() => el.classList.remove('is-new'), 2600 * TEMPO);
@@ -188,9 +201,12 @@ export function initDemo(root) {
         cursor += 1;
         reset();
         debugLoop(alive);
-        if (companyEl) companyEl.textContent = dash.company;
+        if (companyEl) companyEl.textContent = '';
         dash.metrics.forEach((m, i) => metricLabels[i] && (metricLabels[i].textContent = m.label));
-        await wait(600);
+        await wait(700);
+        await typeText(companyEl, dash.company);
+        if (!alive()) return;
+        await wait(400);
 
         for (const line of dash.intro) {
             log(line, 'start');
@@ -309,8 +325,8 @@ export function initDemo(root) {
         log('Raport wysłany. Czekam na Twoje decyzje.', 'done');
         setStep('raport');
 
-        // 6. Pauza i nowa sesja
-        await wait(9000);
+        // 6. Dłuższa pauza na przeczytanie raportu, potem nowa firma
+        await wait(12000);
         if (!alive()) return;
         root.classList.add('is-fading');
         await wait(700);

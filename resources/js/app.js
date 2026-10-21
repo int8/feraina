@@ -61,7 +61,7 @@ document.querySelectorAll('form[data-beta-start]').forEach((form) => {
     form.addEventListener('submit', () => track('beta_start', { location: form.dataset.betaStart || 'unknown' }));
 });
 
-// --- Log nocy: wpisy pojawiają się po kolei po wejściu w viewport ---
+// --- Log dnia: wpisy pojawiają się po kolei po wejściu w viewport ---
 const log = document.querySelector('[data-night-log]');
 if (log) {
     const entries = [...log.querySelectorAll('.night-log-entry')];

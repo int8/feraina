@@ -1,6 +1,6 @@
 <x-layouts.app :site="$site">
     @include('sections.hero')
-    @include('sections.night')
+    @include('sections.day')
     @include('sections.does')
     @include('sections.poland')
     @include('sections.how')

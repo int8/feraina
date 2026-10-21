@@ -121,7 +121,7 @@
                 <div class="mt-7 max-w-lg">
                     <x-email-form location="hero" :site="$site" :cta="$site['hero']['cta_primary']" :note="$content->fill($site['hero']['note'])" />
                 </div>
-                <a href="#noc" class="btn-ghost mt-6 px-0 font-mono text-sm" data-plausible="cta_click" data-plausible-prop-location="hero_secondary">
+                <a href="#dzien" class="btn-ghost mt-6 px-0 font-mono text-sm" data-plausible="cta_click" data-plausible-prop-location="hero_secondary">
                     {{ $site['hero']['cta_secondary'] }} ↓
                 </a>
             </div>

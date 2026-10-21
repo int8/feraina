@@ -17,16 +17,16 @@ class PagesTest extends TestCase
         $html = $response->getContent();
 
         $markers = [
-            'Twoja firma rośnie, kiedy Ty śpisz',
-            'Tak wygląda jedna noc Twojego AI wspólnika',
-            'Co robi za Ciebie',
+            'Ferajna robi robotę',
+            'Zwykły wtorek z Ferajną',
+            'Co bierze na siebie',
             'Zrobione pod Polskę',
             'id="jak-to-dziala"',
-            'Ty decydujesz. AI wykonuje.',
+            'Ty decydujesz. Ferajna robi.',
             'id="integracje"',
             'id="cennik"',
             'id="faq"',
-            'Kim jesteśmy',
+            'Kto za tym stoi',
             'Polityka prywatności',
         ];
         $pos = -1;

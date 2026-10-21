@@ -1,4 +1,4 @@
-# Landing page – AI wspólnik PL (zapisy do bety)
+# Ferajna – landing page i zapisy do bety
 
 Jedna strona z 11 sekcjami, osobny ekran zapisu do bety (`/beta`), panel wewnętrzny (`/panel`) z rankingiem integracji i eksportem CSV. Stack: Laravel 13, Tailwind 4, Vite, czysty JS (bez frameworka front-end). Dane trzymamy we własnej bazie, maile wysyłamy własnym SMTP – zero zewnętrznych narzędzi do formularzy.
 

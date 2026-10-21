@@ -3,27 +3,27 @@
   "items": [
     {
       "question": "Kto odpowiada za treści i odpowiedzi wysyłane klientom?",
-      "answer": "[Odpowiedź do uzupełnienia przez właściciela produktu.]"
+      "answer": "Ty. Tak to jest ustawione: Ferajna pracuje w ramach planu, który zatwierdzasz, a wszystko poza nim czeka na Twoje kliknięcie. Każdą wysłaną odpowiedź i publikację widzisz w logu."
     },
     {
       "question": "Gdzie są przechowywane moje dane i dane moich klientów?",
-      "answer": "[Odpowiedź do uzupełnienia przez właściciela produktu.]"
+      "answer": "Na serwerach w Unii Europejskiej, zgodnie z RODO. Szczegóły, w tym listę podwykonawców, znajdziesz w polityce prywatności."
     },
     {
       "question": "Czy to zastąpi księgową albo marketingowca?",
-      "answer": "[Odpowiedź do uzupełnienia przez właściciela produktu.]"
+      "answer": "Księgowej nie. Ferajna wystawia faktury i pilnuje płatności, ale deklaracje i rozliczenia zostają u niej. Marketingowca zastąpi w codziennej robocie, czyli w postach, artykułach i reklamach. Strategię i tak ustalasz Ty."
     },
     {
       "question": "Co jeśli AI się pomyli?",
-      "answer": "[Odpowiedź do uzupełnienia przez właściciela produktu.]"
+      "answer": "Cofasz. Każda akcja jest w logu z możliwością wycofania, a wydatki nie przekroczą limitu, który ustalisz. Rzeczy, w których pomyłka boli, czyli pieniądze i publikacje poza planem, i tak czekają na Twoje „Zatwierdź”."
     },
     {
       "question": "Czy mogę odejść i zabrać stronę oraz treści?",
-      "answer": "[Odpowiedź do uzupełnienia przez właściciela produktu.]"
+      "answer": "Tak. Strona, teksty i dane są Twoje, dostajesz je w [FORMAT / SPOSÓB EKSPORTU]. Umowy nie ma, więc rezygnujesz w każdej chwili."
     },
     {
       "question": "Kiedy ruszy beta i ile kosztuje?",
-      "answer": "[Odpowiedź do uzupełnienia przez właściciela produktu.]"
+      "answer": "Start bety planujemy na [DATA]. Dla pierwszych [X] firm cena to [CENA BETA] zł miesięcznie, na stałe. Zapis nie wymaga karty ani zobowiązań."
     }
   ]
 }

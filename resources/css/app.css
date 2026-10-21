@@ -424,12 +424,12 @@
 
 /* dokumenty */
 .demo-docs { list-style: none; margin: 0; padding: 0; }
-.demo-doc { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--color-line); font-size: 13.5px; animation: demo-in 0.4s ease-out both; }
+.demo-doc { display: flex; justify-content: space-between; gap: 10px; padding: 8px 10px; border-bottom: 1px solid var(--color-line); font-size: 13.5px; animation: demo-in 0.4s ease-out both; }
 .demo-doc-title::before { content: '▤ '; color: var(--color-stone); }
 .demo-doc-when { font-family: var(--font-mono); font-size: 11px; color: var(--color-stone); white-space: nowrap; }
 
 /* kanały */
-.demo-channel { padding: 10px 0; border-bottom: 1px solid var(--color-line); font-size: 13px; }
+.demo-channel { padding: 10px 12px; border-bottom: 1px solid var(--color-line); font-size: 13px; }
 .demo-channel:last-child { border-bottom: 0; }
 .demo-channel h5 { margin: 0 0 3px; font-size: 13px; font-weight: 700; }
 .demo-channel p { margin: 0; color: var(--color-ink-soft); line-height: 1.4; }
@@ -490,8 +490,23 @@
     text-transform: uppercase;
     animation: demo-in 0.3s ease-out both;
 }
-.demo-doc.is-new::after, .demo-channel.is-new::after { top: 6px; right: 0; }
+.demo-doc.is-new::after, .demo-channel.is-new::after { top: 6px; right: 6px; }
 .demo-metrics dd:empty::after { content: '—'; }
+
+/* Pisanie nazwy firmy między sesjami: czerwone w trakcie, czarne po zakończeniu */
+.is-typing { color: var(--color-stamp); }
+[data-demo-company] { transition: color 0.4s ease; }
+.is-typing::after {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 0.95em;
+    margin-left: 4px;
+    vertical-align: -0.08em;
+    background: var(--color-stamp);
+    animation: demo-cursor 0.7s steps(1) infinite;
+}
+@keyframes demo-cursor { 50% { opacity: 0; } }
 
 /* Reflektor: aktywny kafelek na pierwszym planie, reszta panelu przygaszona. */
 .demo-task, .demo-doc, .demo-channel, .demo-note, .demo-firma, .demo-ask, .demo-col-title, .demo-col-hint {

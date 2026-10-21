@@ -1,10 +1,10 @@
 {
   "product": {
     "name": "Ferajna",
-    "tagline": "AI wspólnik dla polskich firm",
+    "tagline": "Ekipa AI dla małej polskiej firmy",
     "domain": "[DOMENA]",
     "beta_slots": "[X]",
-    "meta_description": "AI wspólnik, który codziennie buduje Twoją stronę, prowadzi marketing i odpowiada klientom. Po polsku, na polskich zasadach. Zapisz się do bety."
+    "meta_description": "Ferajna to ekipa agentów AI, która robi robotę w małej firmie: strona, reklamy, posty, odpowiedzi klientom, faktury, research. Ty ustalasz limit w złotówkach i co rano decydujesz, co dalej. Zapisz się do bety."
   },
   "company": {
     "name": "[NAZWA FIRMY]",
@@ -34,10 +34,10 @@
     "cta": "Zapisz się do bety"
   },
   "hero": {
-    "heading": "Twoja firma rośnie, kiedy Ty śpisz",
-    "subheading": "AI wspólnik, który codziennie buduje Twoją stronę, prowadzi marketing i odpowiada klientom. Po polsku, na polskich zasadach.",
+    "heading": "Ferajna robi robotę",
+    "subheading": "Ekipa agentów AI, która w małej firmie robi to, na co nie masz czasu: strona, reklamy, posty, odpowiedzi klientom, faktury. Ty ustalasz limit w złotówkach i co rano decydujesz, co dalej.",
     "cta_primary": "Zapisz się do bety",
-    "cta_secondary": "Zobacz przykładową noc",
+    "cta_secondary": "Zobacz zwykły wtorek",
     "email_placeholder": "Twój adres e-mail",
     "note": "Beta dla pierwszych [X] firm. Bez karty, bez zobowiązań.",
     "facts": [
@@ -67,51 +67,53 @@
       }
     ]
   },
-  "night": {
-    "heading": "Tak wygląda jedna noc Twojego AI wspólnika",
+  "day": {
+    "heading": "Zwykły wtorek z Ferajną",
+    "file": "wtorek.log",
+    "range": "07:30 → 17:00",
     "entries": [
       {
-        "time": "02:14",
-        "text": "Opublikowano artykuł na blogu"
+        "time": "07:30",
+        "text": "Strona: poprawiono podstronę z cennikiem, bo ruch z telefonów uciekał po kilku sekundach. Stara wersja w logu."
       },
       {
-        "time": "02:50",
-        "text": "Zaplanowano 3 posty na Facebooku i LinkedIn"
+        "time": "09:10",
+        "text": "Google Ads: wyłączono słowo kluczowe, które zjadało budżet i nie dało ani jednego zapytania."
       },
       {
-        "time": "03:40",
-        "text": "Odpowiedziano na 4 zapytania klientów"
+        "time": "11:45",
+        "text": "Messenger i mail: odpowiedziano na 6 pytań o termin i cenę. Jedno nietypowe odłożone do Twojej decyzji."
       },
       {
-        "time": "04:22",
-        "text": "Poprawiono nagłówek na stronie głównej"
+        "time": "14:00",
+        "text": "Faktury: wystawiono 3 za zeszły tydzień. Do jednej po terminie poszło grzeczne przypomnienie."
       },
       {
-        "time": "06:00",
-        "text": "Raport dzienny czeka na Ciebie"
+        "time": "17:00",
+        "text": "Raport dnia gotowy. Trzy sprawy czekają na Twoje „Zatwierdź”: nowa kampania, rabat dla stałego klienta, tekst na blog."
       }
     ],
-    "caption": "Przykład poglądowy"
+    "caption": "Przykład poglądowy. Każdy wpis jest w logu i można go cofnąć."
   },
   "does": {
-    "heading": "Co robi za Ciebie",
+    "heading": "Co bierze na siebie",
     "cards": [
       {
         "icon": "globe",
         "title": "Strona",
-        "text": "Buduje, wdraża i poprawia stronę na podstawie danych o ruchu.",
+        "text": "Buduje i poprawia stronę na podstawie tego, co robią na niej ludzie. Każdą zmianę zapisuje w logu.",
         "saved": "ok. [X] h tygodniowo"
       },
       {
         "icon": "megaphone",
         "title": "Marketing",
-        "text": "Posty w social mediach i artykuły SEO po polsku.",
+        "text": "Prowadzi reklamy w Google i Meta, pisze posty i artykuły po polsku. Research konkurencji i cen w pakiecie.",
         "saved": "ok. [X] h tygodniowo"
       },
       {
         "icon": "chat",
-        "title": "Klienci",
-        "text": "Odpowiada na maile i zapytania w Twoim imieniu.",
+        "title": "Klienci i pieniądze",
+        "text": "Odpisuje na maile i Messengera w Twoim tonie, wystawia faktury i sprawdza, czy przelew doszedł. Trudne sprawy odkłada do Twojej decyzji.",
         "saved": "ok. [X] h tygodniowo"
       }
     ]
@@ -121,7 +123,7 @@
     "items": [
       {
         "icon": "flag",
-        "text": "Polski język natywnie, nie tłumaczenie."
+        "text": "Polski od początku, nie z tłumacza."
       },
       {
         "icon": "card",
@@ -135,7 +137,7 @@
       },
       {
         "icon": "shield",
-        "text": "Dane w UE, zgodność z RODO."
+        "text": "Dane na serwerach w UE, zgodnie z RODO."
       }
     ]
   },
@@ -143,55 +145,55 @@
     "heading": "Jak to działa",
     "steps": [
       {
-        "title": "Opisujesz biznes i cel",
-        "text": "Mówisz, czym się zajmujesz i co chcesz osiągnąć."
+        "title": "Opowiadasz o firmie",
+        "text": "Czym się zajmujesz, kogo szukasz, ile możesz wydać. Po ludzku, bez briefu na dwadzieścia stron."
       },
       {
-        "title": "AI układa plan na tydzień",
-        "text": "Dostajesz plan działań do akceptacji."
+        "title": "Ferajna układa plan tygodnia",
+        "text": "Dostajesz listę działań i limit w złotówkach. Zatwierdzasz albo wykreślasz."
       },
       {
-        "title": "Każdego ranka dostajesz raport",
-        "text": "Przeglądasz, co zrobiono, i decydujesz o ważnych sprawach."
+        "title": "Co rano raport i decyzje",
+        "text": "Widzisz, co zrobiono, i klikasz „Zatwierdź” tam, gdzie trzeba. Reszta idzie dalej."
       }
     ]
   },
   "control": {
-    "heading": "Ty decydujesz. AI wykonuje.",
+    "heading": "Ty decydujesz. Ferajna robi.",
     "items": [
-      "AI nie wyda złotówki ponad Twój limit.",
-      "Każda akcja jest w logu i możesz ją cofnąć.",
-      "Wydatki i publikacje poza planem wymagają Twojej akceptacji.",
-      "Wyłączasz AI jednym kliknięciem."
+      "Ani złotówki ponad limit, który ustalisz.",
+      "Każda akcja w logu. Każdą możesz cofnąć.",
+      "Wydatek albo publikacja poza planem czeka na Twoje „Zatwierdź”.",
+      "Wyłączasz całość jednym kliknięciem. Bez telefonu do działu utrzymania klienta."
     ]
   },
   "pricing": {
     "heading": "Cennik",
-    "plan_name": "Jeden plan. Wszystko w środku.",
+    "plan_name": "Jeden plan. Cała ekipa.",
     "price": "[CENA] zł",
     "period": "miesięcznie",
     "vat_note": "[brutto/netto + VAT]",
-    "invoice_note": "Faktura VAT",
+    "invoice_note": "Faktura VAT w PLN",
     "comparison": "Mniej niż godzina pracy agencji marketingowej.",
-    "cancel_note": "Rezygnujesz w każdej chwili. Bez umowy na rok.",
-    "beta_label": "Cena dla uczestników bety: [CENA BETA] zł na zawsze",
+    "cancel_note": "Rezygnujesz w każdej chwili. Bez umowy na rok, bez działu retencji.",
+    "beta_label": "Cena dla uczestników bety: [CENA BETA] zł, na stałe",
     "cta": "Zapisz się do bety",
     "features": [
-      "Strona, marketing i obsługa klienta w jednym",
-      "Codzienna praca i poranny raport",
-      "Limit budżetu i log każdej akcji"
+      "Strona, reklamy, teksty, klienci, faktury, research",
+      "Codzienna robota i poranny raport",
+      "Limit w złotówkach, log i przycisk „Cofnij”"
     ]
   },
   "about": {
-    "heading": "Kim jesteśmy",
+    "heading": "Kto za tym stoi",
     "founder_name": "[IMIĘ I NAZWISKO]",
     "founder_photo": "",
     "founder_bio": "[Dwa zdania o założycielu: kim jest i dlaczego buduje ten produkt.]",
     "linkedin_url": "[LINK DO LINKEDIN]"
   },
   "beta": {
-    "heading": "Beta dla pierwszych [X] firm. Zapisz się, zanim zamkniemy listę.",
-    "subheading": "Zostaw e-mail, a w kolejnym kroku zapytamy o Twoją firmę i narzędzia, z których korzystasz. Zajmie to minutę.",
+    "heading": "Beta dla pierwszych [X] firm. Potem zamykamy listę.",
+    "subheading": "Zostaw e-mail. W kolejnym kroku zapytamy, czym się zajmujesz i z jakich narzędzi korzystasz. Minuta, nie ankieta.",
     "cta": "Zapisz się do bety"
   },
   "footer": {
