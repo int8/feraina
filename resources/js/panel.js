@@ -181,21 +181,8 @@ export function initPanel() {
         reset();
 
         // Stage 1: typing
-        const speed = 28;
-        let i = 0;
-
-        if (reduce) {
-            $('p-typed').textContent = PROMPT;
-            i = PROMPT.length;
-        } else {
-            const t = setInterval(() => {
-                $('p-typed').textContent = PROMPT.slice(0, ++i);
-                if (i >= PROMPT.length) clearInterval(t);
-            }, speed);
-            timers.push(t);
-        }
-
-        const typed = reduce ? 0 : PROMPT.length * speed;
+        if (reduce) $('p-typed').textContent = PROMPT;
+        const typed = reduce ? 0 : typeHuman(PROMPT, $('p-typed'), after);
 
         // Kursor: pojawia się przy karecie, jedzie na Enter, klika.
         after(typed + 300, () => {
@@ -317,6 +304,61 @@ export function initPanel() {
         }, { threshold: 0.25 });
         observer.observe(panel);
     }
+}
+
+/**
+ * Pisanie „po ludzku": nierówne tempo, przystanki po przecinkach,
+ * kilka literówek poprawionych backspace'em. Zwraca łączny czas w ms.
+ */
+const TYPOS = {
+    'seniorzy': 'seniozr',
+    'sprzątanie': 'sprzat',
+    'naprawy': 'naprw',
+};
+
+function typeHuman(text, el, after) {
+    const steps = []; // { add: 'x' } | { del: 1 }
+    let i = 0;
+    while (i < text.length) {
+        const word = Object.keys(TYPOS).find(w => text.startsWith(w, i) && (i === 0 || text[i - 1] === ' '));
+        if (word) {
+            const wrong = TYPOS[word];
+            // wspólny prefiks piszemy normalnie, potem błędną końcówkę, pauza, backspace, poprawna końcówka
+            let k = 0;
+            while (k < word.length && word[k] === wrong[k]) k++;
+            for (const ch of word.slice(0, k)) steps.push({ add: ch });
+            for (const ch of wrong.slice(k)) steps.push({ add: ch });
+            steps.push({ pause: 420 });
+            for (let d = 0; d < wrong.length - k; d++) steps.push({ del: 1 });
+            steps.push({ pause: 120 });
+            for (const ch of word.slice(k)) steps.push({ add: ch });
+            i += word.length;
+            continue;
+        }
+        steps.push({ add: text[i] });
+        i++;
+    }
+
+    let t = 0;
+    let out = '';
+    let seed = 7;
+    const rnd = () => { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; };
+    steps.forEach(s => {
+        if (s.pause) { t += s.pause; return; }
+        if (s.del) {
+            t += 70;
+            after(t, () => { out = out.slice(0, -1); el.textContent = out; });
+            return;
+        }
+        let delay = 18 + rnd() * 26;
+        if (s.add === ' ') delay += 20;
+        if (',.:'.includes(s.add)) delay += 40;
+        t += delay;
+        const ch = s.add;
+        after(t, () => { out += ch; el.textContent = out; });
+        if (',.:'.includes(ch)) t += 140;
+    });
+    return t;
 }
 
 /**
