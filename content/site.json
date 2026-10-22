@@ -1,10 +1,10 @@
 {
   "product": {
     "name": "Udaina",
-    "tagline": "Ekipa AI dla małej polskiej firmy",
+    "tagline": "Zespół AI dla małej polskiej firmy",
     "domain": "[DOMENA]",
     "beta_slots": "[X]",
-    "meta_description": "Udaina to ekipa agentów AI, która robi robotę w małej firmie: strona, reklamy, posty, odpowiedzi klientom, faktury, research. Ty ustalasz limit w złotówkach i co rano decydujesz, co dalej. Zapisz się do bety."
+    "meta_description": "Udaina codziennie prowadzi bieżące sprawy małej firmy w internecie: stronę, reklamy, komunikację z klientami i faktury. Ustalasz miesięczny budżet, a każdego ranka otrzymujesz raport z działań i listę decyzji do zatwierdzenia."
   },
   "company": {
     "name": "[NAZWA FIRMY]",
@@ -14,198 +14,152 @@
   },
   "nav": {
     "links": [
-      {
-        "label": "Jak to działa",
-        "href": "#jak-to-dziala"
-      },
-      {
-        "label": "Integracje",
-        "href": "#integracje"
-      },
-      {
-        "label": "Cennik",
-        "href": "#cennik"
-      },
-      {
-        "label": "FAQ",
-        "href": "#faq"
-      }
+      { "label": "Co robi", "href": "#co" },
+      { "label": "Jeden dzień", "href": "#dzien" },
+      { "label": "Narzędzia", "href": "#integracje" },
+      { "label": "Cennik", "href": "#cennik" },
+      { "label": "FAQ", "href": "#faq" }
     ],
     "cta": "Zapisz się do bety"
   },
   "hero": {
-    "heading": "Udaina robi robotę",
-    "subheading": "Ekipa agentów AI, która w małej firmie robi to, na co nie masz czasu: strona, reklamy, posty, odpowiedzi klientom, faktury. Ty ustalasz limit w złotówkach i co rano decydujesz, co dalej.",
+    "heading": "Zespół AI, który prowadzi Twoją firmę w internecie.",
+    "subheading": "Udaina codziennie prowadzi bieżące sprawy małej firmy w internecie: stronę, reklamy, komunikację z klientami i faktury. Ustalasz miesięczny budżet, a każdego ranka otrzymujesz raport z działań i listę decyzji do zatwierdzenia.",
     "cta_primary": "Zapisz się do bety",
-    "cta_secondary": "Zobacz zwykły wtorek",
     "email_placeholder": "Twój adres e-mail",
-    "note": "Beta dla pierwszych [X] firm. Bez karty, bez zobowiązań.",
-    "facts": [
+    "note": "Zapis do bety jest bezpłatny."
+  },
+  "features": {
+    "eyebrow": "Zakres działania",
+    "heading": "Cztery obszary, które Udaina prowadzi za Ciebie",
+    "items": [
       {
-        "label": "Język",
-        "value": "polski, natywnie"
+        "num": "01",
+        "area": "STRONA",
+        "title": "Rozwija stronę firmową na podstawie danych",
+        "text": "Aktualizuje treści, poprawia podstrony i analizuje zachowanie odwiedzających. Każda zmiana ma uzasadnienie, a poprzednia wersja pozostaje w dzienniku.",
+        "list": ["Cennik, oferta, formularze kontaktowe", "Testy A/B, wdrażana jest wersja skuteczniejsza", "Każdą zmianę można cofnąć"],
+        "ui": "diff"
       },
       {
-        "label": "Rozliczenie",
-        "value": "faktura VAT, ceny w PLN"
+        "num": "02",
+        "area": "REKLAMY I POSTY",
+        "title": "Prowadzi kampanie reklamowe w ramach budżetu",
+        "text": "Zarządza Google Ads oraz Meta Ads, wstrzymuje działania bez efektu i przygotowuje treści po polsku: rzeczowe, z konkretnymi terminami, cenami i liczbą miejsc.",
+        "list": ["Dzienny limit wydatków, którego nie przekroczy", "Nowa kampania wymaga Twojej akceptacji", "Publikacje planowane w godzinach największego ruchu"],
+        "ui": "keywords"
       },
       {
-        "label": "Dane",
-        "value": "serwery w UE, RODO"
+        "num": "03",
+        "area": "KLIENCI",
+        "title": "Obsługuje korespondencję z klientami",
+        "text": "E-mail, Messenger, opinie w Google. Zna Twój cennik i kalendarz, więc odpowiada konkretnie i w tonie Twojej firmy. Reklamacje i sprawy nietypowe przekazuje do Twojej decyzji.",
+        "list": ["Odpowiedź w ciągu minut", "Styl i zasady komunikacji ustalasz Ty", "Sprawy wrażliwe zawsze trafiają do Ciebie"],
+        "ui": "messenger"
       },
       {
-        "label": "Limit wydatków",
-        "value": "ustalasz Ty, co do złotówki"
-      },
-      {
-        "label": "KSeF · Przelewy24 · Allegro",
-        "stamp": "w planach"
-      },
-      {
-        "label": "Umowa",
-        "value": "brak, rezygnacja w każdej chwili"
+        "num": "04",
+        "area": "FAKTURY",
+        "title": "Wystawia faktury i monitoruje płatności",
+        "text": "Faktura po każdej sprzedaży, przesyłana do KSeF. Przeterminowane należności otrzymują uprzejme przypomnienie. Księgowość dostaje komplet dokumentów.",
+        "list": ["KSeF przez Fakturownię lub inFakt", "Przypomnienia o płatności, bez windykacji", "Dane kontrahentów z CEIDG i KRS"],
+        "ui": "invoices"
       }
+    ]
+  },
+  "why": {
+    "eyebrow": "Zasady działania",
+    "heading": "Pełna kontrola nad budżetem i każdą zmianą",
+    "items": [
+      { "icon": "zł", "title": "Budżet pod Twoją kontrolą", "text": "Ustalasz limit wydatków. Udaina nie może go zmienić. Każdy wydatek poza planem wymaga Twojej akceptacji." },
+      { "icon": "↶", "title": "Każda zmiana odwracalna", "text": "Zmiany na stronie, publikacje i wiadomości są zapisywane w dzienniku wraz z poprzednią wersją. Cofnięcie zajmuje jedno kliknięcie." },
+      { "icon": "PL", "title": "Przygotowane dla polskich firm", "text": "Język polski od podstaw. Integracje z KSeF, BLIK, Allegro, InPost i CEIDG. Dane przetwarzane na serwerach w UE, zgodnie z RODO." }
     ]
   },
   "day": {
-    "heading": "Zwykły wtorek z Udainą",
+    "eyebrow": "Przykładowy dzień pracy",
+    "heading": "Jeden dzień z Udainą",
+    "lead": "Od 7:30 do raportu o 17:00. Każde działanie jest zapisane w dzienniku.",
     "file": "wtorek.log",
     "range": "07:30 → 17:00",
     "entries": [
-      {
-        "time": "07:30",
-        "text": "Strona: poprawiono podstronę z cennikiem, bo ruch z telefonów uciekał po kilku sekundach. Stara wersja w logu."
-      },
-      {
-        "time": "09:10",
-        "text": "Google Ads: wyłączono słowo kluczowe, które zjadało budżet i nie dało ani jednego zapytania."
-      },
-      {
-        "time": "11:45",
-        "text": "Messenger i mail: odpowiedziano na 6 pytań o termin i cenę. Jedno nietypowe odłożone do Twojej decyzji."
-      },
-      {
-        "time": "14:00",
-        "text": "Faktury: wystawiono 3 za zeszły tydzień. Do jednej po terminie poszło grzeczne przypomnienie."
-      },
-      {
-        "time": "17:00",
-        "text": "Raport dnia gotowy. Trzy sprawy czekają na Twoje „Zatwierdź”: nowa kampania, rabat dla stałego klienta, tekst na blog."
-      }
+      { "time": "07:30", "text": "Strona: zaktualizowano podstronę z cennikiem na urządzeniach mobilnych. Poprzednia wersja zapisana w dzienniku." },
+      { "time": "09:10", "text": "Google Ads: wstrzymano słowo kluczowe generujące koszty bez zapytań." },
+      { "time": "11:45", "text": "Messenger i e-mail: 6 odpowiedzi na pytania o terminy i ceny. Jedna sprawa nietypowa przekazana do Twojej decyzji." },
+      { "time": "14:00", "text": "Faktury: wystawiono 3 faktury za ubiegły tydzień. Do jednej przeterminowanej wysłano przypomnienie." },
+      { "time": "17:00", "text": "Raport dzienny gotowy. Do akceptacji: nowa kampania, rabat dla stałego klienta, artykuł na blog." }
     ],
-    "caption": "Przykład poglądowy. Każdy wpis jest w logu i można go cofnąć."
-  },
-  "does": {
-    "heading": "Co bierze na siebie",
-    "cards": [
-      {
-        "icon": "globe",
-        "title": "Strona",
-        "text": "Buduje i poprawia stronę na podstawie tego, co robią na niej ludzie. Każdą zmianę zapisuje w logu.",
-        "saved": "ok. [X] h tygodniowo"
-      },
-      {
-        "icon": "megaphone",
-        "title": "Marketing",
-        "text": "Prowadzi reklamy w Google i Meta, pisze posty i artykuły po polsku. Research konkurencji i cen w pakiecie.",
-        "saved": "ok. [X] h tygodniowo"
-      },
-      {
-        "icon": "chat",
-        "title": "Klienci i pieniądze",
-        "text": "Odpisuje na maile i Messengera w Twoim tonie, wystawia faktury i sprawdza, czy przelew doszedł. Trudne sprawy odkłada do Twojej decyzji.",
-        "saved": "ok. [X] h tygodniowo"
-      }
+    "rules": [
+      "Wydatki nigdy nie przekraczają ustalonego limitu.",
+      "Każde działanie jest w dzienniku i można je cofnąć.",
+      "Wydatek lub publikacja poza planem wymaga Twojej akceptacji.",
+      "Całość można wyłączyć jednym kliknięciem."
     ]
   },
-  "poland": {
-    "heading": "Zrobione pod Polskę",
-    "items": [
-      {
-        "icon": "flag",
-        "text": "Polski od początku, nie z tłumacza."
-      },
-      {
-        "icon": "card",
-        "text": "Płatności Przelewy24 i BLIK na Twojej stronie.",
-        "status": "w planach"
-      },
-      {
-        "icon": "invoice",
-        "text": "Faktury z KSeF przez Fakturownię lub inFakt.",
-        "status": "w planach"
-      },
-      {
-        "icon": "shield",
-        "text": "Dane na serwerach w UE, zgodnie z RODO."
-      }
-    ]
-  },
-  "how": {
-    "heading": "Jak to działa",
-    "steps": [
-      {
-        "title": "Opowiadasz o firmie",
-        "text": "Czym się zajmujesz, kogo szukasz, ile możesz wydać. Po ludzku, bez briefu na dwadzieścia stron."
-      },
-      {
-        "title": "Udaina układa plan tygodnia",
-        "text": "Dostajesz listę działań i limit w złotówkach. Zatwierdzasz albo wykreślasz."
-      },
-      {
-        "title": "Co rano raport i decyzje",
-        "text": "Widzisz, co zrobiono, i klikasz „Zatwierdź” tam, gdzie trzeba. Reszta idzie dalej."
-      }
-    ]
-  },
-  "control": {
-    "heading": "Ty decydujesz. Udaina robi.",
-    "items": [
-      "Ani złotówki ponad limit, który ustalisz.",
-      "Każda akcja w logu. Każdą możesz cofnąć.",
-      "Wydatek albo publikacja poza planem czeka na Twoje „Zatwierdź”.",
-      "Wyłączasz całość jednym kliknięciem. Bez telefonu do działu utrzymania klienta."
+  "integrations": {
+    "eyebrow": "Narzędzia",
+    "heading": "Integracje z narzędziami, z których już korzystasz",
+    "lead": "Bez zmiany dotychczasowych systemów. Udaina łączy się z Twoimi istniejącymi kontami.",
+    "groups": [
+      { "name": "Marketing", "tools": "Facebook i Instagram · Google Ads · Google Business Profile · LinkedIn", "status": "w becie" },
+      { "name": "Komunikacja", "tools": "Gmail · Outlook · Messenger · WhatsApp · SMSAPI", "status": "w becie" },
+      { "name": "Faktury i księgowość", "tools": "KSeF · Fakturownia · inFakt · wFirma · iFirma", "status": "w planach" },
+      { "name": "Płatności", "tools": "Przelewy24 · BLIK · PayU · Stripe", "status": "w becie" },
+      { "name": "Sprzedaż i e-commerce", "tools": "Allegro · BaseLinker · Shopify · WooCommerce · Shoper · IdoSell", "status": "w becie" },
+      { "name": "Wysyłka i rejestry", "tools": "InPost · DPD · Furgonetka · Apaczka · CEIDG · KRS · GUS", "status": "w becie" }
     ]
   },
   "pricing": {
-    "heading": "Cennik",
-    "plan_name": "Jeden plan. Cała ekipa.",
-    "price": "[CENA] zł",
-    "period": "miesięcznie",
-    "vat_note": "[brutto/netto + VAT]",
-    "invoice_note": "Faktura VAT w PLN",
-    "comparison": "Mniej niż godzina pracy agencji marketingowej.",
-    "cancel_note": "Rezygnujesz w każdej chwili. Bez umowy na rok, bez działu retencji.",
-    "beta_label": "Cena dla uczestników bety: [CENA BETA] zł, na stałe",
-    "cta": "Zapisz się do bety",
+    "eyebrow": "Cennik",
+    "heading": "Jeden plan. Pełny zakres.",
+    "price": "459 zł",
+    "period": "miesięcznie netto · faktura VAT w PLN",
     "features": [
-      "Strona, reklamy, teksty, klienci, faktury, research",
-      "Codzienna robota i poranny raport",
-      "Limit w złotówkach, log i przycisk „Cofnij”"
+      "Strona, reklamy, treści, obsługa klientów, faktury",
+      "Codzienne działania i poranny raport",
+      "Limit wydatków, dziennik zmian, możliwość cofnięcia",
+      "Rezygnacja w dowolnym momencie, bez umowy terminowej"
+    ],
+    "cta": "Zapisz się do bety"
+  },
+  "faq": {
+    "eyebrow": "Najczęstsze pytania",
+    "heading": "Co warto wiedzieć przed zapisem",
+    "items": [
+      {
+        "question": "Czy Udaina zastąpi księgową lub agencję marketingową?",
+        "answer": "Księgowości nie. Udaina wystawia faktury i monitoruje płatności, ale rozliczenia pozostają po stronie Twojej księgowej. W zakresie podstawowego marketingu (publikacje, kampanie, poprawki na stronie) może zastąpić agencję."
+      },
+      {
+        "question": "Co się dzieje, gdy AI popełni błąd?",
+        "answer": "Każda zmiana jest zapisana w dzienniku i można ją cofnąć jednym kliknięciem. Wydatki i publikacje poza zatwierdzonym planem wymagają Twojej zgody, więc błąd nie generuje kosztów."
+      },
+      {
+        "question": "Kto odpowiada za treści wysyłane do klientów?",
+        "answer": "Udaina przygotowuje treści w imieniu Twojej firmy i w jej stylu, ale nadawcą pozostajesz Ty. Dlatego reklamacje, sprawy nietypowe i wszystko, co niesie ryzyko, trafia do Twojej decyzji."
+      },
+      {
+        "question": "Gdzie przechowywane są moje dane i dane moich klientów?",
+        "answer": "Na serwerach w Unii Europejskiej, zgodnie z RODO. Dane nie są sprzedawane ani wykorzystywane do trenowania modeli dla innych firm."
+      },
+      {
+        "question": "Czy mogę zakończyć współpracę i zachować stronę oraz treści?",
+        "answer": "Tak. Strona, treści i historia zmian należą do Ciebie. Eksport jest możliwy w dowolnym momencie."
+      },
+      {
+        "question": "Kiedy rusza beta i ile kosztuje?",
+        "answer": "Liczba miejsc w becie jest ograniczona. Abonament wynosi 459 zł netto miesięcznie. Zapis na listę jest bezpłatny."
+      }
     ]
   },
-  "about": {
-    "heading": "Kto za tym stoi",
-    "founder_name": "[IMIĘ I NAZWISKO]",
-    "founder_photo": "",
-    "founder_bio": "[Dwa zdania o założycielu: kim jest i dlaczego buduje ten produkt.]",
-    "linkedin_url": "[LINK DO LINKEDIN]"
-  },
   "beta": {
-    "heading": "Beta dla pierwszych [X] firm. Potem zamykamy listę.",
-    "subheading": "Zostaw e-mail. W kolejnym kroku zapytamy, czym się zajmujesz i z jakich narzędzi korzystasz. Minuta, nie ankieta.",
-    "cta": "Zapisz się do bety"
+    "heading": "Dołącz do bety. Liczba miejsc jest ograniczona.",
+    "subheading": "Zostaw adres e-mail. W kolejnym kroku zapytamy o profil firmy i narzędzia, z których korzystasz. Zajmie to około minuty."
   },
   "footer": {
     "links": [
-      {
-        "label": "Polityka prywatności",
-        "route": "privacy"
-      },
-      {
-        "label": "Regulamin bety",
-        "route": "terms"
-      }
+      { "label": "Polityka prywatności", "route": "privacy" },
+      { "label": "Regulamin bety", "route": "terms" }
     ]
   }
 }

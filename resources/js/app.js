@@ -1,5 +1,5 @@
 import { initWizard } from './wizard.js';
-import { initDemo } from './demo.js';
+import { initPanel } from './panel.js';
 
 document.documentElement.classList.remove('no-js');
 
@@ -95,6 +95,5 @@ if (log) {
 const wizard = document.querySelector('[data-wizard]');
 if (wizard) initWizard(wizard, track);
 
-// --- Mock dashboardu w hero ---
-const demo = document.querySelector('[data-demo]');
-if (demo) initDemo(demo);
+// --- Panel produktowy w hero ---
+initPanel();

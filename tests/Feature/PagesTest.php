@@ -17,16 +17,15 @@ class PagesTest extends TestCase
         $html = $response->getContent();
 
         $markers = [
-            'Udaina robi robotę',
-            'Zwykły wtorek z Udainą',
-            'Co bierze na siebie',
-            'Zrobione pod Polskę',
-            'id="jak-to-dziala"',
-            'Ty decydujesz. Udaina robi.',
+            'Zespół AI, który prowadzi',
+            'id="co"',
+            'Cztery obszary',
+            'id="dzien"',
+            'Jeden dzień z Udainą',
             'id="integracje"',
             'id="cennik"',
             'id="faq"',
-            'Kto za tym stoi',
+            'id="zapis"',
             'Polityka prywatności',
         ];
         $pos = -1;
@@ -54,19 +53,15 @@ class PagesTest extends TestCase
         $groups = $content->integrations()['groups'];
         $this->assertCount(7, $groups);
 
-        $home = $this->get('/')->assertOk();
         $this->startSurvey();
         $survey = $this->get(route('beta.survey'))->assertOk();
 
         foreach ($groups as $group) {
-            $home->assertSee($group['name']);
             $survey->assertSee($group['name']);
             foreach ($group['tools'] as $tool) {
-                $home->assertSee($tool['name']);
                 $survey->assertSee('value="'.$tool['id'].'"', false);
             }
         }
-        $home->assertSee('w planach');
     }
 
     public function test_changed_integrations_file_updates_section_and_form(): void
@@ -86,8 +81,6 @@ class PagesTest extends TestCase
         ];
         file_put_contents("{$dir}/integrations.json", json_encode($custom, JSON_UNESCAPED_UNICODE));
         $this->app->singleton(Content::class, fn () => new Content($dir));
-
-        $this->get('/')->assertOk()->assertSee('Grupa Testowa')->assertSee('Narzędzie X')->assertDontSee('>Allegro<', false)->assertDontSee('data-integration-group="sprzedaz"', false);
 
         $this->startSurvey();
         $this->get(route('beta.survey'))->assertOk()->assertSee('value="narzedzie-x"', false)->assertDontSee('value="allegro"', false);

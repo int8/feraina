@@ -3,7 +3,6 @@
         <div class="container-x max-w-2xl" data-wizard
              data-progress-url="{{ route('beta.progress') }}"
              data-csrf="{{ csrf_token() }}"
-             data-max-integrations="{{ $maxIntegrations }}"
              data-start-step="{{ min(max((int) $lead->last_step, 1), 4) }}">
 
             <p class="text-sm text-stone">Zapis dla <strong class="text-ink">{{ $lead->email }}</strong></p>
@@ -52,7 +51,7 @@
                 <fieldset class="wizard-step" data-field data-required-group data-min="1" data-required-message="Zaznacz przynajmniej jedną integrację." hidden>
                     <legend class="sr-only">Które integracje są dla Ciebie najważniejsze?</legend>
                     <h2 class="text-xl font-semibold" aria-hidden="true">Które integracje są dla Ciebie najważniejsze?</h2>
-                    <p class="mt-1 text-ink-soft">Zaznacz od 1 do {{ $maxIntegrations }}. <span class="font-medium text-ink" data-integrations-counter aria-live="polite">Wybrano 0 z {{ $maxIntegrations }}</span></p>
+                    <p class="mt-1 text-ink-soft">Zaznacz przynajmniej jedną.</p>
                     @php($selected = old('integrations', $lead->integrations ?? []))
                     <div class="mt-5 space-y-6">
                         @foreach ($integrations['groups'] as $group)

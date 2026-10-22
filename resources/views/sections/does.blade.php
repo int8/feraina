@@ -7,7 +7,6 @@
                     <p class="eyebrow">{{ $card['title'] }}</p>
                     <h3 class="display mt-3 text-3xl sm:text-4xl">{{ $card['title'] }}</h3>
                     <p class="mt-4 flex-1 leading-relaxed text-ink-soft">{{ $card['text'] }}</p>
-                    <p class="mt-6 font-mono text-sm text-ink">Oszczędzasz {{ $card['saved'] }}</p>
                 </article>
             @endforeach
         </div>

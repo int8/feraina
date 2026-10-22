@@ -81,7 +81,6 @@ class BetaController extends Controller
             'site' => $this->content->site(),
             'form' => $this->content->form(),
             'integrations' => $this->content->integrations(),
-            'maxIntegrations' => (int) config('beta.max_integrations'),
         ]);
     }
 

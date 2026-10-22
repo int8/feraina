@@ -123,20 +123,14 @@ class BetaSignupTest extends TestCase
         Mail::assertNothingSent();
     }
 
-    public function test_cannot_select_more_than_three_integrations_or_unknown_ids(): void
+    public function test_cannot_select_unknown_or_duplicate_integration_ids(): void
     {
         $this->startSignup();
 
-        $this->post(route('beta.finish'), $this->validSurvey(['integrations' => ['allegro', 'blik', 'ksef', 'inpost']]))
-            ->assertSessionHasErrors(['integrations']);
         $this->post(route('beta.finish'), $this->validSurvey(['integrations' => ['nie-istnieje']]))
             ->assertSessionHasErrors(['integrations.0']);
         $this->post(route('beta.finish'), $this->validSurvey(['integrations' => ['allegro', 'allegro']]))
             ->assertSessionHasErrors(['integrations.0']);
-
-        $this->postJson(route('beta.progress'), ['last_step' => 3, 'integrations' => ['allegro', 'blik', 'ksef', 'inpost']])
-            ->assertStatus(422)
-            ->assertJsonValidationErrors(['integrations']);
     }
 
     public function test_same_email_does_not_create_duplicate(): void

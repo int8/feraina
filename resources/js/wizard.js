@@ -1,5 +1,5 @@
 /**
- * Ankieta zapisu do bety: kroki, pasek postępu, „Wstecz”, limit integracji,
+ * Ankieta zapisu do bety: kroki, pasek postępu, „Wstecz",
  * zapis postępu po każdym kroku (żeby nie tracić porzuconych zapisów).
  */
 export function initWizard(root, track = () => {}) {
@@ -12,26 +12,13 @@ export function initWizard(root, track = () => {}) {
     const submitBtn = root.querySelector('[data-wizard-submit]');
     const progressUrl = root.dataset.progressUrl;
     const csrf = root.dataset.csrf;
-    const max = Number(root.dataset.maxIntegrations || 3);
-
     let current = clamp(Number(root.dataset.startStep || 1) - 1, 0, steps.length - 1);
 
     // Jeśli serwer zwrócił błędy walidacji, otwórz pierwszy krok z błędem.
     const firstErrorStep = steps.findIndex((s) => s.querySelector('[data-server-error]'));
     if (firstErrorStep >= 0) current = firstErrorStep;
 
-    // --- Integracje: licznik i blokada powyżej limitu ---
     const boxes = [...form.querySelectorAll('input[name="integrations[]"]')];
-    const counter = form.querySelector('[data-integrations-counter]');
-    const refreshBoxes = () => {
-        const checked = boxes.filter((b) => b.checked).length;
-        boxes.forEach((b) => {
-            b.disabled = !b.checked && checked >= max;
-        });
-        if (counter) counter.textContent = `Wybrano ${checked} z ${max}`;
-    };
-    boxes.forEach((b) => b.addEventListener('change', refreshBoxes));
-    refreshBoxes();
 
     // --- „Inne” odsłania pole tekstowe ---
     const otherWrap = form.querySelector('[data-business-other]');
