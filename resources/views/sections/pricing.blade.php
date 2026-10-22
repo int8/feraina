@@ -9,7 +9,7 @@
                     <li>{{ $feature }}</li>
                 @endforeach
             </ul>
-            <a href="#zapis" class="btn-primary w-full" data-scroll-to-email data-plausible="cta_click" data-plausible-prop-location="pricing">{{ $site['pricing']['cta'] }}</a>
+            <a href="#zapis" class="btn-primary w-full" data-open-beta data-plausible="cta_click" data-plausible-prop-location="pricing">{{ $site['pricing']['cta'] }}</a>
         </div>
     </div>
 </section>

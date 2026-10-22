@@ -7,4 +7,5 @@
     @include('sections.pricing')
     @include('sections.faq')
     @include('sections.beta')
+    @include('sections.beta-modal')
 </x-layouts.app>

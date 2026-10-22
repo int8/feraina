@@ -14,20 +14,36 @@
   },
   "nav": {
     "links": [
-      { "label": "Co robi", "href": "#co" },
-      { "label": "Jeden dzień", "href": "#dzien" },
-      { "label": "Narzędzia", "href": "#integracje" },
-      { "label": "Cennik", "href": "#cennik" },
-      { "label": "FAQ", "href": "#faq" }
+      {
+        "label": "Co robi",
+        "href": "#co"
+      },
+      {
+        "label": "Jeden dzień",
+        "href": "#dzien"
+      },
+      {
+        "label": "Narzędzia",
+        "href": "#integracje"
+      },
+      {
+        "label": "Cennik",
+        "href": "#cennik"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
     ],
     "cta": "Zapisz się do bety"
   },
   "hero": {
-    "heading": "Zespół AI, który prowadzi Twoją firmę w internecie.",
-    "subheading": "Udaina codziennie prowadzi bieżące sprawy małej firmy w internecie: stronę, reklamy, komunikację z klientami i faktury. Ustalasz miesięczny budżet, a każdego ranka otrzymujesz raport z działań i listę decyzji do zatwierdzenia.",
+    "heading": "Zespół AI dla Twojej firmy.",
     "cta_primary": "Zapisz się do bety",
     "email_placeholder": "Twój adres e-mail",
-    "note": "Zapis do bety jest bezpłatny."
+    "note": "Zapis do bety jest bezpłatny.",
+    "modal_heading": "Zapisz się do bety",
+    "modal_text": "Zostaw adres e-mail. W kolejnym kroku zapytamy o profil firmy i narzędzia, z których korzystasz."
   },
   "features": {
     "eyebrow": "Zakres działania",
@@ -38,7 +54,11 @@
         "area": "STRONA",
         "title": "Rozwija stronę firmową na podstawie danych",
         "text": "Aktualizuje treści, poprawia podstrony i analizuje zachowanie odwiedzających. Każda zmiana ma uzasadnienie, a poprzednia wersja pozostaje w dzienniku.",
-        "list": ["Cennik, oferta, formularze kontaktowe", "Testy A/B, wdrażana jest wersja skuteczniejsza", "Każdą zmianę można cofnąć"],
+        "list": [
+          "Cennik, oferta, formularze kontaktowe",
+          "Testy A/B, wdrażana jest wersja skuteczniejsza",
+          "Każdą zmianę można cofnąć"
+        ],
         "ui": "diff"
       },
       {
@@ -46,7 +66,11 @@
         "area": "REKLAMY I POSTY",
         "title": "Prowadzi kampanie reklamowe w ramach budżetu",
         "text": "Zarządza Google Ads oraz Meta Ads, wstrzymuje działania bez efektu i przygotowuje treści po polsku: rzeczowe, z konkretnymi terminami, cenami i liczbą miejsc.",
-        "list": ["Dzienny limit wydatków, którego nie przekroczy", "Nowa kampania wymaga Twojej akceptacji", "Publikacje planowane w godzinach największego ruchu"],
+        "list": [
+          "Dzienny limit wydatków, którego nie przekroczy",
+          "Nowa kampania wymaga Twojej akceptacji",
+          "Publikacje planowane w godzinach największego ruchu"
+        ],
         "ui": "keywords"
       },
       {
@@ -54,7 +78,11 @@
         "area": "KLIENCI",
         "title": "Obsługuje korespondencję z klientami",
         "text": "E-mail, Messenger, opinie w Google. Zna Twój cennik i kalendarz, więc odpowiada konkretnie i w tonie Twojej firmy. Reklamacje i sprawy nietypowe przekazuje do Twojej decyzji.",
-        "list": ["Odpowiedź w ciągu minut", "Styl i zasady komunikacji ustalasz Ty", "Sprawy wrażliwe zawsze trafiają do Ciebie"],
+        "list": [
+          "Odpowiedź w ciągu minut",
+          "Styl i zasady komunikacji ustalasz Ty",
+          "Sprawy wrażliwe zawsze trafiają do Ciebie"
+        ],
         "ui": "messenger"
       },
       {
@@ -62,7 +90,11 @@
         "area": "FAKTURY",
         "title": "Wystawia faktury i monitoruje płatności",
         "text": "Faktura po każdej sprzedaży, przesyłana do KSeF. Przeterminowane należności otrzymują uprzejme przypomnienie. Księgowość dostaje komplet dokumentów.",
-        "list": ["KSeF przez Fakturownię lub inFakt", "Przypomnienia o płatności, bez windykacji", "Dane kontrahentów z CEIDG i KRS"],
+        "list": [
+          "KSeF przez Fakturownię lub inFakt",
+          "Przypomnienia o płatności, bez windykacji",
+          "Dane kontrahentów z CEIDG i KRS"
+        ],
         "ui": "invoices"
       }
     ]
@@ -71,9 +103,21 @@
     "eyebrow": "Zasady działania",
     "heading": "Pełna kontrola nad budżetem i każdą zmianą",
     "items": [
-      { "icon": "zł", "title": "Budżet pod Twoją kontrolą", "text": "Ustalasz limit wydatków. Udaina nie może go zmienić. Każdy wydatek poza planem wymaga Twojej akceptacji." },
-      { "icon": "↶", "title": "Każda zmiana odwracalna", "text": "Zmiany na stronie, publikacje i wiadomości są zapisywane w dzienniku wraz z poprzednią wersją. Cofnięcie zajmuje jedno kliknięcie." },
-      { "icon": "PL", "title": "Przygotowane dla polskich firm", "text": "Język polski od podstaw. Integracje z KSeF, BLIK, Allegro, InPost i CEIDG. Dane przetwarzane na serwerach w UE, zgodnie z RODO." }
+      {
+        "icon": "zł",
+        "title": "Budżet pod Twoją kontrolą",
+        "text": "Ustalasz limit wydatków. Udaina nie może go zmienić. Każdy wydatek poza planem wymaga Twojej akceptacji."
+      },
+      {
+        "icon": "↶",
+        "title": "Każda zmiana odwracalna",
+        "text": "Zmiany na stronie, publikacje i wiadomości są zapisywane w dzienniku wraz z poprzednią wersją. Cofnięcie zajmuje jedno kliknięcie."
+      },
+      {
+        "icon": "PL",
+        "title": "Przygotowane dla polskich firm",
+        "text": "Język polski od podstaw. Integracje z KSeF, BLIK, Allegro, InPost i CEIDG. Dane przetwarzane na serwerach w UE, zgodnie z RODO."
+      }
     ]
   },
   "day": {
@@ -83,11 +127,26 @@
     "file": "wtorek.log",
     "range": "07:30 → 17:00",
     "entries": [
-      { "time": "07:30", "text": "Strona: zaktualizowano podstronę z cennikiem na urządzeniach mobilnych. Poprzednia wersja zapisana w dzienniku." },
-      { "time": "09:10", "text": "Google Ads: wstrzymano słowo kluczowe generujące koszty bez zapytań." },
-      { "time": "11:45", "text": "Messenger i e-mail: 6 odpowiedzi na pytania o terminy i ceny. Jedna sprawa nietypowa przekazana do Twojej decyzji." },
-      { "time": "14:00", "text": "Faktury: wystawiono 3 faktury za ubiegły tydzień. Do jednej przeterminowanej wysłano przypomnienie." },
-      { "time": "17:00", "text": "Raport dzienny gotowy. Do akceptacji: nowa kampania, rabat dla stałego klienta, artykuł na blog." }
+      {
+        "time": "07:30",
+        "text": "Strona: zaktualizowano podstronę z cennikiem na urządzeniach mobilnych. Poprzednia wersja zapisana w dzienniku."
+      },
+      {
+        "time": "09:10",
+        "text": "Google Ads: wstrzymano słowo kluczowe generujące koszty bez zapytań."
+      },
+      {
+        "time": "11:45",
+        "text": "Messenger i e-mail: 6 odpowiedzi na pytania o terminy i ceny. Jedna sprawa nietypowa przekazana do Twojej decyzji."
+      },
+      {
+        "time": "14:00",
+        "text": "Faktury: wystawiono 3 faktury za ubiegły tydzień. Do jednej przeterminowanej wysłano przypomnienie."
+      },
+      {
+        "time": "17:00",
+        "text": "Raport dzienny gotowy. Do akceptacji: nowa kampania, rabat dla stałego klienta, artykuł na blog."
+      }
     ],
     "rules": [
       "Wydatki nigdy nie przekraczają ustalonego limitu.",
@@ -101,12 +160,36 @@
     "heading": "Integracje z narzędziami, z których już korzystasz",
     "lead": "Bez zmiany dotychczasowych systemów. Udaina łączy się z Twoimi istniejącymi kontami.",
     "groups": [
-      { "name": "Marketing", "tools": "Facebook i Instagram · Google Ads · Google Business Profile · LinkedIn", "status": "w becie" },
-      { "name": "Komunikacja", "tools": "Gmail · Outlook · Messenger · WhatsApp · SMSAPI", "status": "w becie" },
-      { "name": "Faktury i księgowość", "tools": "KSeF · Fakturownia · inFakt · wFirma · iFirma", "status": "w planach" },
-      { "name": "Płatności", "tools": "Przelewy24 · BLIK · PayU · Stripe", "status": "w becie" },
-      { "name": "Sprzedaż i e-commerce", "tools": "Allegro · BaseLinker · Shopify · WooCommerce · Shoper · IdoSell", "status": "w becie" },
-      { "name": "Wysyłka i rejestry", "tools": "InPost · DPD · Furgonetka · Apaczka · CEIDG · KRS · GUS", "status": "w becie" }
+      {
+        "name": "Marketing",
+        "tools": "Facebook i Instagram · Google Ads · Google Business Profile · LinkedIn",
+        "status": "w becie"
+      },
+      {
+        "name": "Komunikacja",
+        "tools": "Gmail · Outlook · Messenger · WhatsApp · SMSAPI",
+        "status": "w becie"
+      },
+      {
+        "name": "Faktury i księgowość",
+        "tools": "KSeF · Fakturownia · inFakt · wFirma · iFirma",
+        "status": "w planach"
+      },
+      {
+        "name": "Płatności",
+        "tools": "Przelewy24 · BLIK · PayU · Stripe",
+        "status": "w becie"
+      },
+      {
+        "name": "Sprzedaż i e-commerce",
+        "tools": "Allegro · BaseLinker · Shopify · WooCommerce · Shoper · IdoSell",
+        "status": "w becie"
+      },
+      {
+        "name": "Wysyłka i rejestry",
+        "tools": "InPost · DPD · Furgonetka · Apaczka · CEIDG · KRS · GUS",
+        "status": "w becie"
+      }
     ]
   },
   "pricing": {
@@ -158,8 +241,14 @@
   },
   "footer": {
     "links": [
-      { "label": "Polityka prywatności", "route": "privacy" },
-      { "label": "Regulamin bety", "route": "terms" }
+      {
+        "label": "Polityka prywatności",
+        "route": "privacy"
+      },
+      {
+        "label": "Regulamin bety",
+        "route": "terms"
+      }
     ]
   }
 }
