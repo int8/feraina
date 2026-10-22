@@ -9,7 +9,7 @@
     @php($initialDecision = array_values(array_filter($dash['tasks'], fn ($t) => ! empty($t['decision'])))[0] ?? null)
     @php($dash['today'] = [['text' => 'Raport gotowy. 4 zadania, z czego 1 czeka na Twoją decyzję. Reszta wdrożona i zapisana w logu.', 'time' => 'raport']])
     <div class="container-wide mt-10 lg:mt-14">
-        <div class="demo" data-demo role="region" aria-label="Przykładowy panel Ferajny">
+        <div class="demo" data-demo role="region" aria-label="Przykładowy panel Udainy">
             <div class="demo-top">
                 <ol class="demo-strip" data-demo-strip aria-live="off">
                     <li class="demo-strip-line is-start">> {{ $dash['intro'][0] }}</li>
@@ -37,7 +37,7 @@
                 {{-- Kolumna 1: firma --}}
                 <div class="demo-col" data-demo-col="firma">
                     <h3 class="demo-col-title">Firma</h3>
-                    <p class="demo-col-hint">Liczby i dokumenty, które Ferajna pilnuje za Ciebie.</p>
+                    <p class="demo-col-hint">Liczby i dokumenty, które Udaina pilnuje za Ciebie.</p>
                     <div class="demo-firma" data-demo-firma>
                     <div class="demo-ship" data-demo-ship><b>{{ $dash['status']['label'] }}</b><span>{{ $dash['status']['text'] }}</span></div>
                     <dl class="demo-metrics">
@@ -106,7 +106,7 @@
                             <li class="demo-note"><p class="demo-note-text">{{ $n['text'] }}</p><span class="demo-note-time">{{ $n['time'] }}</span></li>
                         @endforeach
                     </ul>
-                    <div class="demo-ask" data-demo-ask aria-hidden="true"><span>Zapytaj Ferajnę o cokolwiek…</span><span>↵</span></div>
+                    <div class="demo-ask" data-demo-ask aria-hidden="true"><span>Zapytaj Udainę o cokolwiek…</span><span>↵</span></div>
                 </div>
             </div>
             <script type="application/json">{!! json_encode($demo, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_HEX_AMP) !!}</script>

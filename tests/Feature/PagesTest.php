@@ -17,12 +17,12 @@ class PagesTest extends TestCase
         $html = $response->getContent();
 
         $markers = [
-            'Ferajna robi robotę',
-            'Zwykły wtorek z Ferajną',
+            'Udaina robi robotę',
+            'Zwykły wtorek z Udainą',
             'Co bierze na siebie',
             'Zrobione pod Polskę',
             'id="jak-to-dziala"',
-            'Ty decydujesz. Ferajna robi.',
+            'Ty decydujesz. Udaina robi.',
             'id="integracje"',
             'id="cennik"',
             'id="faq"',

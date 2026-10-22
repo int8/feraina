@@ -1,10 +1,10 @@
 {
   "product": {
-    "name": "Ferajna",
+    "name": "Udaina",
     "tagline": "Ekipa AI dla małej polskiej firmy",
     "domain": "[DOMENA]",
     "beta_slots": "[X]",
-    "meta_description": "Ferajna to ekipa agentów AI, która robi robotę w małej firmie: strona, reklamy, posty, odpowiedzi klientom, faktury, research. Ty ustalasz limit w złotówkach i co rano decydujesz, co dalej. Zapisz się do bety."
+    "meta_description": "Udaina to ekipa agentów AI, która robi robotę w małej firmie: strona, reklamy, posty, odpowiedzi klientom, faktury, research. Ty ustalasz limit w złotówkach i co rano decydujesz, co dalej. Zapisz się do bety."
   },
   "company": {
     "name": "[NAZWA FIRMY]",
@@ -34,7 +34,7 @@
     "cta": "Zapisz się do bety"
   },
   "hero": {
-    "heading": "Ferajna robi robotę",
+    "heading": "Udaina robi robotę",
     "subheading": "Ekipa agentów AI, która w małej firmie robi to, na co nie masz czasu: strona, reklamy, posty, odpowiedzi klientom, faktury. Ty ustalasz limit w złotówkach i co rano decydujesz, co dalej.",
     "cta_primary": "Zapisz się do bety",
     "cta_secondary": "Zobacz zwykły wtorek",
@@ -68,7 +68,7 @@
     ]
   },
   "day": {
-    "heading": "Zwykły wtorek z Ferajną",
+    "heading": "Zwykły wtorek z Udainą",
     "file": "wtorek.log",
     "range": "07:30 → 17:00",
     "entries": [
@@ -149,7 +149,7 @@
         "text": "Czym się zajmujesz, kogo szukasz, ile możesz wydać. Po ludzku, bez briefu na dwadzieścia stron."
       },
       {
-        "title": "Ferajna układa plan tygodnia",
+        "title": "Udaina układa plan tygodnia",
         "text": "Dostajesz listę działań i limit w złotówkach. Zatwierdzasz albo wykreślasz."
       },
       {
@@ -159,7 +159,7 @@
     ]
   },
   "control": {
-    "heading": "Ty decydujesz. Ferajna robi.",
+    "heading": "Ty decydujesz. Udaina robi.",
     "items": [
       "Ani złotówki ponad limit, który ustalisz.",
       "Każda akcja w logu. Każdą możesz cofnąć.",
