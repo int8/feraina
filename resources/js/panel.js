@@ -85,7 +85,6 @@ export function initPanel() {
         $('p-week').textContent = '0 zł z 300 zł';
         $('p-meter').style.width = '0';
         $('p-step').textContent = 'etap: opis pomysłu';
-        $('p-pub').innerHTML = '<button class="chip" type="button" data-ok>Opublikuj stronę</button><button class="chip ghost" type="button" data-no>Popraw</button>';
         show('st-prompt');
     }
 
@@ -271,25 +270,7 @@ export function initPanel() {
             show('st-result');
             $('p-step').textContent = 'etap: raport i decyzje';
             activate('udaina');
-            after(9000, play);
         });
-    }
-
-    // Publish/Correct buttons
-    $('p-pub').addEventListener('click', e => {
-        const b = e.target.closest('.chip');
-        if (!b) return;
-        $('p-pub').innerHTML = `<span class="chip done">${b.hasAttribute('data-ok') ? 'Opublikowano · wpis w dzienniku' : 'Uwagi zapisane · poprawiam'}</span>`;
-        $('p-dec').textContent = '0';
-        timers.forEach(clearTimeout);
-        timers = [];
-        after(7000, play);
-    });
-
-    // Replay button
-    const replayBtn = document.getElementById('p-replay');
-    if (replayBtn) {
-        replayBtn.addEventListener('click', play);
     }
 
     // Start animation when panel is visible

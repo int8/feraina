@@ -57,7 +57,7 @@
                         <div class="stage" id="st-result" hidden>
                             <div class="result-head">
                                 <div><h4>Gotowe do publikacji</h4><p class="hint">Strona stoi na pomocnizdzielnicy.pl, w sąsiedniej karcie. Profile, płatności i regulamin w dzienniku.</p></div>
-                                <div class="acts" id="p-pub"><button class="chip" type="button" data-ok>Opublikuj stronę</button><button class="chip ghost" type="button" data-no>Popraw</button></div>
+                                <div class="acts"><span class="chip">Opublikuj stronę</span><span class="chip ghost">Popraw</span></div>
                             </div>
                             <ul class="sum">
                                 <li><b>7</b><span>zadań wykonanych</span></li>
@@ -173,6 +173,6 @@
             </div>
             <canvas class="fireworks" id="p-fireworks" aria-hidden="true"></canvas>
         </div>
-        <div class="caption"><span>Przykład · projekt i dane fikcyjne</span><button class="chip ghost" type="button" id="p-replay">↻ Odtwórz ponownie</button></div>
+        <div class="caption"><span>Przykład · projekt i dane fikcyjne</span><span>Karty w oknie można przełączać</span></div>
     </div>
 </section>
