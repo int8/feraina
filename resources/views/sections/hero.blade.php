@@ -18,6 +18,7 @@
 
                 {{-- Karta 1: Udaina --}}
                 <div class="bw-page" data-page="udaina">
+                    <svg class="p-cursor" id="p-cursor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-6.2 1.2 3.4 6.4-2.6 1.3-3.4-6.4L5 19z"/></svg>
                     <div class="bar">
                         <span>wydane <b id="p-spent">0,00 zł</b></span>
                         <span>limit <b>300 zł</b></span>
@@ -31,6 +32,11 @@
                             <div class="ask-label">Opisz, co chcesz zbudować</div>
                             <div class="ask-box"><span id="p-typed"></span><i class="caret"></i></div>
                             <div class="ask-foot"><span>Po ludzku, bez briefu.</span><span class="key" id="p-enter">↵ Enter</span></div>
+                        </div>
+
+                        {{-- stage 1b: krótkie ładowanie po Enterze --}}
+                        <div class="stage" id="st-load" hidden>
+                            <div class="load"><i class="load-dot"></i><span>Analizuję opis</span><div class="load-bar"><i id="p-load-bar"></i></div></div>
                         </div>
 
                         {{-- stage 2: plan + log --}}

@@ -44,12 +44,12 @@ export function initPanel() {
     if (!panel) return;
 
     const $ = id => document.getElementById(id);
-    const stages = ['st-prompt', 'st-work', 'st-result'];
+    const stages = ['st-prompt', 'st-load', 'st-work', 'st-result'];
     let timers = [];
 
     const after = (ms, fn) => timers.push(setTimeout(fn, reduce ? 0 : ms));
 
-    const URLS = { 'st-prompt': '/projekty/nowy', 'st-work': '/projekty/pomocni-z-dzielnicy', 'st-result': '/projekty/pomocni-z-dzielnicy/raport' };
+    const URLS = { 'st-prompt': '/projekty/nowy', 'st-load': '/projekty/nowy', 'st-work': '/projekty/pomocni-z-dzielnicy', 'st-result': '/projekty/pomocni-z-dzielnicy/raport' };
 
     function show(id) {
         stage = id;
@@ -72,6 +72,10 @@ export function initPanel() {
         timers.forEach(clearTimeout);
         timers = [];
         closeTab();
+        cursorReset();
+        const loadBar = $('p-load-bar');
+        loadBar.style.transition = 'none';
+        loadBar.style.width = '0';
         $('p-typed').textContent = '';
         $('p-enter').classList.remove('hit');
         $('p-tasks').innerHTML = '';
@@ -83,6 +87,22 @@ export function initPanel() {
         $('p-step').textContent = 'etap: opis pomysłu';
         $('p-pub').innerHTML = '<button class="chip" type="button" data-ok>Opublikuj stronę</button><button class="chip ghost" type="button" data-no>Popraw</button>';
         show('st-prompt');
+    }
+
+    // ----- Kursor myszy: od końca wpisanego tekstu do klawisza Enter -----
+    const cursor = $('p-cursor');
+
+    function cursorPlace(el, dx = 0, dy = 0) {
+        if (!cursor || !el) return;
+        const base = cursor.parentElement.getBoundingClientRect();
+        const r = el.getBoundingClientRect();
+        cursor.style.left = `${r.left - base.left + r.width / 2 + dx}px`;
+        cursor.style.top = `${r.top - base.top + r.height / 2 + dy}px`;
+    }
+
+    function cursorReset() {
+        if (!cursor) return;
+        cursor.classList.remove('show', 'move', 'click');
     }
 
     // ----- Karty: Udaina i strona klienta -----
@@ -177,8 +197,33 @@ export function initPanel() {
 
         const typed = reduce ? 0 : PROMPT.length * speed;
 
-        after(typed + 600, () => $('p-enter').classList.add('hit'));
-        after(typed + 1100, () => {
+        // Kursor: pojawia się przy karecie, jedzie na Enter, klika.
+        after(typed + 300, () => {
+            cursorPlace(document.querySelector('#st-prompt .caret'), 18, 14);
+            cursor?.classList.add('show');
+        });
+        after(typed + 500, () => {
+            cursor?.classList.add('move');
+            cursorPlace($('p-enter'), 2, 4);
+        });
+        after(typed + 1300, () => {
+            cursor?.classList.add('click');
+            $('p-enter').classList.add('hit');
+        });
+        after(typed + 1450, () => cursor?.classList.remove('click'));
+
+        // Krótkie ładowanie, potem plan i dziennik.
+        after(typed + 1650, () => {
+            cursorReset();
+            show('st-load');
+            $('p-step').textContent = 'etap: analiza opisu';
+            const bar = $('p-load-bar');
+            requestAnimationFrame(() => {
+                bar.style.transition = reduce ? 'none' : 'width 0.55s linear';
+                bar.style.width = '100%';
+            });
+        });
+        after(typed + 2300, () => {
             show('st-work');
             $('p-step').textContent = 'etap: plan i wdrożenie';
             runWork();

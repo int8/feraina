@@ -354,9 +354,30 @@
 /* Scena: okno z dwiema kartami + fajerwerki nad nim */
 .bw-stage { position: relative; }
 .panel .bw-fav-dot { width: 12px; height: 12px; margin: 2px; border-radius: 999px; background: #1f6f5a; display: block; }
-.panel { --bw-page-h: 560px; }
-@media (max-width: 640px) { .panel { --bw-page-h: 540px; } }
-.panel .bw-page { height: var(--bw-page-h); display: flex; flex-direction: column; }
+.panel { --bw-page-h: 680px; }
+@media (max-width: 640px) { .panel { --bw-page-h: 600px; } }
+.panel .bw-page { height: var(--bw-page-h); display: flex; flex-direction: column; position: relative; }
+
+/* Kursor myszy w demo: pojawia się po wpisaniu, jedzie na Enter, klika */
+.p-cursor {
+    position: absolute; z-index: 6; width: 20px; height: 20px; left: 0; top: 0;
+    fill: #fff; stroke: var(--color-ink); stroke-width: 1.5; stroke-linejoin: round;
+    filter: drop-shadow(0 1px 1.5px rgb(0 0 0 / 0.45));
+    opacity: 0; pointer-events: none; transform-origin: 5px 3px;
+    transition: opacity 0.2s ease;
+}
+.p-cursor.show { opacity: 1; }
+.p-cursor.move { transition: left 0.7s cubic-bezier(0.3, 0.7, 0.25, 1), top 0.7s cubic-bezier(0.3, 0.7, 0.25, 1), opacity 0.2s ease, transform 0.1s ease; }
+.p-cursor.click { transform: scale(0.8); }
+
+/* Krótkie ładowanie po Enterze */
+.load {
+    min-height: 260px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+    font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-stone);
+}
+.load-dot { width: 8px; height: 8px; background: var(--color-stamp); animation: pulse 1s infinite; }
+.load-bar { width: min(320px, 70%); height: 6px; border: 1.5px solid var(--color-ink); }
+.load-bar i { display: block; height: 100%; width: 0; background: var(--color-stamp); }
 .panel .bw-page[hidden] { display: none; }
 .panel .bw-page .bw-view { flex: 1; height: auto; min-height: 0; }
 .panel .bw-view-site { padding: 0; background: #fff; }
@@ -809,6 +830,8 @@
     .panel .task.run .st::before { animation: none; }
     .cook-flame { animation: none; }
     .panel .bw-tab { transition: none; }
+    .p-cursor, .p-cursor.move { transition: none; }
+    .load-dot { animation: none; }
     .s-pin::after { animation: none; }
     .panel .bw-fav-dot.loading { animation: none; }
 }
@@ -835,11 +858,14 @@
 .hero { padding-block: 36px 48px; }
 .hero .lead { font-size: 1.25rem; max-width: 42rem; }
 .hero .display {
-    font-size: clamp(2.6rem, 6vw, 4.5rem);
+    font-size: clamp(2.4rem, 5.4vw, 4.6rem);
     line-height: 1.02;
 }
+.hero .display { margin-inline: auto; max-width: 14ch; }
+@media (min-width: 900px) {
+    .hero .display { white-space: nowrap; text-wrap: nowrap; max-width: none; }
+}
 .hero .hero-cta { margin-top: 24px; }
-.hero .display { margin-inline: auto; max-width: 20ch; }
 
 /* Okno zapisu do bety */
 .beta-modal {
