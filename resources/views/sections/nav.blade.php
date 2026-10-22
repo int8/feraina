@@ -11,6 +11,7 @@
         </ul>
 
         <div class="flex items-center gap-2">
+            <a href="{{ route('beta.show') }}" class="btn-stamp px-4 py-2 text-[15px]" data-open-beta data-plausible="cta_click" data-plausible-prop-location="nav">{{ $site['nav']['cta'] }}</a>
             <button type="button" class="p-2 md:hidden" data-nav-toggle aria-expanded="false" aria-controls="menu-mobilne" aria-label="Otwórz menu">
                 <x-icon name="menu" />
             </button>

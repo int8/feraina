@@ -2,10 +2,6 @@
     <div class="wrap">
         <h1 class="display">{!! nl2br(e($site['hero']['heading'])) !!}</h1>
 
-        <div class="hero-cta">
-            <a href="#zapis" class="btn-stamp px-7 py-4 text-lg" data-open-beta data-plausible="cta_click" data-plausible-prop-location="hero">{{ $site['hero']['cta_primary'] }}</a>
-        </div>
-
         {{-- Demo: jedno okno Chrome, dwie karty (Udaina i gotowa strona klienta) --}}
         <div class="bw-stage" id="bw-stage">
             <div class="panel" id="panel" aria-label="Przykładowy przebieg pracy Udainy w przeglądarce">

@@ -866,7 +866,6 @@
 @media (min-width: 900px) {
     .hero .display { white-space: nowrap; text-wrap: nowrap; max-width: none; }
 }
-.hero .hero-cta { margin-top: 24px; }
 
 /* Okno zapisu do bety */
 .beta-modal {
