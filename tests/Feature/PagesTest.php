@@ -17,7 +17,7 @@ class PagesTest extends TestCase
         $html = $response->getContent();
 
         $markers = [
-            'Zespół AI dla Twojej firmy',
+            'Biznes w <span class="accent">pięć</span> minut',
             'id="co"',
             'Cztery obszary',
             'id="dzien"',

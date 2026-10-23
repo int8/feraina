@@ -2,7 +2,7 @@
   "product": {
     "name": "Udaina",
     "tagline": "Zespół AI dla małej polskiej firmy",
-    "domain": "[DOMENA]",
+    "domain": "biznesw5minut.pl",
     "beta_slots": "[X]",
     "meta_description": "Udaina codziennie prowadzi bieżące sprawy małej firmy w internecie: stronę, reklamy, komunikację z klientami i faktury. Ustalasz miesięczny budżet, a każdego ranka otrzymujesz raport z działań i listę decyzji do zatwierdzenia."
   },
@@ -35,10 +35,11 @@
         "href": "#faq"
       }
     ],
-    "cta": "Zapisz się do bety"
+    "cta": "SPRAWDŹ TO"
   },
   "hero": {
-    "heading": "Zespół AI dla Twojej firmy.",
+    "heading": "Biznes w *pięć* minut",
+    "sub_lead": "Tworzymy pomysły i narzędzia dla *Twojego nowego biznesu*",
     "cta_primary": "Zapisz się do bety",
     "email_placeholder": "Twój adres e-mail",
     "note": "Zapis do bety jest bezpłatny.",
@@ -203,7 +204,7 @@
       "Limit wydatków, dziennik zmian, możliwość cofnięcia",
       "Rezygnacja w dowolnym momencie, bez umowy terminowej"
     ],
-    "cta": "Zapisz się do bety"
+    "cta": "SPRAWDŹ TO"
   },
   "faq": {
     "eyebrow": "Najczęstsze pytania",

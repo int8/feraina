@@ -6,7 +6,10 @@
     <title>{{ isset($title) ? $title.' · ' : '' }}{{ $content->fill($site['product']['name']) }} – {{ $site['product']['tagline'] }}</title>
     <meta name="description" content="{{ $content->fill($site['product']['meta_description']) }}">
     <meta name="color-scheme" content="light">
+    <link rel="icon" href="{{ asset('favicon-32.png') }}" sizes="32x32" type="image/png">
+    <link rel="icon" href="{{ asset('favicon-192.png') }}" sizes="192x192" type="image/png">
     <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
     @if (config('beta.plausible.domain'))
         <script defer data-domain="{{ config('beta.plausible.domain') }}" src="{{ config('beta.plausible.script') }}"></script>
     @endif
