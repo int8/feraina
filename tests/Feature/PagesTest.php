@@ -93,7 +93,7 @@ class PagesTest extends TestCase
     public function test_legal_pages_render_from_markdown(): void
     {
         $this->get('/polityka-prywatnosci')->assertOk()->assertSee('<h1>Polityka prywatności</h1>', false);
-        $this->get('/regulamin-bety')->assertOk()->assertSee('<h1>Regulamin bety</h1>', false);
+        $this->get('/regulamin')->assertOk()->assertSee('<h1>Regulamin</h1>', false);
     }
 
     public function test_security_headers_are_set(): void

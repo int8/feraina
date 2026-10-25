@@ -30,8 +30,8 @@ class LandingController extends Controller
     public function terms(): View
     {
         return view('pages.legal', [
-            'title' => 'Regulamin bety',
-            'html' => $this->content->legalHtml('regulamin-bety'),
+            'title' => 'Regulamin',
+            'html' => $this->content->legalHtml('regulamin'),
         ]);
     }
 }

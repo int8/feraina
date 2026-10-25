@@ -247,7 +247,7 @@
         "route": "privacy"
       },
       {
-        "label": "Regulamin bety",
+        "label": "Regulamin",
         "route": "terms"
       }
     ]
