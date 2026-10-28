@@ -47,4 +47,4 @@ RUN chown -R www-data:www-data /var/www/html/storage \
 COPY docker/entrypoint.sh /etc/cont-init.d/99-laravel-init
 RUN chmod +x /etc/cont-init.d/99-laravel-init
 
-EXPOSE 80
+EXPOSE 8080
