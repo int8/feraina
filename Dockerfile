@@ -47,7 +47,4 @@ RUN chown -R www-data:www-data /var/www/html/storage \
 COPY docker/entrypoint.sh /etc/cont-init.d/99-laravel-init
 RUN chmod +x /etc/cont-init.d/99-laravel-init
 
-# Switch back to www-data
-USER www-data
-
 EXPOSE 80
