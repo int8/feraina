@@ -39,11 +39,6 @@ COPY --chown=www-data:www-data --from=frontend /app/public/build ./public/build
 # Finish composer install
 RUN composer dump-autoload --optimize
 
-# Cache Laravel config and routes
-RUN php artisan config:cache \
-    && php artisan route:cache \
-    && php artisan view:cache
-
 # Set correct permissions
 RUN chown -R www-data:www-data /var/www/html/storage \
     && chown -R www-data:www-data /var/www/html/bootstrap/cache
