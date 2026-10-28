@@ -96,8 +96,12 @@ export function initPanel() {
                 const el = document.createElement('div');
                 el.className = 'task run';
                 el.innerHTML = `<div class="h"><span>${title}</span><span class="st">w toku</span></div><p>${desc}</p><div class="area">${area}</div>`;
-                $('p-tasks').appendChild(el);
-                requestAnimationFrame(() => el.classList.add('in'));
+                const tasks = $('p-tasks');
+                tasks.appendChild(el);
+                requestAnimationFrame(() => {
+                    el.classList.add('in');
+                    tasks.scrollTo({ top: tasks.scrollHeight, behavior: 'smooth' });
+                });
 
                 after(step - 150, () => {
                     el.classList.remove('run');
