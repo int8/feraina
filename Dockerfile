@@ -43,13 +43,11 @@ RUN composer dump-autoload --optimize
 RUN chown -R www-data:www-data /var/www/html/storage \
     && chown -R www-data:www-data /var/www/html/bootstrap/cache
 
-# Copy and set up entrypoint
-COPY docker/entrypoint.sh /etc/entrypoint.sh
-RUN chmod +x /etc/entrypoint.sh
+# Copy init script for S6 (runs before nginx/php-fpm start)
+COPY docker/entrypoint.sh /etc/cont-init.d/99-laravel-init
+RUN chmod +x /etc/cont-init.d/99-laravel-init
 
 # Switch back to www-data
 USER www-data
 
 EXPOSE 80
-
-ENTRYPOINT ["/etc/entrypoint.sh"]

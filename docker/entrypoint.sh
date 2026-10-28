@@ -1,15 +1,11 @@
-#!/bin/sh
-set -e
+#!/command/with-contenv sh
 
 cd /var/www/html
 
-# Cache config, routes, views (now that env vars are available)
+# Cache config, routes, views
 php artisan config:cache
 php artisan route:cache
 php artisan view:cache
 
 # Run migrations
 php artisan migrate --force
-
-# Start the default entrypoint (S6 supervisor -> nginx + php-fpm)
-exec /init
