@@ -13,7 +13,7 @@ COPY public ./public
 RUN npm run build
 
 # Stage 2: Production image
-FROM serversideup/php:8.3-fpm-nginx-alpine
+FROM serversideup/php:8.4-fpm-nginx-alpine
 
 # Switch to root to install dependencies
 USER root
