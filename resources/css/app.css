@@ -462,6 +462,11 @@
 .panel .hint { font-size: 13px; color: var(--color-ink-soft); margin-bottom: 14px; }
 
 /* Stage 1: Prompt */
+#st-prompt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .ask-label {
     font-family: var(--font-mono);
     font-size: 12px;
