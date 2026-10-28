@@ -37,17 +37,26 @@ if (panel && toggles.length) {
     });
 }
 
-// --- CTA "Zapisz się do bety": przewiń do pola e-mail i ustaw na nim fokus ---
-document.querySelectorAll('[data-scroll-to-email]').forEach((el) => {
-    el.addEventListener('click', (e) => {
-        const input = document.getElementById(el.dataset.scrollToEmail || 'beta-email');
-        if (!input) return;
-        e.preventDefault();
-        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        input.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
-        input.focus({ preventScroll: true });
+// --- CTA "Zapisz się do bety": otwórz okno z polem e-mail (bez okna: link działa normalnie) ---
+const betaModal = document.getElementById('beta-modal');
+if (betaModal && typeof betaModal.showModal === 'function') {
+    const openBeta = () => {
+        if (betaModal.open) return;
+        betaModal.showModal();
+        betaModal.querySelector('input[type="email"]')?.focus({ preventScroll: true });
+    };
+    document.querySelectorAll('[data-open-beta]').forEach((el) => {
+        el.addEventListener('click', (e) => {
+            e.preventDefault();
+            openBeta();
+        });
     });
-});
+    betaModal.querySelectorAll('[data-close-beta]').forEach((b) => b.addEventListener('click', () => betaModal.close()));
+    betaModal.addEventListener('click', (e) => {
+        if (e.target === betaModal) betaModal.close();
+    });
+    if (betaModal.hasAttribute('data-open')) openBeta();
+}
 
 // --- UTM i referrer do ukrytych pól formularza ---
 const params = new URLSearchParams(window.location.search);

@@ -27,6 +27,7 @@
         <input type="hidden" name="{{ $utm }}" value="{{ request()->query($utm) }}">
     @endforeach
     <input type="hidden" name="referrer" value="">
+    <input type="hidden" name="location" value="{{ $location }}">
 
     @if ($note)
         <p class="mt-3 font-mono text-[13px] text-stone">{{ $note }}</p>

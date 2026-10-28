@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LandingController::class, 'home'])->name('home');
 Route::get('/polityka-prywatnosci', [LandingController::class, 'privacy'])->name('privacy');
-Route::get('/regulamin-bety', [LandingController::class, 'terms'])->name('terms');
+Route::get('/regulamin', [LandingController::class, 'terms'])->name('terms');
 
 Route::get('/beta', [BetaController::class, 'show'])->name('beta.show');
 Route::post('/beta', [BetaController::class, 'start'])->middleware('throttle:beta-start')->name('beta.start');

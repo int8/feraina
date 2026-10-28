@@ -55,7 +55,6 @@ export function initPanel() {
         $('p-dec').textContent = '0';
         $('p-week').textContent = '0 zł z 300 zł';
         $('p-meter').style.width = '0';
-        $('p-step').textContent = 'etap: opis pomysłu';
         $('p-pub').innerHTML = '<button class="chip" type="button" data-ok>Opublikuj stronę</button><button class="chip ghost" type="button" data-no>Popraw</button>';
         const site = document.querySelector('.site');
         if (site) site.classList.remove('in');
@@ -85,7 +84,6 @@ export function initPanel() {
         after(typed + 600, () => $('p-enter').classList.add('hit'));
         after(typed + 1100, () => {
             show('st-work');
-            $('p-step').textContent = 'etap: plan i wdrożenie';
             runWork();
         });
     }
@@ -131,7 +129,6 @@ export function initPanel() {
 
         after(600 + TASKS.length * step + 900, () => {
             show('st-result');
-            $('p-step').textContent = 'etap: raport i decyzje';
             after(80, () => {
                 const site = document.querySelector('.site');
                 if (site) site.classList.add('in');

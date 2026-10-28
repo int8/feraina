@@ -1,18 +1,19 @@
 <section class="hero center" id="top">
     <div class="wrap">
-        <h1 class="display">{!! nl2br(e($site['hero']['heading'])) !!}</h1>
-        <p class="lead">{{ $site['hero']['subheading'] }}</p>
-
-        <x-email-form location="hero" :site="$site" :cta="$site['hero']['cta_primary']" :note="$site['hero']['note']" />
+        {{-- *słowo* w treści = akcent w kolorze stempla --}}
+        @php($accent = fn (string $t) => preg_replace('/\*(.+?)\*/u', '<span class="accent">$1</span>', nl2br(e($t))))
+        <h1 class="display">{!! $accent($site['hero']['heading']) !!}</h1>
+        <div class="hero-sub">
+            <p class="hero-sub-lead">{!! $accent($site['hero']['sub_lead']) !!}</p>
+        </div>
 
         {{-- Panel produktowy --}}
         <div class="panel" id="panel" aria-label="Przykładowy przebieg pracy Udainy">
-            <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="url">app.udaina.pl · nowy projekt</span><span id="p-step">etap: opis pomysłu</span></div>
+            <div class="chrome"><span class="dots"><i></i><i></i><i></i></span></div>
             <div class="bar">
                 <span>wydane <b id="p-spent">0,00 zł</b></span>
                 <span>limit <b>300 zł</b></span>
                 <span class="red">do decyzji <b id="p-dec">0</b></span>
-                <span>dziennik: <b>wszystko odwracalne</b></span>
             </div>
 
             {{-- stage 1: prompt --}}

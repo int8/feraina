@@ -22,10 +22,6 @@
                         <span>{{ $entry['text'] }}</span>
                     </li>
                 @endforeach
-                <li class="night-log-entry is-visible" aria-hidden="true">
-                    <time></time>
-                    <span><i class="cursor" data-night-cursor></i></span>
-                </li>
             </ol>
         </div>
     </div>
