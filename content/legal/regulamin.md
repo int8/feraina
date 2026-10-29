@@ -4,7 +4,7 @@ Ostatnia aktualizacja: październik 2026
 
 ## 1. Postanowienia ogólne
 
-1.1. Niniejszy Regulamin określa zasady korzystania z usługi Udaina, świadczonej drogą elektroniczną przez [NAZWA FIRMY], NIP [NIP], z siedzibą pod adresem [ADRES] (dalej: „Usługodawca").
+1.1. Niniejszy Regulamin określa zasady korzystania z usługi Udaina, świadczonej drogą elektroniczną przez Arkadiusza Plichtę prowadzącego działalność gospodarczą. [Dane firmy w rejestrze](https://mapa.targeo.pl/5891829351/nip/firma) (dalej: „Usługodawca").
 
 1.2. Usługa Udaina (dalej: „Usługa") to narzędzie wykorzystujące sztuczną inteligencję do wsparcia małych firm w prowadzeniu codziennych działań internetowych: strony firmowej, kampanii reklamowych, komunikacji z klientami oraz wystawiania faktur.
 
