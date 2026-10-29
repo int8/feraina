@@ -36,12 +36,21 @@ export function initPanel() {
 
     const $ = id => document.getElementById(id);
     const stages = ['st-prompt', 'st-work', 'st-result'];
+    const explanations = {
+        'st-prompt': '1. Ty opisujesz pomysł w kilku zdaniach — bez briefu, bez specyfikacji.',
+        'st-work': '2. Udaina rozkłada Twój pomysł na zadania i realizuje je jedno po drugim.',
+        'st-result': '3. Gotowe. Ty decydujesz — publikujesz od razu albo prosisz o poprawki.'
+    };
     let timers = [];
 
     const after = (ms, fn) => timers.push(setTimeout(fn, reduce ? 0 : ms));
 
     function show(id) {
         stages.forEach(s => $(s).hidden = s !== id);
+        const explainEl = $('p-explain');
+        if (explainEl && explanations[id]) {
+            explainEl.textContent = explanations[id];
+        }
     }
 
     function reset() {
@@ -65,7 +74,7 @@ export function initPanel() {
         reset();
 
         // Stage 1: typing
-        const speed = 28;
+        const speed = 55;
         let i = 0;
 
         if (reduce) {
@@ -89,7 +98,7 @@ export function initPanel() {
     }
 
     function runWork() {
-        const step = 1100;
+        const step = 1800;
 
         TASKS.forEach(([area, title, desc, ask], i) => {
             after(300 + i * step, () => {
@@ -137,7 +146,7 @@ export function initPanel() {
                 const site = document.querySelector('.site');
                 if (site) site.classList.add('in');
             });
-            after(9000, play);
+            after(14000, play);
         });
     }
 
@@ -149,7 +158,7 @@ export function initPanel() {
         $('p-dec').textContent = '0';
         timers.forEach(clearTimeout);
         timers = [];
-        after(7000, play);
+        after(10000, play);
     });
 
     // Replay button

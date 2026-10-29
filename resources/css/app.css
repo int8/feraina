@@ -467,6 +467,14 @@
     flex-direction: column;
     justify-content: center;
 }
+/* Panel explanation (above panel) */
+.panel-explain {
+    color: var(--color-ink);
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
 .ask-label {
     font-family: var(--font-mono);
     font-size: 12px;

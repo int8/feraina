@@ -7,6 +7,9 @@
             <p class="hero-sub-lead">{!! $accent($site['hero']['sub_lead']) !!}</p>
         </div>
 
+        {{-- Explanation outside panel --}}
+        <p class="panel-explain" id="p-explain">1. Ty opisujesz pomysł w kilku zdaniach — bez briefu, bez specyfikacji.</p>
+
         {{-- Panel produktowy --}}
         <div class="panel" id="panel" aria-label="Przykładowy przebieg pracy Udainy">
             <div class="chrome"><span class="dots"><i></i><i></i><i></i></span></div>
