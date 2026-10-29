@@ -37,9 +37,9 @@ export function initPanel() {
     const $ = id => document.getElementById(id);
     const stages = ['st-prompt', 'st-work', 'st-result'];
     const explanations = {
-        'st-prompt': '1. Ty opisujesz pomysł w kilku zdaniach — bez briefu, bez specyfikacji.',
-        'st-work': '2. Udaina rozkłada Twój pomysł na zadania i realizuje je jedno po drugim.',
-        'st-result': '3. Gotowe. Ty decydujesz — publikujesz od razu albo prosisz o poprawki.'
+        'st-prompt': '1. Ty opisujesz pomysł — bez briefu, bez specyfikacji.',
+        'st-work': '2. Udaina realizuje zadania — widzisz postęp na żywo.',
+        'st-result': '3. Gotowe — publikujesz lub prosisz o poprawki.'
     };
     let timers = [];
 
@@ -74,7 +74,7 @@ export function initPanel() {
         reset();
 
         // Stage 1: typing
-        const speed = 55;
+        const speed = 70;
         let i = 0;
 
         if (reduce) {
@@ -98,7 +98,7 @@ export function initPanel() {
     }
 
     function runWork() {
-        const step = 1800;
+        const step = 2400;
 
         TASKS.forEach(([area, title, desc, ask], i) => {
             after(300 + i * step, () => {

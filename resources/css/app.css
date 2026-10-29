@@ -442,8 +442,10 @@
 }
 .panel .bar b { font-weight: 600; }
 .panel .bar .red b { color: var(--color-stamp); }
+.panel .bar #p-explain { font-weight: 600; color: var(--color-stamp); flex: 1; }
 @media (max-width: 640px) {
     .panel .bar { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; padding: 10px 16px; font-size: 12px; }
+    .panel .bar #p-explain { grid-column: 1 / -1; text-align: center; }
 }
 
 /* Stages */
@@ -467,14 +469,6 @@
     flex-direction: column;
     justify-content: center;
 }
-/* Panel explanation (above panel) */
-.panel-explain {
-    color: var(--color-ink);
-    font-size: 15px;
-    text-align: center;
-    margin-bottom: 16px;
-}
-
 .ask-label {
     font-family: var(--font-mono);
     font-size: 12px;

@@ -7,15 +7,12 @@
             <p class="hero-sub-lead">{!! $accent($site['hero']['sub_lead']) !!}</p>
         </div>
 
-        {{-- Explanation outside panel --}}
-        <p class="panel-explain" id="p-explain">1. Ty opisujesz pomysł w kilku zdaniach — bez briefu, bez specyfikacji.</p>
-
         {{-- Panel produktowy --}}
         <div class="panel" id="panel" aria-label="Przykładowy przebieg pracy Udainy">
             <div class="chrome"><span class="dots"><i></i><i></i><i></i></span></div>
             <div class="bar">
+                <span id="p-explain">1. Ty opisujesz pomysł — bez briefu, bez specyfikacji.</span>
                 <span>wydane <b id="p-spent">0,00 zł</b></span>
-                <span>limit <b>300 zł</b></span>
                 <span class="red">do decyzji <b id="p-dec">0</b></span>
             </div>
 
