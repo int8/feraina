@@ -4,7 +4,7 @@ Ostatnia aktualizacja: październik 2026
 
 ## 1. Administrator danych
 
-Administratorem danych osobowych jest Arkadiusz Plichta prowadzący działalność gospodarczą. [Dane firmy w rejestrze](https://mapa.targeo.pl/5891829351/nip/firma) (dalej: „Administrator").
+Administratorem danych osobowych jest biznesw5minut.pl (dalej: „Administrator").
 
 ## 2. Jakie dane zbieramy
 

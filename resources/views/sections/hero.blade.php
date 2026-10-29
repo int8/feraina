@@ -2,7 +2,7 @@
     <div class="wrap">
         {{-- *słowo* w treści = akcent w kolorze stempla --}}
         @php($accent = fn (string $t) => preg_replace('/\*(.+?)\*/u', '<span class="accent">$1</span>', nl2br(e($t))))
-        <h1 class="display">{!! $accent($site['hero']['heading']) !!}</h1>
+        <h1 class="display" style="margin-top: 48px;">{!! $accent($site['hero']['heading']) !!}</h1>
         <div class="hero-sub">
             <p class="hero-sub-lead">{!! $accent($site['hero']['sub_lead']) !!}</p>
         </div>

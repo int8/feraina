@@ -4,16 +4,16 @@ Ostatnia aktualizacja: październik 2026
 
 ## 1. Postanowienia ogólne
 
-1.1. Niniejszy Regulamin określa zasady korzystania z usługi Udaina, świadczonej drogą elektroniczną przez Arkadiusza Plichtę prowadzącego działalność gospodarczą. [Dane firmy w rejestrze](https://mapa.targeo.pl/5891829351/nip/firma) (dalej: „Usługodawca").
+1.1. Niniejszy Regulamin określa zasady korzystania z usługi świadczonej drogą elektroniczną przez biznesw5minut.pl (dalej: „Usługodawca").
 
-1.2. Usługa Udaina (dalej: „Usługa") to narzędzie wykorzystujące sztuczną inteligencję do wsparcia małych firm w prowadzeniu codziennych działań internetowych: strony firmowej, kampanii reklamowych, komunikacji z klientami oraz wystawiania faktur.
+1.2. Usługa (dalej: „Usługa") to narzędzie wykorzystujące sztuczną inteligencję do wsparcia małych firm w prowadzeniu codziennych działań internetowych: strony firmowej, kampanii reklamowych, komunikacji z klientami oraz wystawiania faktur.
 
 1.3. Korzystanie z Usługi oznacza akceptację niniejszego Regulaminu.
 
 ## 2. Definicje
 
 - **Użytkownik** – osoba fizyczna prowadząca działalność gospodarczą lub osoba prawna, która korzysta z Usługi.
-- **Konto** – indywidualne konto Użytkownika w systemie Udaina.
+- **Konto** – indywidualne konto Użytkownika w systemie.
 - **Dziennik** – rejestr wszystkich działań wykonanych przez Usługę, dostępny dla Użytkownika.
 - **Limit wydatków** – maksymalna kwota, którą Usługa może wydać na działania reklamowe w danym okresie rozliczeniowym.
 

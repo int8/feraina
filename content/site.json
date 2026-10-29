@@ -1,14 +1,13 @@
 {
   "product": {
-    "name": "Udaina",
+    "name": "AI",
     "tagline": "Zespół AI dla małej polskiej firmy",
     "domain": "biznesw5minut.pl",
-    "beta_slots": "[X]",
-    "meta_description": "Udaina codziennie prowadzi bieżące sprawy małej firmy w internecie: stronę, reklamy, komunikację z klientami i faktury. Ustalasz miesięczny budżet, a każdego ranka otrzymujesz raport z działań i listę decyzji do zatwierdzenia."
+    "beta_slots": "20",
+    "meta_description": "AI codziennie prowadzi bieżące sprawy małej firmy w internecie: stronę, reklamy, komunikację z klientami i faktury. Ustalasz miesięczny budżet, a każdego ranka otrzymujesz raport z działań i listę decyzji do zatwierdzenia."
   },
   "company": {
-    "name": "[NAZWA FIRMY]",
-    "nip": "[NIP]",
+    "name": "biznesw5minut.pl",
     "address": "[ADRES]",
     "email": "[E-MAIL KONTAKTOWY]"
   },
@@ -39,7 +38,7 @@
   },
   "hero": {
     "heading": "Biznes w *pięć* minut",
-    "sub_lead": "Tworzymy pomysły i narzędzia dla *Twojego nowego biznesu*",
+    "sub_lead": "Ty wyznaczasz kierunek. *Agenci AI* robią resztę.",
     "cta_primary": "Zapisz się do bety",
     "email_placeholder": "Twój adres e-mail",
     "note": "Zapis do bety jest bezpłatny.",
@@ -48,30 +47,22 @@
   },
   "features": {
     "eyebrow": "Zakres działania",
-    "heading": "Cztery obszary, które Udaina prowadzi za Ciebie",
+    "heading": "Cztery obszary, które AI prowadzi za Ciebie",
     "items": [
       {
         "num": "01",
         "area": "STRONA",
-        "title": "Rozwija stronę firmową na podstawie danych",
-        "text": "Aktualizuje treści, poprawia podstrony i analizuje zachowanie odwiedzających. Każda zmiana ma uzasadnienie, a poprzednia wersja pozostaje w dzienniku.",
-        "list": [
-          "Cennik, oferta, formularze kontaktowe",
-          "Testy A/B, wdrażana jest wersja skuteczniejsza",
-          "Każdą zmianę można cofnąć"
-        ],
+        "title": "Tworzy stronę, która opowiada Twoją historię",
+        "text": "Strona dopasowana do Ciebie i Twojej firmy. Pokazuje to, co robisz najlepiej, i pomaga klientom Cię znaleźć.",
+        "list": [],
         "ui": "diff"
       },
       {
         "num": "02",
         "area": "REKLAMY I POSTY",
-        "title": "Prowadzi kampanie reklamowe w ramach budżetu",
-        "text": "Zarządza Google Ads oraz Meta Ads, wstrzymuje działania bez efektu i przygotowuje treści po polsku: rzeczowe, z konkretnymi terminami, cenami i liczbą miejsc.",
-        "list": [
-          "Dzienny limit wydatków, którego nie przekroczy",
-          "Nowa kampania wymaga Twojej akceptacji",
-          "Publikacje planowane w godzinach największego ruchu"
-        ],
+        "title": "Reklamuje Twoją firmę w internecie",
+        "text": "Tworzy reklamy na Facebooku, Instagramie i w Google. Wyłącza te, które nie przynoszą klientów. Wszystko po polsku i w ramach budżetu, który ustalasz.",
+        "list": [],
         "ui": "keywords"
       },
       {
@@ -79,87 +70,23 @@
         "area": "KLIENCI",
         "title": "Obsługuje korespondencję z klientami",
         "text": "E-mail, Messenger, opinie w Google. Zna Twój cennik i kalendarz, więc odpowiada konkretnie i w tonie Twojej firmy. Reklamacje i sprawy nietypowe przekazuje do Twojej decyzji.",
-        "list": [
-          "Odpowiedź w ciągu minut",
-          "Styl i zasady komunikacji ustalasz Ty",
-          "Sprawy wrażliwe zawsze trafiają do Ciebie"
-        ],
+        "list": [],
         "ui": "messenger"
       },
       {
         "num": "04",
         "area": "FAKTURY",
         "title": "Wystawia faktury i monitoruje płatności",
-        "text": "Faktura po każdej sprzedaży, przesyłana do KSeF. Przeterminowane należności otrzymują uprzejme przypomnienie. Księgowość dostaje komplet dokumentów.",
-        "list": [
-          "KSeF przez Fakturownię lub inFakt",
-          "Przypomnienia o płatności, bez windykacji",
-          "Dane kontrahentów z CEIDG i KRS"
-        ],
+        "text": "Łatwo wystawiasz faktury i łączysz się z programem księgowym, z którego już korzystasz.",
+        "list": [],
         "ui": "invoices"
       }
-    ]
-  },
-  "why": {
-    "eyebrow": "Zasady działania",
-    "heading": "Pełna kontrola nad budżetem i każdą zmianą",
-    "items": [
-      {
-        "icon": "zł",
-        "title": "Budżet pod Twoją kontrolą",
-        "text": "Ustalasz limit wydatków. Udaina nie może go zmienić. Każdy wydatek poza planem wymaga Twojej akceptacji."
-      },
-      {
-        "icon": "↶",
-        "title": "Każda zmiana odwracalna",
-        "text": "Zmiany na stronie, publikacje i wiadomości są zapisywane w dzienniku wraz z poprzednią wersją. Cofnięcie zajmuje jedno kliknięcie."
-      },
-      {
-        "icon": "PL",
-        "title": "Przygotowane dla polskich firm",
-        "text": "Język polski od podstaw. Integracje z KSeF, BLIK, Allegro, InPost i CEIDG. Dane przetwarzane na serwerach w UE, zgodnie z RODO."
-      }
-    ]
-  },
-  "day": {
-    "eyebrow": "Przykładowy dzień pracy",
-    "heading": "Jeden dzień z Udainą",
-    "lead": "Od 7:30 do raportu o 17:00. Każde działanie jest zapisane w dzienniku.",
-    "file": "wtorek.log",
-    "range": "07:30 → 17:00",
-    "entries": [
-      {
-        "time": "07:30",
-        "text": "Strona: zaktualizowano podstronę z cennikiem na urządzeniach mobilnych. Poprzednia wersja zapisana w dzienniku."
-      },
-      {
-        "time": "09:10",
-        "text": "Google Ads: wstrzymano słowo kluczowe generujące koszty bez zapytań."
-      },
-      {
-        "time": "11:45",
-        "text": "Messenger i e-mail: 6 odpowiedzi na pytania o terminy i ceny. Jedna sprawa nietypowa przekazana do Twojej decyzji."
-      },
-      {
-        "time": "14:00",
-        "text": "Faktury: wystawiono 3 faktury za ubiegły tydzień. Do jednej przeterminowanej wysłano przypomnienie."
-      },
-      {
-        "time": "17:00",
-        "text": "Raport dzienny gotowy. Do akceptacji: nowa kampania, rabat dla stałego klienta, artykuł na blog."
-      }
-    ],
-    "rules": [
-      "Wydatki nigdy nie przekraczają ustalonego limitu.",
-      "Każde działanie jest w dzienniku i można je cofnąć.",
-      "Wydatek lub publikacja poza planem wymaga Twojej akceptacji.",
-      "Całość można wyłączyć jednym kliknięciem."
     ]
   },
   "integrations": {
     "eyebrow": "Narzędzia",
     "heading": "Integracje z narzędziami, z których już korzystasz",
-    "lead": "Bez zmiany dotychczasowych systemów. Udaina łączy się z Twoimi istniejącymi kontami.",
+    "lead": "Bez zmiany dotychczasowych systemów. AI łączy się z Twoimi istniejącymi kontami.",
     "groups": [
       {
         "name": "Marketing",
@@ -187,32 +114,57 @@
         "status": "w becie"
       },
       {
-        "name": "Wysyłka i rejestry",
-        "tools": "InPost · DPD · Furgonetka · Apaczka · CEIDG · KRS · GUS",
+        "name": "Wysyłka",
+        "tools": "InPost · DPD · Furgonetka · Apaczka",
         "status": "w becie"
       }
     ]
   },
   "pricing": {
     "eyebrow": "Cennik",
-    "heading": "Jeden plan. Pełny zakres.",
-    "price": "459 zł",
-    "period": "miesięcznie netto · faktura VAT w PLN",
-    "features": [
-      "Strona, reklamy, treści, obsługa klientów, faktury",
-      "Codzienne działania i poranny raport",
-      "Limit wydatków, dziennik zmian, możliwość cofnięcia",
-      "Rezygnacja w dowolnym momencie, bez umowy terminowej"
-    ],
-    "cta": "SPRAWDŹ TO"
+    "heading": "Wybierz plan dla siebie",
+    "period": "miesięcznie netto",
+    "cta": "SPRAWDŹ TO",
+    "plans": [
+      {
+        "name": "Start",
+        "price": "99 zł",
+        "features": [
+          "Strona internetowa",
+          "Podstawowe reklamy",
+          "Raport tygodniowy"
+        ]
+      },
+      {
+        "name": "Biznes",
+        "price": "259 zł",
+        "featured": true,
+        "features": [
+          "Strona internetowa",
+          "Reklamy na Facebooku i Google",
+          "Obsługa klientów",
+          "Raport dzienny"
+        ]
+      },
+      {
+        "name": "Pro",
+        "price": "459 zł",
+        "features": [
+          "Wszystko z planu Biznes",
+          "Faktury i płatności",
+          "Pełna automatyzacja",
+          "Priorytetowe wsparcie"
+        ]
+      }
+    ]
   },
   "faq": {
     "eyebrow": "Najczęstsze pytania",
     "heading": "Co warto wiedzieć przed zapisem",
     "items": [
       {
-        "question": "Czy Udaina zastąpi księgową lub agencję marketingową?",
-        "answer": "Księgowości nie. Udaina wystawia faktury i monitoruje płatności, ale rozliczenia pozostają po stronie Twojej księgowej. W zakresie podstawowego marketingu (publikacje, kampanie, poprawki na stronie) może zastąpić agencję."
+        "question": "Czy AI zastąpi księgową lub agencję marketingową?",
+        "answer": "Księgowości nie. AI wystawia faktury i monitoruje płatności, ale rozliczenia pozostają po stronie Twojej księgowej. W zakresie podstawowego marketingu (publikacje, kampanie, poprawki na stronie) może zastąpić agencję."
       },
       {
         "question": "Co się dzieje, gdy AI popełni błąd?",
@@ -220,7 +172,7 @@
       },
       {
         "question": "Kto odpowiada za treści wysyłane do klientów?",
-        "answer": "Udaina przygotowuje treści w imieniu Twojej firmy i w jej stylu, ale nadawcą pozostajesz Ty. Dlatego reklamacje, sprawy nietypowe i wszystko, co niesie ryzyko, trafia do Twojej decyzji."
+        "answer": "AI przygotowuje treści w imieniu Twojej firmy i w jej stylu, ale nadawcą pozostajesz Ty. Dlatego reklamacje, sprawy nietypowe i wszystko, co niesie ryzyko, trafia do Twojej decyzji."
       },
       {
         "question": "Gdzie przechowywane są moje dane i dane moich klientów?",
