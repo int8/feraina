@@ -1,6 +1,6 @@
 <header class="sticky top-0 z-40 border-b-2 border-rule bg-paper">
     <nav class="wrap flex h-16 items-center justify-between gap-4" aria-label="Główna">
-        <a href="{{ route('home') }}" class="flex items-center text-ink" aria-label="Udaina – strona główna">
+        <a href="{{ route('home') }}" class="flex items-center text-ink" aria-label="biznesw5minut.pl – strona główna">
             <x-logo-mark class="h-9 w-auto" />
         </a>
 

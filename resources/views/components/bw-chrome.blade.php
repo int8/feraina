@@ -3,7 +3,7 @@
     @foreach ($tabs as $tab)
         <button type="button" class="bw-tab {{ ($tab['active'] ?? false) ? 'active' : '' }}" role="tab" data-tab="{{ $tab['id'] }}"
                 aria-selected="{{ ($tab['active'] ?? false) ? 'true' : 'false' }}" @if ($tab['hidden'] ?? false) hidden @endif>
-            @if (($tab['fav'] ?? 'udaina') === 'udaina')
+            @if (($tab['fav'] ?? 'default') === 'default')
                 <img class="bw-fav" src="{{ asset('favicon.svg') }}" alt="">
             @else
                 <span class="bw-fav bw-fav-dot" data-fav></span>

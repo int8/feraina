@@ -8,7 +8,7 @@
         </div>
 
         {{-- Panel produktowy --}}
-        <div class="panel" id="panel" aria-label="Przykładowy przebieg pracy Udainy">
+        <div class="panel" id="panel" aria-label="Przykładowy przebieg pracy AI">
             <div class="chrome"><span class="dots"><i></i><i></i><i></i></span></div>
             <div class="bar">
                 <span id="p-explain">1. Ty opisujesz pomysł — bez briefu, bez specyfikacji.</span>

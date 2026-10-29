@@ -1,5 +1,5 @@
 /**
- * Demo „Udaina w akcji": pusty panel wypełnia się na oczach użytkownika.
+ * Demo „AI w akcji": pusty panel wypełnia się na oczach użytkownika.
  * Kolumny wjeżdżają po kolei z mikroopisem, potem rozdziały: liczby → zadania → kanały → decyzje.
  * Każdy nowy element dostaje na chwilę oznaczenie „nowe”, żeby diff był widoczny.
  * Serwer renderuje stan końcowy (bez JS i przy prefers-reduced-motion zostaje jak jest).

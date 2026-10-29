@@ -1,5 +1,5 @@
 /**
- * Panel produktowy: animacja przebiegu pracy Udainy.
+ * Panel produktowy: animacja przebiegu pracy AI.
  * Etapy: prompt → praca (plan + dziennik) → gotowa strona.
  */
 
@@ -38,7 +38,7 @@ export function initPanel() {
     const stages = ['st-prompt', 'st-work', 'st-result'];
     const explanations = {
         'st-prompt': '1. Ty opisujesz pomysł — bez briefu, bez specyfikacji.',
-        'st-work': '2. Udaina realizuje zadania — widzisz postęp na żywo.',
+        'st-work': '2. AI realizuje zadania — widzisz postęp na żywo.',
         'st-result': '3. Gotowe — publikujesz lub prosisz o poprawki.'
     };
     let timers = [];

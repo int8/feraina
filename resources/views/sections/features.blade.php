@@ -41,7 +41,7 @@
                         <div class="ui-top"><span>messenger</span><span>wt 14:12</span></div>
                         <div class="ui-body msg">
                             <div class="in">Dzień dobry, czy są jeszcze miejsca w grupie od zera? I ile to kosztuje?<span class="t">Marta K. · 14:12</span></div>
-                            <div class="out">Dzień dobry! Tak, zostały 3 miejsca w grupie wtorek–czwartek 18:30, start 4 listopada. Semestr to 1 290 zł, można w 2 ratach. Podsyłam link do krótkiego testu poziomu: udaina.pl/t/m4k<span class="t">Udaina w imieniu szkoły · 14:14</span></div>
+                            <div class="out">Dzień dobry! Tak, zostały 3 miejsca w grupie wtorek–czwartek 18:30, start 4 listopada. Semestr to 1 290 zł, można w 2 ratach. Podsyłam link do krótkiego testu poziomu: biznesw5minut.pl/t/m4k<span class="t">AI w imieniu szkoły · 14:14</span></div>
                             <div class="in">Super, dziękuję, zrobię test wieczorem.<span class="t">Marta K. · 14:15</span></div>
                         </div>
                     @elseif ($feat['ui'] === 'invoices')
