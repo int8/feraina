@@ -1025,20 +1025,6 @@
     .s-foot { padding-inline: 16px; }
 }
 
-/* Caption below panel */
-.caption {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    flex-wrap: wrap;
-    font-family: var(--font-mono);
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-stone);
-    margin-top: 18px;
-}
-
 @media (prefers-reduced-motion: reduce) {
     .panel .task, .panel .plog li, .site { transition: none; opacity: 1; transform: none; }
     .panel .meter i { transition: none; }

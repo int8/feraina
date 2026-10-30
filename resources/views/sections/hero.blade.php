@@ -74,6 +74,5 @@
                 </div>
             </div>
         </div>
-        <div class="caption"><span>Przykład · projekt i dane fikcyjne</span><button class="chip ghost" type="button" id="p-replay">↻ Odtwórz ponownie</button></div>
     </div>
 </section>

@@ -74,7 +74,7 @@ export function initPanel() {
         reset();
 
         // Stage 1: typing
-        const speed = 70;
+        const speed = 60;
         let i = 0;
 
         if (reduce) {
@@ -160,12 +160,6 @@ export function initPanel() {
         timers = [];
         after(10000, play);
     });
-
-    // Replay button
-    const replayBtn = document.getElementById('p-replay');
-    if (replayBtn) {
-        replayBtn.addEventListener('click', play);
-    }
 
     // Start animation when panel is visible
     if (reduce || !('IntersectionObserver' in window)) {
