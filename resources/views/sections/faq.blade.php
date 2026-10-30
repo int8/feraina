@@ -1,14 +1,19 @@
-<section id="faq" class="section center">
+<section class="section" id="faq">
     <div class="wrap">
-        <p class="eyebrow">{{ $site['faq']['eyebrow'] }}</p>
-        <h2 class="section-title">{{ $site['faq']['heading'] }}</h2>
-        <div class="faq">
-            @foreach ($site['faq']['items'] as $item)
-                <details>
-                    <summary>{{ $item['question'] }}</summary>
-                    <p>{{ $item['answer'] }}</p>
-                </details>
-            @endforeach
+        <div class="faq-grid">
+            <div class="sec-head">
+                <p class="eyebrow">{{ $site['faq']['eyebrow'] }}</p>
+                <h2 class="section-title" data-reveal>{{ $site['faq']['heading'] }}</h2>
+                <p class="lead">{{ $site['faq']['lead'] }}</p>
+            </div>
+            <div class="faq-list">
+                @foreach ($site['faq']['items'] as $i => $item)
+                    <details>
+                        <summary><span class="n">{{ sprintf('%02d', $i + 1) }}</span><span>{{ $item['question'] }}</span></summary>
+                        <p>{{ $item['answer'] }}</p>
+                    </details>
+                @endforeach
+            </div>
         </div>
     </div>
 </section>

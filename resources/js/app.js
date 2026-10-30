@@ -1,7 +1,10 @@
 import { initWizard } from './wizard.js';
-import { initPanel } from './panel.js';
+import { scramble, reveal } from './fx.js';
+import { initThemer } from './theme.js';
 
 document.documentElement.classList.remove('no-js');
+
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // --- Plausible: zdarzenia z atrybutów data-plausible="nazwa" (+ data-plausible-prop-*). ---
 export function track(name, props = {}) {
@@ -37,7 +40,7 @@ if (panel && toggles.length) {
     });
 }
 
-// --- CTA "Zapisz się do bety": otwórz okno z polem e-mail (bez okna: link działa normalnie) ---
+// --- CTA: otwórz okno z polem e-mail (bez okna: link działa normalnie) ---
 const betaModal = document.getElementById('beta-modal');
 if (betaModal && typeof betaModal.showModal === 'function') {
     const openBeta = () => {
@@ -70,39 +73,20 @@ document.querySelectorAll('form[data-beta-start]').forEach((form) => {
     form.addEventListener('submit', () => track('beta_start', { location: form.dataset.betaStart || 'unknown' }));
 });
 
-// --- Log dnia: wpisy pojawiają się po kolei po wejściu w viewport ---
-const log = document.querySelector('[data-night-log]');
-if (log) {
-    const entries = [...log.querySelectorAll('.night-log-entry')];
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const reveal = () => {
-        entries.forEach((entry, i) => {
-            if (reduce) {
-                entry.classList.add('is-visible');
-                return;
-            }
-            setTimeout(() => {
-                entry.classList.add('is-visible');
-                if (i === entries.length - 1) log.querySelector('[data-night-cursor]')?.classList.add('night-log-cursor');
-            }, 500 + i * 650);
-        });
-    };
-    if (reduce || !('IntersectionObserver' in window)) {
-        reveal();
-    } else {
-        const io = new IntersectionObserver((obs) => {
-            if (obs.some((o) => o.isIntersecting)) {
-                reveal();
-                io.disconnect();
-            }
-        }, { threshold: 0.35 });
-        io.observe(log);
-    }
+// --- Efekty tekstu: nagłówek hero i nagłówki sekcji ---
+scramble(document.querySelector('[data-scramble-root]'), { startDelay: 150 });
+document.querySelectorAll('[data-reveal]').forEach((h) => reveal(h));
+
+// --- Film w hero: przy ograniczonym ruchu zostaje na pierwszej klatce ---
+const heroVideo = document.querySelector('[data-hero-video]');
+if (heroVideo && reduce) {
+    heroVideo.removeAttribute('autoplay');
+    heroVideo.pause();
 }
 
 // --- Ankieta bety ---
 const wizard = document.querySelector('[data-wizard]');
 if (wizard) initWizard(wizard, track);
 
-// --- Panel produktowy w hero ---
-initPanel();
+// --- Przełącznik „ducha” strony (motywy z themes.css) ---
+initThemer(document.querySelector('[data-themer]'));

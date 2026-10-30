@@ -23,3 +23,8 @@ Route::middleware(AdminBasicAuth::class)->prefix('panel')->name('admin.')->group
     Route::get('/', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::get('/eksport.csv', [AdminController::class, 'exportCsv'])->name('export');
 });
+
+// Scena do nagrania filmu z hero (npm run record:intro). Tylko lokalnie.
+if (app()->environment('local')) {
+    Route::view('/studio/intro', 'studio.intro')->name('studio.intro');
+}
