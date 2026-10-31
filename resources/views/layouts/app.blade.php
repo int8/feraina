@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ isset($title) ? $title.' · ' : '' }}{{ $content->fill($site['product']['name']) }} – {{ $site['product']['tagline'] }}</title>
     <meta name="description" content="{{ $content->fill($site['product']['meta_description']) }}">
-    <meta name="color-scheme" content="light">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#08090a">
     <link rel="icon" href="{{ asset('favicon-32.png') }}" sizes="32x32" type="image/png">
     <link rel="icon" href="{{ asset('favicon-192.png') }}" sizes="192x192" type="image/png">
     <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/svg+xml">

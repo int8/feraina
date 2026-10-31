@@ -4,12 +4,18 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
-        "dev": "vite"
+        "dev": "vite",
+        "record:intro": "node scripts/record-intro.mjs intro",
+        "record:whatsapp": "node scripts/record-intro.mjs whatsapp",
+        "record:all": "npm run record:intro && npm run record:whatsapp",
+        "sync:brands": "node scripts/sync-brands.mjs"
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.0.0",
         "concurrently": "^10.0.3",
         "laravel-vite-plugin": "^3.1",
+        "playwright": "^1.63.0",
+        "simple-icons": "^16.36.0",
         "tailwindcss": "^4.0.0",
         "vite": "^8.0.0"
     },
@@ -17,7 +23,9 @@
         "@laravel/multiplex": "^0.4.1"
     },
     "dependencies": {
-        "@fontsource-variable/archivo": "^5.3.0",
-        "@fontsource/ibm-plex-mono": "^5.3.0"
+        "@fontsource-variable/geist": "^5.3.0",
+        "@fontsource-variable/geist-mono": "^5.3.0",
+        "@fontsource-variable/inter": "^5.3.0",
+        "@fontsource/silkscreen": "^5.3.0"
     }
 }

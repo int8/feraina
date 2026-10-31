@@ -4,7 +4,7 @@ Ostatnia aktualizacja: październik 2026
 
 ## 1. Postanowienia ogólne
 
-1.1. Niniejszy Regulamin określa zasady korzystania z usługi świadczonej drogą elektroniczną przez biznesw5minut.pl (dalej: „Usługodawca").
+1.1. Niniejszy Regulamin określa zasady korzystania z usługi świadczonej drogą elektroniczną przez udaina.com (dalej: „Usługodawca").
 
 1.2. Usługa (dalej: „Usługa") to narzędzie wykorzystujące sztuczną inteligencję do wsparcia małych firm w prowadzeniu codziennych działań internetowych: strony firmowej, kampanii reklamowych, komunikacji z klientami oraz wystawiania faktur.
 

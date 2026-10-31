@@ -17,12 +17,17 @@ class PagesTest extends TestCase
         $html = $response->getContent();
 
         $markers = [
-            'Biznes w <span class="accent">pięć</span> minut',
+            'aria-label="Biznes w pięć minut"',
+            'data-scramble="B"',
+            'data-hero-tab="web"',
+            'data-hero-tab="whatsapp"',
+            'videos/intro.mp4',
+            'videos/whatsapp.mp4',
             'id="co"',
             'Cztery obszary',
-            'id="dzien"',
-            'Jeden dzień z Udainą',
             'id="integracje"',
+            'id="dzien"',
+            'Co się dzieje, kiedy Ty prowadzisz firmę',
             'id="cennik"',
             'id="faq"',
             'id="zapis"',

@@ -1,7 +1,9 @@
 import { initWizard } from './wizard.js';
-import { initPanel } from './panel.js';
+import { scramble, reveal } from './fx.js';
 
 document.documentElement.classList.remove('no-js');
+
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // --- Plausible: zdarzenia z atrybutów data-plausible="nazwa" (+ data-plausible-prop-*). ---
 export function track(name, props = {}) {
@@ -37,7 +39,7 @@ if (panel && toggles.length) {
     });
 }
 
-// --- CTA "Zapisz się do bety": otwórz okno z polem e-mail (bez okna: link działa normalnie) ---
+// --- CTA: otwórz okno z polem e-mail (bez okna: link działa normalnie) ---
 const betaModal = document.getElementById('beta-modal');
 if (betaModal && typeof betaModal.showModal === 'function') {
     const openBeta = () => {
@@ -70,39 +72,44 @@ document.querySelectorAll('form[data-beta-start]').forEach((form) => {
     form.addEventListener('submit', () => track('beta_start', { location: form.dataset.betaStart || 'unknown' }));
 });
 
-// --- Log dnia: wpisy pojawiają się po kolei po wejściu w viewport ---
-const log = document.querySelector('[data-night-log]');
-if (log) {
-    const entries = [...log.querySelectorAll('.night-log-entry')];
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const reveal = () => {
-        entries.forEach((entry, i) => {
-            if (reduce) {
-                entry.classList.add('is-visible');
-                return;
-            }
-            setTimeout(() => {
-                entry.classList.add('is-visible');
-                if (i === entries.length - 1) log.querySelector('[data-night-cursor]')?.classList.add('night-log-cursor');
-            }, 500 + i * 650);
-        });
-    };
-    if (reduce || !('IntersectionObserver' in window)) {
-        reveal();
-    } else {
-        const io = new IntersectionObserver((obs) => {
-            if (obs.some((o) => o.isIntersecting)) {
-                reveal();
-                io.disconnect();
-            }
-        }, { threshold: 0.35 });
-        io.observe(log);
-    }
+// --- Efekty tekstu: nagłówek hero i nagłówki sekcji ---
+scramble(document.querySelector('[data-scramble-root]'), { startDelay: 150 });
+document.querySelectorAll('[data-reveal]').forEach((h) => reveal(h));
+
+// --- Filmy w hero: przy ograniczonym ruchu zostają na pierwszej klatce ---
+const heroVideos = [...document.querySelectorAll('[data-hero-video]')];
+if (reduce) {
+    heroVideos.forEach((v) => { v.removeAttribute('autoplay'); v.pause(); });
 }
+
+// --- Zakładki nad filmem (Web / WhatsApp): pokazują jeden z filmów, drugi ładuje się dopiero po wyborze ---
+const heroTabs = [...document.querySelectorAll('[data-hero-tab]')];
+const selectHeroTab = (tab) => {
+    heroTabs.forEach((t) => {
+        const on = t === tab;
+        t.setAttribute('aria-selected', String(on));
+        t.tabIndex = on ? 0 : -1;
+    });
+    document.getElementById('hero-demo')?.setAttribute('aria-labelledby', tab.id);
+    heroVideos.forEach((v) => {
+        const on = v.dataset.heroVideo === tab.dataset.heroTab;
+        v.hidden = !on;
+        if (!on) { v.pause(); return; }
+        if (v.preload === 'none') { v.preload = 'auto'; v.load(); }
+        if (!reduce) { v.currentTime = 0; v.play().catch(() => {}); }
+    });
+};
+heroTabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => selectHeroTab(tab));
+    tab.addEventListener('keydown', (e) => {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        e.preventDefault();
+        const next = heroTabs[(i + (e.key === 'ArrowRight' ? 1 : heroTabs.length - 1)) % heroTabs.length];
+        next.focus();
+        selectHeroTab(next);
+    });
+});
 
 // --- Ankieta bety ---
 const wizard = document.querySelector('[data-wizard]');
 if (wizard) initWizard(wizard, track);
-
-// --- Panel produktowy w hero ---
-initPanel();

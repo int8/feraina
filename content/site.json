@@ -1,13 +1,13 @@
 {
   "product": {
-    "name": "AI",
+    "name": "Udaina",
     "tagline": "Zespół AI dla małej polskiej firmy",
-    "domain": "biznesw5minut.pl",
+    "domain": "udaina.com",
     "beta_slots": "20",
     "meta_description": "AI codziennie prowadzi bieżące sprawy małej firmy w internecie: stronę, reklamy, komunikację z klientami i faktury. Ustalasz miesięczny budżet, a każdego ranka otrzymujesz raport z działań i listę decyzji do zatwierdzenia."
   },
   "company": {
-    "name": "biznesw5minut.pl",
+    "name": "udaina.com",
     "address": "[ADRES]",
     "email": "[E-MAIL KONTAKTOWY]"
   },
@@ -18,12 +18,12 @@
         "href": "#co"
       },
       {
-        "label": "Jeden dzień",
-        "href": "#dzien"
-      },
-      {
         "label": "Narzędzia",
         "href": "#integracje"
+      },
+      {
+        "label": "Przykładowy dzień pracy",
+        "href": "#dzien"
       },
       {
         "label": "Cennik",
@@ -38,8 +38,9 @@
   },
   "hero": {
     "heading": "Biznes w *pięć* minut",
-    "sub_lead": "Ty wyznaczasz kierunek. *Agenci AI* robią resztę.",
+    "sub_lead": "Ty wyznaczasz kierunek. Agenci AI robią resztę.",
     "cta_primary": "Zapisz się do bety",
+    "cta_secondary": "Jak działa Udaina",
     "email_placeholder": "Twój adres e-mail",
     "note": "Zapis do bety jest bezpłatny.",
     "modal_heading": "Zapisz się do bety",
@@ -85,8 +86,8 @@
   },
   "integrations": {
     "eyebrow": "Narzędzia",
-    "heading": "Integracje z narzędziami, z których już korzystasz",
-    "lead": "Bez zmiany dotychczasowych systemów. AI łączy się z Twoimi istniejącymi kontami.",
+    "heading": "Narzędzia, z których już korzystasz",
+    "lead": "Bez zmiany dotychczasowych systemów. Agenci łączą się z kontami, które już masz, i pracują w nich za Ciebie.",
     "groups": [
       {
         "name": "Marketing",
@@ -118,11 +119,49 @@
         "tools": "InPost · DPD · Furgonetka · Apaczka",
         "status": "w becie"
       }
+    ],
+    "note": "+ każde inne narzędzie przez e-mail lub API"
+  },
+  "day": {
+    "eyebrow": "Przykładowy dzień pracy",
+    "heading": "Co się dzieje, kiedy Ty prowadzisz firmę",
+    "lead": "Agenci pracują w tle od rana do wieczora. Ty dostajesz krótki raport i listę rzeczy do zatwierdzenia.",
+    "entries": [
+      {
+        "time": "07:00",
+        "title": "Raport poranny",
+        "text": "Co zrobiono wczoraj, ile wydano, co czeka na Twoją decyzję."
+      },
+      {
+        "time": "09:30",
+        "title": "Klienci",
+        "text": "Odpowiedzi na maile i Messengera w tonie Twojej firmy. Sprawy nietypowe trafiają do Ciebie."
+      },
+      {
+        "time": "12:00",
+        "title": "Reklamy",
+        "text": "Wyłączone słowa kluczowe bez zapisów, budżet przeniesiony tam, gdzie działa."
+      },
+      {
+        "time": "15:00",
+        "title": "Faktury",
+        "text": "Wystawione faktury, przypomnienie do klienta po terminie, KSeF odhaczony."
+      },
+      {
+        "time": "18:00",
+        "title": "Treści",
+        "text": "Post na profilu firmy i poprawka nagłówka na stronie po wynikach z tygodnia."
+      },
+      {
+        "time": "23:00",
+        "title": "Podsumowanie",
+        "text": "Dziennik zamknięty. Rano dostaniesz jedną wiadomość zamiast dziesięciu."
+      }
     ]
   },
   "pricing": {
     "eyebrow": "Cennik",
-    "heading": "Wybierz plan dla siebie",
+    "heading": "Jeden abonament zamiast kilku umów",
     "period": "miesięcznie netto",
     "cta": "SPRAWDŹ TO",
     "plans": [
@@ -186,11 +225,13 @@
         "question": "Kiedy rusza beta i ile kosztuje?",
         "answer": "Liczba miejsc w becie jest ograniczona. Abonament wynosi 459 zł netto miesięcznie. Zapis na listę jest bezpłatny."
       }
-    ]
+    ],
+    "lead": "Krótko o tym, co zwykle budzi wątpliwości przed zapisem."
   },
   "beta": {
     "heading": "Dołącz do bety. Liczba miejsc jest ograniczona.",
-    "subheading": "Zostaw adres e-mail. W kolejnym kroku zapytamy o profil firmy i narzędzia, z których korzystasz. Zajmie to około minuty."
+    "subheading": "Zostaw adres e-mail. W kolejnym kroku zapytamy o profil firmy i narzędzia, z których korzystasz. Zajmie to około minuty.",
+    "note": "Bez opłat. Bez karty."
   },
   "footer": {
     "links": [

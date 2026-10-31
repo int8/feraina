@@ -1,19 +1,23 @@
-<section id="cennik" class="section center" style="background: var(--color-paper-dim)">
+<section class="section" id="cennik">
     <div class="wrap">
-        <p class="eyebrow">{{ $site['pricing']['eyebrow'] }}</p>
-        <h2 class="section-title">{{ $site['pricing']['heading'] }}</h2>
-        <div class="pricing-grid">
-            @foreach ($site['pricing']['plans'] as $plan)
-                <div class="price-card {{ isset($plan['featured']) && $plan['featured'] ? 'featured' : '' }}">
-                    <h3>{{ $plan['name'] }}</h3>
-                    <div class="price-amt">{{ $plan['price'] }}<span>{{ $site['pricing']['period'] }}</span></div>
+        <div class="sec-head center">
+            <p class="eyebrow">{{ $site['pricing']['eyebrow'] }}</p>
+            <h2 class="section-title" data-reveal>{{ $site['pricing']['heading'] }}</h2>
+        </div>
+        <div class="plans">
+            @foreach ($site['pricing']['plans'] as $i => $plan)
+                @php($featured = ! empty($plan['featured']))
+                <article class="plan {{ $featured ? 'featured' : '' }}">
+                    <div class="k"><span>{{ sprintf('%02d', $i + 1) }} · {{ $plan['name'] }}</span>@if ($featured)<b>Najczęściej wybierany</b>@endif</div>
+                    <div class="amt">{{ $plan['price'] }}</div>
+                    <div class="per">{{ $site['pricing']['period'] }}</div>
                     <ul>
                         @foreach ($plan['features'] as $feature)
-                            <li>{{ $feature }}</li>
+                            <li>{!! \App\Support\Brands::mark($feature) !!}</li>
                         @endforeach
                     </ul>
-                    <a href="#zapis" class="btn-primary w-full font-extrabold tracking-wide" data-open-beta data-plausible="cta_click" data-plausible-prop-location="pricing">{{ $site['pricing']['cta'] }}</a>
-                </div>
+                    <a href="{{ route('beta.show') }}" class="{{ $featured ? 'btn-primary' : 'btn-secondary' }}" data-open-beta data-plausible="cta_click" data-plausible-prop-location="pricing">{{ $site['pricing']['cta'] }}</a>
+                </article>
             @endforeach
         </div>
     </div>
