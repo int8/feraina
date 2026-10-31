@@ -24,7 +24,8 @@ Route::middleware(AdminBasicAuth::class)->prefix('panel')->name('admin.')->group
     Route::get('/eksport.csv', [AdminController::class, 'exportCsv'])->name('export');
 });
 
-// Scena do nagrania filmu z hero (npm run record:intro). Tylko lokalnie.
+// Sceny do nagrania filmów z hero (npm run record:intro / record:whatsapp). Tylko lokalnie.
 if (app()->environment('local')) {
     Route::view('/studio/intro', 'studio.intro')->name('studio.intro');
+    Route::view('/studio/whatsapp', 'studio.whatsapp')->name('studio.whatsapp');
 }

@@ -10,7 +10,7 @@
                 @foreach ($site['faq']['items'] as $i => $item)
                     <details>
                         <summary><span class="n">{{ sprintf('%02d', $i + 1) }}</span><span>{{ $item['question'] }}</span></summary>
-                        <p>{{ $item['answer'] }}</p>
+                        <p>{!! \App\Support\Brands::mark($item['answer']) !!}</p>
                     </details>
                 @endforeach
             </div>

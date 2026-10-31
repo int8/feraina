@@ -19,8 +19,10 @@ class PagesTest extends TestCase
         $markers = [
             'aria-label="Biznes w pięć minut"',
             'data-scramble="B"',
+            'data-hero-tab="web"',
+            'data-hero-tab="whatsapp"',
             'videos/intro.mp4',
-            'id="zasady"',
+            'videos/whatsapp.mp4',
             'id="co"',
             'Cztery obszary',
             'id="integracje"',

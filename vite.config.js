@@ -8,9 +8,10 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
-                // Scena do nagrania filmu z hero (tylko /studio/intro, środowisko local).
+                // Sceny do nagrania filmów z hero (tylko /studio/*, środowisko local).
                 'resources/css/studio.css',
                 'resources/js/studio.js',
+                'resources/js/studio-whatsapp.js',
             ],
             refresh: true,
         }),

@@ -13,7 +13,7 @@
                     <div class="per">{{ $site['pricing']['period'] }}</div>
                     <ul>
                         @foreach ($plan['features'] as $feature)
-                            <li>{{ $feature }}</li>
+                            <li>{!! \App\Support\Brands::mark($feature) !!}</li>
                         @endforeach
                     </ul>
                     <a href="{{ route('beta.show') }}" class="{{ $featured ? 'btn-primary' : 'btn-secondary' }}" data-open-beta data-plausible="cta_click" data-plausible-prop-location="pricing">{{ $site['pricing']['cta'] }}</a>

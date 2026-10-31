@@ -1,8 +1,7 @@
 <header class="nav">
     <nav class="wrap nav-inner" aria-label="Główna">
-        <a href="{{ route('home') }}" class="logo" aria-label="Biznes w 5 minut – strona główna">
-            <x-logo-mark class="h-6 w-6" aria-hidden="true" />
-            <span>Biznes w 5 minut</span>
+        <a href="{{ route('home') }}" class="logo" aria-label="Udaina – strona główna">
+            <x-logo-mark class="lamp" aria-hidden="true" />
         </a>
 
         <ul class="nav-links hidden items-center gap-7 md:flex">

@@ -10,8 +10,8 @@
                 @foreach ($site['day']['entries'] as $entry)
                     <div>
                         <time>{{ $entry['time'] }}</time>
-                        <h3>{{ $entry['title'] }}</h3>
-                        <p>{{ $entry['text'] }}</p>
+                        <h3>{!! \App\Support\Brands::mark($entry['title']) !!}</h3>
+                        <p>{!! \App\Support\Brands::mark($entry['text']) !!}</p>
                     </div>
                 @endforeach
             </div>

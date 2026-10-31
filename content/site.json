@@ -1,22 +1,18 @@
 {
   "product": {
-    "name": "AI",
+    "name": "Udaina",
     "tagline": "Zespół AI dla małej polskiej firmy",
-    "domain": "biznesw5minut.pl",
+    "domain": "udaina.com",
     "beta_slots": "20",
     "meta_description": "AI codziennie prowadzi bieżące sprawy małej firmy w internecie: stronę, reklamy, komunikację z klientami i faktury. Ustalasz miesięczny budżet, a każdego ranka otrzymujesz raport z działań i listę decyzji do zatwierdzenia."
   },
   "company": {
-    "name": "biznesw5minut.pl",
+    "name": "udaina.com",
     "address": "[ADRES]",
     "email": "[E-MAIL KONTAKTOWY]"
   },
   "nav": {
     "links": [
-      {
-        "label": "Zasady",
-        "href": "#zasady"
-      },
       {
         "label": "Co robi",
         "href": "#co"
@@ -26,7 +22,7 @@
         "href": "#integracje"
       },
       {
-        "label": "Jeden dzień",
+        "label": "Przykładowy dzień pracy",
         "href": "#dzien"
       },
       {
@@ -44,36 +40,11 @@
     "heading": "Biznes w *pięć* minut",
     "sub_lead": "Ty wyznaczasz kierunek. Agenci AI robią resztę.",
     "cta_primary": "Zapisz się do bety",
-    "cta_secondary": "Zobacz, co robi",
+    "cta_secondary": "Jak działa Udaina",
     "email_placeholder": "Twój adres e-mail",
     "note": "Zapis do bety jest bezpłatny.",
     "modal_heading": "Zapisz się do bety",
     "modal_text": "Zostaw adres e-mail. W kolejnym kroku zapytamy o profil firmy i narzędzia, z których korzystasz."
-  },
-  "principles": {
-    "eyebrow": "Zasady",
-    "heading": "Zespół AI, nad którym masz pełną kontrolę",
-    "lead": "Agenci pracują codziennie w tle. Ty ustalasz budżet, widzisz każdą zmianę i podejmujesz tylko te decyzje, które niosą ryzyko.",
-    "items": [
-      {
-        "k": "01",
-        "label": "Budżet",
-        "title": "Ty ustalasz limit wydatków",
-        "text": "Miesięczny budżet na reklamy i usługi. Agenci nie wydadzą złotówki ponad to, co zatwierdzisz."
-      },
-      {
-        "k": "02",
-        "label": "Dziennik",
-        "title": "Każda zmiana zapisana i odwracalna",
-        "text": "Strona, reklamy, odpowiedzi klientom. Wszystko trafia do dziennika, a każdą zmianę cofniesz jednym kliknięciem."
-      },
-      {
-        "k": "03",
-        "label": "Decyzje",
-        "title": "Co ryzykowne, czeka na Twoje tak",
-        "text": "Reklamacje, większe wydatki, nowe kampanie. Dostajesz krótką listę decyzji, reszta dzieje się sama."
-      }
-    ]
   },
   "features": {
     "eyebrow": "Zakres działania",
@@ -152,7 +123,7 @@
     "note": "+ każde inne narzędzie przez e-mail lub API"
   },
   "day": {
-    "eyebrow": "Jeden dzień",
+    "eyebrow": "Przykładowy dzień pracy",
     "heading": "Co się dzieje, kiedy Ty prowadzisz firmę",
     "lead": "Agenci pracują w tle od rana do wieczora. Ty dostajesz krótki raport i listę rzeczy do zatwierdzenia.",
     "entries": [

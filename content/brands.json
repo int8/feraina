@@ -1,0 +1,183 @@
+{
+  "_": "Logotypy marek pokazywane przy nazwach narzędzi. icon = plik z simple-icons (scripts/sync-brands.mjs kopiuje go do resources/svg/brands); bez icon rysujemy literki na kafelku. match = odmieniany rdzeń nazwy w tekstach (wielkość liter ma znaczenie); parts = kilka marek w jednym chipie.",
+  "allegro": {
+    "name": "Allegro",
+    "icon": "allegro",
+    "color": "#FF5A00"
+  },
+  "baselinker": {
+    "name": "BaseLinker",
+    "color": "#2C6BED",
+    "letters": "BL"
+  },
+  "shopify": {
+    "name": "Shopify",
+    "icon": "shopify",
+    "color": "#7AB55C"
+  },
+  "woocommerce": {
+    "name": "WooCommerce",
+    "icon": "woocommerce",
+    "color": "#96588A"
+  },
+  "shoper": {
+    "name": "Shoper",
+    "color": "#F5542E",
+    "letters": "S"
+  },
+  "idosell": {
+    "name": "IdoSell",
+    "color": "#1D4ED8",
+    "letters": "Id"
+  },
+  "przelewy24": {
+    "name": "Przelewy24",
+    "color": "#D13239",
+    "letters": "P24"
+  },
+  "blik": {
+    "name": "BLIK",
+    "color": "#FFFFFF",
+    "fg": "#000000",
+    "letters": "blik"
+  },
+  "payu": {
+    "name": "PayU",
+    "color": "#A6C307",
+    "letters": "PU"
+  },
+  "stripe": {
+    "name": "Stripe",
+    "icon": "stripe",
+    "color": "#635BFF"
+  },
+  "ksef": {
+    "name": "KSeF",
+    "color": "#0B3D91",
+    "letters": "KSeF"
+  },
+  "fakturownia": {
+    "name": "Fakturownia",
+    "color": "#009F6B",
+    "letters": "Fa"
+  },
+  "infakt": {
+    "name": "inFakt",
+    "color": "#00A9E0",
+    "letters": "inF"
+  },
+  "wfirma": {
+    "name": "wFirma",
+    "color": "#2E7D32",
+    "letters": "wFi"
+  },
+  "ifirma": {
+    "name": "iFirma",
+    "color": "#F26522",
+    "letters": "iFi"
+  },
+  "inpost": {
+    "name": "InPost",
+    "color": "#FFCD00",
+    "fg": "#000000",
+    "letters": "In"
+  },
+  "dpd": {
+    "name": "DPD",
+    "icon": "dpd",
+    "color": "#DC0032"
+  },
+  "furgonetka": {
+    "name": "Furgonetka",
+    "color": "#E2231A",
+    "letters": "Fu"
+  },
+  "apaczka": {
+    "name": "Apaczka",
+    "color": "#0067B1",
+    "letters": "Ap"
+  },
+  "facebook": {
+    "name": "Facebook",
+    "icon": "facebook",
+    "color": "#0866FF"
+  },
+  "instagram": {
+    "name": "Instagram",
+    "icon": "instagram",
+    "color": "#FF0069"
+  },
+  "facebook-instagram": {
+    "name": "Facebook i Instagram",
+    "parts": [
+      "facebook",
+      "instagram"
+    ],
+    "match": null
+  },
+  "linkedin": {
+    "name": "LinkedIn",
+    "color": "#0A66C2",
+    "letters": "in"
+  },
+  "google-business-profile": {
+    "name": "Google Business Profile",
+    "icon": "google",
+    "color": "#4285F4"
+  },
+  "google": {
+    "name": "Google",
+    "icon": "google",
+    "color": "#4285F4"
+  },
+  "google-ads": {
+    "name": "Google Ads",
+    "icon": "googleads",
+    "color": "#4285F4"
+  },
+  "meta-ads": {
+    "name": "Meta Ads",
+    "icon": "meta",
+    "color": "#0467DF"
+  },
+  "gmail": {
+    "name": "Gmail",
+    "icon": "gmail",
+    "color": "#EA4335"
+  },
+  "outlook": {
+    "name": "Outlook",
+    "color": "#0F6CBD",
+    "letters": "O"
+  },
+  "messenger": {
+    "name": "Messenger",
+    "icon": "messenger",
+    "color": "#0866FF"
+  },
+  "whatsapp": {
+    "name": "WhatsApp",
+    "icon": "whatsapp",
+    "color": "#25D366"
+  },
+  "smsapi": {
+    "name": "SMSAPI",
+    "color": "#2A7DE1",
+    "letters": "SMS"
+  },
+  "ceidg": {
+    "name": "CEIDG",
+    "color": "#0B3D91",
+    "letters": "CE"
+  },
+  "krs": {
+    "name": "KRS",
+    "color": "#0B3D91",
+    "letters": "KRS"
+  },
+  "gus": {
+    "name": "GUS",
+    "color": "#0B3D91",
+    "letters": "GUS"
+  }
+}

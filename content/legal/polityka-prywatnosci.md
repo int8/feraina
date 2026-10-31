@@ -4,7 +4,7 @@ Ostatnia aktualizacja: październik 2026
 
 ## 1. Administrator danych
 
-Administratorem danych osobowych jest biznesw5minut.pl (dalej: „Administrator").
+Administratorem danych osobowych jest udaina.com (dalej: „Administrator").
 
 ## 2. Jakie dane zbieramy
 

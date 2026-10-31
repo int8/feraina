@@ -1,79 +1,80 @@
 @import 'tailwindcss';
-@import '@fontsource-variable/geist/wght.css';
+@import '@fontsource-variable/inter/wght.css';
 @import '@fontsource-variable/geist-mono/wght.css';
 @import '@fontsource/silkscreen/latin-400.css';
-@import './themes.css';
 
 @source '../views';
 @source '../../app';
 
 /*
- * Kierunek „Warsztat”: jasny papier, jeden grotesk (Geist), mono do etykiet,
- * pomarańczowy punkt jako jedyny kolor. Panele zaokrąglone, karty na cienkiej linii.
+ * Kierunek „Noc” (wzór: linear.app): czerń, Inter, jeden pomarańczowy akcent jak lampka,
+ * miękkie pigułki, panele na cienkiej jasnej linii. Mono zostaje tylko w makietach.
  */
 @theme {
-    --font-sans: 'Geist Variable', 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+    --font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
     --font-mono: 'Geist Mono Variable', 'Geist Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
     --font-pixel: 'Silkscreen', ui-monospace, monospace;
     --font-display: var(--font-sans);
-    --font-label: var(--font-mono);
+    --font-label: var(--font-sans);
 
-    --color-paper: #f9f9f9;
-    --color-paper-dim: #ebebeb;
-    --color-white: #ffffff;
-    --color-ink: #020202;
-    --color-ink-soft: #3d3a39;
-    --color-stone: #8a8380;
-    --color-line: #d6d3d2;
-    --color-line-strong: #a49d9a;
-    --color-rule: #020202;
-    --color-night: #1f1d1c;
-    --color-night-soft: #2e2c2b;
-    --color-night-line: #3d3a39;
-    --color-accent: #ee6018;
-    --color-accent-soft: #ef6f2e;
-    --color-accent-dark: #d15010;
-    --color-accent-tint: #fdeee5;
+    --color-paper: #08090a;
+    --color-paper-dim: #141516;
+    --color-white: #111214;
+    --color-ink: #f7f8f8;
+    --color-ink-soft: #b4b8bd;
+    --color-stone: #8a8f98;
+    --color-line: #23252a;
+    --color-line-strong: #3a3d44;
+    --color-rule: #f7f8f8;
+    --color-night: #141516;
+    --color-night-soft: #e3e4e6;
+    --color-night-line: #2a2d33;
+    --color-accent: #ff7a30;
+    --color-accent-soft: #ff8f52;
+    --color-accent-dark: #e8631d;
+    --color-accent-tint: #2a1a10;
 
     /* Aliasy dla widoków ankiety i panelu (stare nazwy kolorów). */
-    --color-stamp: #ee6018;
-    --color-stamp-dark: #d15010;
-    --color-stamp-soft: #fdeee5;
-    --color-signal: #ef6f2e;
+    --color-stamp: #ff7a30;
+    --color-stamp-dark: #e8631d;
+    --color-stamp-soft: #2a1a10;
+    --color-signal: #ff8f52;
 
     --radius: 3px;
-    --radius-btn: 3px;
-    --radius-card: 8px;
-    --radius-chip: 6px;
-    --radius-panel: 12px;
+    --radius-btn: 999px;
+    --radius-card: 12px;
+    --radius-chip: 999px;
+    --radius-panel: 16px;
 }
 
-/* Parametry „ducha” strony. Motywy (themes.css) nadpisują je na html[data-theme]. */
+/* Parametry typografii i makiet. */
 :root {
-    --display-size: clamp(2.25rem, 4.2vw, 4rem);
-    --display-weight: 500;
-    --display-tracking: -0.04em;
-    --display-transform: uppercase;
-    --title-weight: 400;
-    --title-tracking: -0.025em;
-    --label-size: 12px;
-    --label-weight: 400;
-    --label-tracking: 0.02em;
-    --label-transform: uppercase;
-    --reveal-from: #ef6f2e;
-    --tile-a: #2e2c2b;
-    --tile-b: #1a1918;
-    --tile-c: #121110;
-    --ui-bg: #1f1d1c;
-    --ui-line: #3d3a39;
-    --ui-ink: #d6d3d2;
-    --ui-muted: #8a8380;
-    --ui-accent: #ef6f2e;
-    --ui-add-bg: rgb(238 96 24 / 0.18);
+    --display-size: clamp(2.4rem, 4.6vw, 4.25rem);
+    --display-weight: 510;
+    --display-tracking: -0.028em;
+    --display-transform: none;
+    --title-weight: 510;
+    --title-tracking: -0.03em;
+    --label-size: 13px;
+    --label-weight: 500;
+    --label-tracking: 0;
+    --label-transform: none;
+    --reveal-from: #ff8f52;
+    --glow: 255 122 48;
+    --tile-a: #1c1e22;
+    --tile-b: #121316;
+    --tile-c: #0b0c0e;
+    --ui-bg: #0f1012;
+    --ui-line: #26292e;
+    --ui-ink: #e6e7e9;
+    --ui-muted: #7b8089;
+    --ui-accent: #ff8f52;
+    --ui-add-bg: rgb(255 122 48 / 0.16);
 }
 
 @layer base {
     html {
+        color-scheme: dark;
         scroll-behavior: smooth;
         -webkit-font-smoothing: antialiased;
         scroll-padding-top: 5rem;
@@ -86,13 +87,16 @@
     }
 
     body {
-        @apply bg-paper text-ink font-sans;
+        @apply text-ink font-sans;
         font-size: 16px;
         line-height: 1.5;
+        background:
+            radial-gradient(60% 40% at 50% -5%, rgb(var(--glow) / 0.16), transparent 70%),
+            var(--color-paper);
     }
 
     ::selection {
-        background: var(--color-ink);
+        background: var(--color-accent);
         color: var(--color-paper);
     }
 
@@ -163,6 +167,7 @@
         line-height: 1;
     }
     .eyebrow::before {
+        box-shadow: 0 0 12px var(--color-accent);
         content: "";
         width: 8px;
         height: 8px;
@@ -199,9 +204,10 @@
     .btn-primary {
         background: var(--color-ink);
         color: var(--color-paper);
+        box-shadow: 0 1px 1px rgb(0 0 0 / 0.08), 0 0 0 1px rgb(255 255 255 / 0.06), 0 8px 24px -8px rgb(var(--glow) / 0.35);
     }
     .btn-primary:hover {
-        background: var(--color-night-soft);
+        background: #ffffff;
     }
 
     .btn-stamp {
@@ -213,12 +219,13 @@
     }
 
     .btn-secondary {
-        background: var(--color-paper);
+        background: rgb(255 255 255 / 0.04);
         color: var(--color-ink);
-        border-color: var(--color-line-strong);
+        border-color: rgb(255 255 255 / 0.12);
     }
     .btn-secondary:hover {
-        border-color: var(--color-ink);
+        background: rgb(255 255 255 / 0.08);
+        border-color: rgb(255 255 255 / 0.2);
     }
 
     .btn-ghost {
@@ -233,10 +240,11 @@
 
     /* Pola */
     .input {
-        @apply w-full bg-white px-3.5 text-ink placeholder:text-stone;
+        @apply w-full px-3.5 text-ink placeholder:text-stone;
         height: 44px;
         font-size: 15px;
-        border: 1px solid var(--color-line-strong);
+        background: #0f1012;
+        border: 1px solid rgb(255 255 255 / 0.12);
         border-radius: var(--radius-btn);
     }
     .input:focus {
@@ -340,7 +348,7 @@
     position: sticky;
     top: 0;
     z-index: 40;
-    background: color-mix(in srgb, var(--color-paper) 86%, transparent);
+    background: color-mix(in srgb, var(--color-paper) 70%, transparent);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
 }
@@ -354,14 +362,25 @@
 .logo {
     display: inline-flex;
     align-items: center;
-    gap: 9px;
+    gap: 10px;
     color: var(--color-ink);
     font-family: var(--font-label);
     font-weight: 600;
-    font-size: 13px;
-    letter-spacing: var(--label-tracking);
-    text-transform: var(--label-transform);
+    font-size: 14px;
+    letter-spacing: -0.01em;
     white-space: nowrap;
+}
+.nav .logo svg { width: 34px; height: 34px; }
+
+/* Znak jak lampka: biała tarcza, pomarańczowe pięć minut, ciepła poświata, która wolno oddycha. */
+.lamp {
+    color: var(--color-ink);
+    --logo-cut: var(--color-accent);
+    filter: drop-shadow(0 0 6px rgb(var(--glow) / 0.55)) drop-shadow(0 0 22px rgb(var(--glow) / 0.35));
+    animation: lamp 3.4s ease-in-out infinite;
+}
+@keyframes lamp {
+    50% { filter: drop-shadow(0 0 9px rgb(var(--glow) / 0.8)) drop-shadow(0 0 34px rgb(var(--glow) / 0.5)); }
 }
 .nav-links a {
     font-size: 14px;
@@ -387,10 +406,14 @@
     text-align: center;
 }
 .hero-mark {
-    width: 52px;
-    height: 52px;
-    margin: 0 auto 28px;
-    color: var(--color-ink);
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 32px;
+}
+/* Słowo z akcentem w nagłówku (site.json: *pięć*) świeci jak znak. */
+.display .hl {
+    color: var(--color-accent-soft);
+    text-shadow: 0 0 28px rgb(var(--glow) / 0.45);
 }
 .hero .display {
     margin-inline: auto;
@@ -400,11 +423,9 @@
     margin: 18px auto 0;
     max-width: 48rem;
     font-family: var(--font-label);
-    font-size: clamp(0.8rem, 0.62rem + 0.7vw, 1.2rem);
-    line-height: 1.3;
-    text-transform: var(--label-transform);
-    letter-spacing: var(--label-tracking);
-    color: var(--color-stone);
+    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+    line-height: 1.4;
+    color: var(--color-ink-soft);
     text-wrap: balance;
 }
 .hero-actions {
@@ -414,14 +435,51 @@
     gap: 8px;
     flex-wrap: wrap;
 }
+/* Zakładki nad filmem: Web / WhatsApp (pigułka jak segmented control) */
+.hero-tabs {
+    margin-top: 48px;
+    display: inline-flex;
+    gap: 4px;
+    padding: 4px;
+    border-radius: var(--radius-btn);
+    background: rgb(255 255 255 / 0.05);
+    border: 1px solid rgb(255 255 255 / 0.08);
+}
+.hero-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 38px;
+    padding: 0 18px;
+    border: 0;
+    border-radius: var(--radius-btn);
+    background: transparent;
+    color: var(--color-ink-soft);
+    font: 500 14px/1 var(--font-label);
+    letter-spacing: -0.005em;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+.hero-tab:hover { color: var(--color-ink); }
+.hero-tab[aria-selected="true"] {
+    background: var(--color-ink);
+    color: var(--color-paper);
+    box-shadow: 0 6px 20px -8px rgb(var(--glow) / 0.5);
+}
+.hero-tab:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.hero-tab-ico { width: 16px; height: 16px; flex: none; }
+.hero-tabs + .hero-video { margin-top: 16px; }
+.hero-video video[hidden] { display: none; }
+
 .hero-video {
     margin-top: 56px;
     position: relative;
     aspect-ratio: 16 / 9;
     overflow: hidden;
     border-radius: var(--radius-panel);
-    border: 1px solid var(--color-line);
+    border: 1px solid rgb(255 255 255 / 0.08);
     background: radial-gradient(ellipse at center, #1a1a1a 0%, #0d0d0d 72%);
+    box-shadow: 0 0 0 1px rgb(255 255 255 / 0.03), 0 40px 120px -40px rgb(var(--glow) / 0.35), 0 60px 100px -60px rgb(0 0 0 / 0.9);
 }
 .hero-video video,
 .hero-video img {
@@ -432,7 +490,7 @@
 }
 @media (max-width: 640px) {
     .hero { padding-top: 36px; }
-    .hero-mark { width: 40px; height: 40px; margin-bottom: 20px; }
+    .hero-mark { width: 60px; height: 60px; margin-bottom: 22px; }
     .hero-video { margin-top: 36px; border-radius: 8px; }
 }
 
@@ -447,7 +505,23 @@
     inset-inline: 0;
     text-align: center;
     font-family: var(--sg-font, inherit);
+    color: var(--sg-color, inherit);
+    text-shadow: none;
     pointer-events: none;
+}
+/* Migający podkreślnik na końcu nagłówka: zaproszenie, że to pole „pisze się” dalej. */
+.display .caret {
+    display: inline-block;
+    width: 0.52em;
+    height: 0.09em;
+    margin-left: 0.14em;
+    vertical-align: 0;
+    background: var(--color-accent);
+    box-shadow: 0 0 14px rgb(var(--glow) / 0.6);
+    animation: caret-blink 1.1s steps(2, jump-none) infinite;
+}
+@keyframes caret-blink {
+    to { opacity: 0; }
 }
 
 /* Nagłówki sekcji: litery wjeżdżają od dołu, z pomarańczowego do czerni (JS dzieli tekst). */
@@ -476,48 +550,6 @@
 }
 .sec-head .eyebrow + .section-title {
     margin-top: 18px;
-}
-
-/* ---------- Karty zasad ---------- */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 12px;
-    margin-top: 40px;
-}
-@media (max-width: 860px) {
-    .cards { grid-template-columns: 1fr; }
-}
-.card-p {
-    background: var(--color-white);
-    border: 1px solid var(--color-line);
-    border-radius: var(--radius-card);
-    padding: 18px 16px 20px;
-}
-.card-p .k {
-    display: flex;
-    gap: 10px;
-    font-family: var(--font-label);
-    font-size: calc(var(--label-size) - 1px);
-    font-weight: var(--label-weight);
-    text-transform: var(--label-transform);
-    color: var(--color-stone);
-    letter-spacing: var(--label-tracking);
-}
-.card-p .k b {
-    font-weight: 400;
-    color: var(--color-stone);
-}
-.card-p h3 {
-    margin-top: 20px;
-    font-size: 15px;
-    font-weight: 500;
-}
-.card-p p {
-    margin-top: 10px;
-    font-size: 13.5px;
-    line-height: 1.5;
-    color: var(--color-ink-soft);
 }
 
 /* ---------- Kafle obszarów (ciemne makiety) ---------- */
@@ -560,6 +592,7 @@
     content: "";
     position: absolute;
     inset: 0;
+    opacity: 0.6;
     background-image:
         linear-gradient(rgb(255 255 255 / 0.035) 1px, transparent 1px),
         linear-gradient(90deg, rgb(255 255 255 / 0.035) 1px, transparent 1px);
@@ -631,7 +664,8 @@
 
 /* ---------- Szary panel: narzędzia ---------- */
 .panel-grey {
-    background: var(--color-paper-dim);
+    background: linear-gradient(180deg, #16181b, #0f1012);
+    border: 1px solid rgb(255 255 255 / 0.06);
     border-radius: var(--radius-panel);
     padding: 40px;
     display: grid;
@@ -670,20 +704,28 @@
     gap: 8px;
     height: 34px;
     padding: 0 12px;
-    background: var(--color-white);
-    border: 1px solid var(--color-line);
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.03), transparent 60%), var(--color-white);
+    border: 1px solid rgb(255 255 255 / 0.08);
     border-radius: var(--radius-chip);
     font-size: 13px;
     white-space: nowrap;
     color: var(--color-ink);
 }
-.chip-tool i {
-    width: 8px;
-    height: 8px;
-    border-radius: 2px;
-    background: var(--c, var(--color-ink));
+.chip-tool .brand-ico { width: 16px; height: 16px; }
+
+/* Miniaturki marek przy nazwach (App\Support\Brands) */
+.brand-ico {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
     flex: none;
+    vertical-align: -0.15em;
+    border-radius: 3px;
 }
+.brand { white-space: nowrap; }
+.brand .brand-ico { margin-right: 0.3em; }
+.brand .brand-ico + .brand-ico { margin-left: -0.1em; }
+.ui-top .brand-ico { width: 12px; height: 12px; vertical-align: -2px; margin-right: 3px; }
 .marquee-note {
     margin-top: 12px;
     font-family: var(--font-label);
@@ -695,7 +737,8 @@
 
 /* ---------- Ciemny panel: jeden dzień ---------- */
 .panel-dark {
-    background: var(--color-night);
+    background: linear-gradient(180deg, #1a1c20, #101114);
+    border: 1px solid rgb(255 255 255 / 0.06);
     color: #eeeeee;
     border-radius: var(--radius-panel);
     padding: 48px 40px;
@@ -754,12 +797,12 @@
 .plan {
     display: flex;
     flex-direction: column;
-    background: var(--color-white);
-    border: 1px solid var(--color-line);
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.03), transparent 60%), var(--color-white);
+    border: 1px solid rgb(255 255 255 / 0.08);
     border-radius: var(--radius-card);
     padding: 22px 20px 20px;
 }
-.plan.featured { border-color: var(--color-ink); }
+.plan.featured { border-color: var(--color-accent); box-shadow: 0 0 60px -20px rgb(var(--glow) / 0.45); }
 .plan .k {
     display: flex;
     justify-content: space-between;
@@ -851,7 +894,8 @@
 
 /* ---------- Zapis ---------- */
 .cta-panel {
-    background: var(--color-paper-dim);
+    background: linear-gradient(180deg, #16181b, #0f1012);
+    border: 1px solid rgb(255 255 255 / 0.06);
     border-radius: var(--radius-panel);
     padding: 72px 24px;
     text-align: center;
@@ -882,13 +926,13 @@
     width: min(calc(100vw - 32px), 32rem);
     max-width: none;
     padding: 40px 32px 32px;
-    border: 1px solid var(--color-line);
+    border: 1px solid rgb(255 255 255 / 0.1);
     border-radius: var(--radius-panel);
-    background: var(--color-white);
+    background: linear-gradient(180deg, rgb(255 255 255 / 0.03), transparent 60%), var(--color-white);
     color: var(--color-ink);
     position: relative;
 }
-.beta-modal::backdrop { background: rgb(2 2 2 / 0.6); }
+.beta-modal::backdrop { background: rgb(0 0 0 / 0.7); }
 .beta-modal:not([open]) { display: none; }
 .beta-modal-close {
     position: absolute;
@@ -924,6 +968,8 @@
 .footer-inner a:hover { color: var(--color-ink); }
 
 @media (prefers-reduced-motion: reduce) {
+    .lamp { animation: none; }
+    .display .caret { animation: none; }
     .marquee-row { animation: none; }
     .marquee { mask-image: none; -webkit-mask-image: none; overflow-x: auto; }
 }

@@ -22,7 +22,7 @@
                                     <span class="ctx">wynik: +12% kliknięć</span>
                                 </div>
                             @elseif ($feat['ui'] === 'keywords')
-                                <div class="ui-top"><span>google ads</span><span>dziś 55 zł z 80 zł</span></div>
+                                <div class="ui-top"><span><x-brand id="google-ads" /> google ads</span><span>dziś 55 zł z 80 zł</span></div>
                                 <div class="ui-body kw">
                                     <div><span>angielski dla dorosłych lublin</span><span class="m">4 zapisy</span><span class="sw"></span></div>
                                     <div><span>kurs angielskiego wieczorem</span><span class="m">2 zapisy</span><span class="sw"></span></div>
@@ -30,7 +30,7 @@
                                     <div><span>test poziomu angielski</span><span class="m">1 zapis</span><span class="sw"></span></div>
                                 </div>
                             @elseif ($feat['ui'] === 'messenger')
-                                <div class="ui-top"><span>messenger</span><span>wt 14:12</span></div>
+                                <div class="ui-top"><span><x-brand id="messenger" /> messenger</span><span>wt 14:12</span></div>
                                 <div class="ui-body msg">
                                     <div class="in">Dzień dobry, czy są jeszcze miejsca w grupie od zera?<span class="t">Marta K. · 14:12</span></div>
                                     <div class="out">Tak, zostały 3 miejsca w grupie wt–czw 18:30, start 4 listopada. Semestr 1 290 zł, można w 2 ratach.<span class="t">AI w imieniu szkoły · 14:14</span></div>
@@ -39,16 +39,16 @@
                             @elseif ($feat['ui'] === 'invoices')
                                 <div class="ui-top"><span>faktury / październik</span><span>8 wystawionych</span></div>
                                 <div class="ui-body inv">
-                                    <div><span>FV/10/148 · Nowak Anna</span><span class="k">KSeF ✓</span></div>
-                                    <div><span>FV/10/149 · Pracownia Lniana</span><span class="k">KSeF ✓</span></div>
+                                    <div><span>FV/10/148 · Nowak Anna</span><span class="k"><x-brand id="ksef" /> KSeF ✓</span></div>
+                                    <div><span>FV/10/149 · Pracownia Lniana</span><span class="k"><x-brand id="ksef" /> KSeF ✓</span></div>
                                     <div><span>FV/10/150 · Kowalski Jan</span><span class="k">14 dni po terminie</span></div>
                                     <div><span>FV/10/151 · Biuro Saldo</span><span class="k">termin 30.10</span></div>
                                 </div>
                             @endif
                         </div>
                     </div>
-                    <h3>{{ $feat['title'] }}</h3>
-                    <p>{{ $feat['text'] }}</p>
+                    <h3>{!! \App\Support\Brands::mark($feat['title']) !!}</h3>
+                    <p>{!! \App\Support\Brands::mark($feat['text']) !!}</p>
                 </article>
             @endforeach
         </div>
