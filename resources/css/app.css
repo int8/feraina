@@ -505,7 +505,6 @@
     inset-inline: 0;
     text-align: center;
     font-family: var(--sg-font, inherit);
-    color: var(--sg-color, inherit);
     text-shadow: none;
     pointer-events: none;
 }
