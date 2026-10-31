@@ -127,8 +127,8 @@
                 </div>
 
                 <div class="wizard-nav mt-8 flex items-center justify-between gap-3">
+                    <a href="{{ route('home') }}" class="btn-secondary" data-wizard-close>Zamknij</a>
                     <button type="button" class="btn-secondary" data-wizard-back hidden>Wstecz</button>
-                    <span></span>
                     <button type="button" class="btn-primary" data-wizard-next>Dalej</button>
                     <button type="submit" class="btn-primary" data-wizard-submit hidden>Zapisz się</button>
                 </div>

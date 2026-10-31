@@ -357,12 +357,23 @@
     height: 64px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 16px;
 }
-.nav-inner > div:last-child {
-    position: absolute;
-    right: 0;
+@media (min-width: 768px) {
+    .nav-inner { justify-content: center; }
+}
+.nav-cta {
+    order: 0;
+}
+@media (min-width: 768px) {
+    .nav-cta {
+        position: absolute;
+        right: 0;
+    }
+}
+.nav-toggle {
+    order: 1;
 }
 .logo {
     display: inline-flex;

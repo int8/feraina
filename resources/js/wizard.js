@@ -7,6 +7,7 @@ export function initWizard(root, track = () => {}) {
     const steps = [...root.querySelectorAll('.wizard-step')];
     const progressText = root.querySelector('[data-progress-text]');
     const progressBar = root.querySelector('[data-progress-bar]');
+    const closeBtn = root.querySelector('[data-wizard-close]');
     const backBtn = root.querySelector('[data-wizard-back]');
     const nextBtn = root.querySelector('[data-wizard-next]');
     const submitBtn = root.querySelector('[data-wizard-submit]');
@@ -130,7 +131,9 @@ export function initWizard(root, track = () => {}) {
             s.hidden = idx !== current;
         });
         const last = current === steps.length - 1;
-        backBtn.hidden = current === 0;
+        const first = current === 0;
+        if (closeBtn) closeBtn.hidden = !first;
+        backBtn.hidden = first;
         nextBtn.hidden = last;
         submitBtn.hidden = !last;
         if (progressText) progressText.textContent = `Krok ${current + 1} z ${steps.length}`;
