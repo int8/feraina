@@ -22,10 +22,6 @@
         <x-logo-mark class="hero-mark lamp" aria-hidden="true" />
         <h1 class="display" aria-label="{{ $heading }}"><span aria-hidden="true" data-scramble-root>{!! $chars !!}<span class="caret"></span></span></h1>
         <p class="hero-sub">{{ str_replace('*', '', $site['hero']['sub_lead']) }}</p>
-        <div class="hero-actions">
-            <a href="{{ route('beta.show') }}" class="btn-primary btn-lg" data-open-beta data-plausible="cta_click" data-plausible-prop-location="hero">{{ $site['hero']['cta_primary'] }}</a>
-            <a href="#co" class="btn-secondary btn-lg">{{ $site['hero']['cta_secondary'] }}</a>
-        </div>
 
         {{-- Dwa filmy do wyboru: „Web" (intro z /studio/intro) i „WhatsApp" (rozmowa z agentem z /studio/whatsapp).
              Nagrywane: npm run record:intro / record:whatsapp. Przełączanie zakładek: app.js. --}}

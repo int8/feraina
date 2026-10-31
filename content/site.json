@@ -34,16 +34,16 @@
         "href": "#faq"
       }
     ],
-    "cta": "SPRAWDŹ TO"
+    "cta": "Wypróbuj"
   },
   "hero": {
     "heading": "Biznes w *pięć* minut",
     "sub_lead": "Ty wyznaczasz kierunek. Agenci AI robią resztę.",
-    "cta_primary": "Zapisz się do bety",
+    "cta_primary": "Zapisz",
     "cta_secondary": "Jak działa Udaina",
     "email_placeholder": "Twój adres e-mail",
     "note": "Zapis do bety jest bezpłatny.",
-    "modal_heading": "Zapisz się do bety",
+    "modal_heading": "Zapisz się",
     "modal_text": "Zostaw adres e-mail. W kolejnym kroku zapytamy o profil firmy i narzędzia, z których korzystasz."
   },
   "features": {
@@ -163,7 +163,7 @@
     "eyebrow": "Cennik",
     "heading": "Jeden abonament zamiast kilku umów",
     "period": "miesięcznie netto",
-    "cta": "SPRAWDŹ TO",
+    "cta": "Zapisz się",
     "plans": [
       {
         "name": "Start",
@@ -229,7 +229,7 @@
     "lead": "Krótko o tym, co zwykle budzi wątpliwości przed zapisem."
   },
   "beta": {
-    "heading": "Dołącz do bety. Liczba miejsc jest ograniczona.",
+    "heading": "Wypróbuj jako jeden z pierwszych",
     "subheading": "Zostaw adres e-mail. W kolejnym kroku zapytamy o profil firmy i narzędzia, z których korzystasz. Zajmie to około minuty.",
     "note": "Bez opłat. Bez karty."
   },
