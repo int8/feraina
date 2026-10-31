@@ -60,7 +60,8 @@ function day(text) {
     return push(d);
 }
 
-function msg(dir, html, time, { read = true } = {}) {
+function msg(dir, html, time, { read = true, today = true } = {}) {
+    if (today) $('wa-clock').textContent = time; // zegar w pasku statusu idzie z rozmową
     const m = document.createElement('div');
     m.className = `msg ${dir}`;
     m.innerHTML = `<span class="txt">${html}</span><span class="meta">${time}${dir === 'out' ? TICKS : ''}</span>`;
@@ -135,6 +136,7 @@ function reset() {
     $('wa-typed').textContent = '';
     $('wa-foot').className = 'wa-foot';
     $('wa-sub').textContent = 'online';
+    $('wa-clock').textContent = '13:37';
     $('phone').classList.remove('in');
     $('cap').classList.remove('in');
     camReset(0);
@@ -145,7 +147,7 @@ export function start() {
 
     // Wczorajsza wiadomość już w rozmowie (łączy ten film z pierwszym: strona wdrożona).
     day('wczoraj');
-    msg('in', MSG.yesterday, '18:42');
+    msg('in', MSG.yesterday, '18:42', { today: false });
     day('dzisiaj');
     $('wa-list').style.transition = 'none';
     $('wa-list').querySelectorAll('.day, .msg').forEach((el) => el.classList.add('in'));
@@ -157,15 +159,15 @@ export function start() {
     const t1 = 1300;
     at(t1, () => typeOut(MSG.ask));
     const sent1 = t1 + MSG.ask.length * TYPE_MS + 450;
-    at(sent1, () => send(MSG.ask, '14:32'));
+    at(sent1, () => send(MSG.ask, '13:37'));
 
     // 2. Raport
     at(sent1 + 700, () => typing(true));
-    at(sent1 + 1900, () => { typing(false); msg('in', MSG.hi, '14:32'); });
+    at(sent1 + 1900, () => { typing(false); msg('in', MSG.hi, '13:37'); });
     at(sent1 + 2500, () => typing(true));
     const reportAt = sent1 + 3700;
     at(reportAt - 200, () => cap(1));
-    at(reportAt, () => { typing(false); msg('in', MSG.report, '14:33'); });
+    at(reportAt, () => { typing(false); msg('in', MSG.report, '13:38'); });
     // Zbliżenie na resztę rozmowy: telefon zostaje w miejscu, dolna krawędź równo z kadrem (pasek statusu wychodzi górą).
     // W pionie telefon i tak wypełnia kadr, a nad nim siedzi podpis – kamera stoi.
     if (!portrait()) at(reportAt + 450, () => focus($('phone'), 1.12, { ms: 1000, dx: -241, bottom: 0 }));
@@ -173,24 +175,24 @@ export function start() {
     // 3. Decyzja
     const oneAt = reportAt + 5200;
     at(oneAt - 1200, () => typing(true));
-    at(oneAt, () => { typing(false); msg('in', MSG.one, '14:33'); });
+    at(oneAt, () => { typing(false); msg('in', MSG.one, '13:38'); });
     at(oneAt + 500, () => typing(true));
     const trendAt = oneAt + 1900;
     at(trendAt - 200, () => cap(2));
-    at(trendAt, () => { typing(false); msg('in', MSG.trend, '14:34'); });
+    at(trendAt, () => { typing(false); msg('in', MSG.trend, '13:38'); });
 
     // 4. „Tak, ale…”
     const t2 = trendAt + 6200;
     at(t2, () => typeOut(MSG.yes));
     const sent2 = t2 + MSG.yes.length * TYPE_MS + 450;
-    at(sent2, () => send(MSG.yes, '14:35'));
+    at(sent2, () => send(MSG.yes, '13:39'));
 
     // 5. Potwierdzenie i 👍
     at(sent2 + 800, () => typing(true));
     const okAt = sent2 + 2300;
     at(okAt - 200, () => cap(3));
     let ok;
-    at(okAt, () => { typing(false); ok = msg('in', MSG.ok, '14:35'); });
+    at(okAt, () => { typing(false); ok = msg('in', MSG.ok, '13:39'); });
     if (!portrait()) at(okAt + 500, () => camReset(1000));
     at(okAt + 2600, () => react(ok, '👍'));
     const total = okAt + 2600 + 3400;

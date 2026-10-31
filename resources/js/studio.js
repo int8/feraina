@@ -98,7 +98,8 @@ function moveCursor(x, y) {
 
 function moveCursorTo(el) {
     const r = sceneRect(el);
-    moveCursor(r.cx - 4, r.cy - 3); // czubek strzałki na środku elementu
+    if (portrait()) moveCursor(r.cx - 32, r.cy - 32); // „palec” (kółko 64px) na środku elementu
+    else moveCursor(r.cx - 4, r.cy - 3); // czubek strzałki na środku elementu
 }
 
 function click(target) {
@@ -300,7 +301,8 @@ export function start() {
     // Telefon z mobilną wersją strony
     const phoneAt = termEnd + 700;
     at(phoneAt, () => { $('phone').classList.add('in'); $('win').classList.add('dim'); });
-    at(phoneAt + 80, () => focusFit($('phone'), portrait() ? 2 : 1.08, { ms: 950, dy: 12, pad: 100 }));
+    // Na telefonie strona zajmuje ten sam telefon co aplikacja, więc kamera wraca do pełnego kadru.
+    at(phoneAt + 80, () => (portrait() ? camReset(900) : focusFit($('phone'), 1.08, { ms: 950, dy: 12, pad: 100 })));
     at(phoneAt + 900, () => $('toast').classList.add('in'));
     at(phoneAt + 1800, () => {
         // Przewijamy treść telefonu do końca (tyle, ile jej jest), zostawiając miejsce na przycisk u dołu.

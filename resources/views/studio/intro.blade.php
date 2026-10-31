@@ -23,8 +23,15 @@
     <div class="menubar" aria-hidden="true">
         <span class="mark"><x-logo-mark class="lamp" /></span><b>Udaina</b><span>Plik</span><span>Edycja</span><span>Widok</span><span>Okno</span><span>Pomoc</span>
         <span class="sp"></span>
-        <span class="ctl"><i class="wifi"></i><i class="batt"></i><span>pon 14:32</span></span>
+        <span class="ctl"><i class="wifi"></i><i class="batt"></i><span>pon 13:37</span></span>
     </div>
+
+    {{-- Na telefonie (?portrait) kafelek i okno aplikacji siedzą w ramce telefonu; w poziomie .app-phone ma display: contents. --}}
+    <div class="app-phone" id="app-phone">
+    <div class="phone-frame"></div>
+    <div class="phone-screen">
+    <div class="phone-island"></div>
+    <div class="phone-status"><span>13:37</span><span class="phone-sig"><i></i><i></i><i></i></span></div>
 
     <div class="tile" id="tile">
         <div class="tile-ico"><x-logo-mark class="lamp" /></div>
@@ -84,13 +91,15 @@
             </div>
         </div>
     </div>
+    </div>
+    </div>
 
-    {{-- Telefon z mobilną wersją strony klienta (po wdrożeniu). --}}
+    {{-- Telefon z mobilną wersją strony klienta (po wdrożeniu). Na telefonie zajmuje dokładnie miejsce ramki aplikacji: ekran „przełącza się” na stronę. --}}
     <div class="phone" id="phone">
         <div class="phone-frame"></div>
         <div class="phone-screen">
             <div class="phone-island"></div>
-            <div class="phone-status"><span>9:41</span><span class="phone-sig"><i></i><i></i><i></i></span></div>
+            <div class="phone-status"><span>13:37</span><span class="phone-sig"><i></i><i></i><i></i></span></div>
             <div class="m" id="m">
                 <header class="m-top">
                     <b><i></i>Pomocni z Dzielnicy</b>

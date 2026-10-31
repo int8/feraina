@@ -447,16 +447,26 @@ body { font-family: var(--font-sans); color: var(--ink); -webkit-font-smoothing:
 /* Ten sam przebieg i markup. Okno aplikacji jest ułożone w pionie i powiększone (zoom), żeby tekst był czytelny na małym ekranie. */
 .portrait, .portrait .scene { width: 1080px; height: 1920px; }
 .portrait .menubar { display: none; }
-.portrait .cursor { width: 60px; height: 60px; }
+/* Palec zamiast strzałki */
+.portrait .cursor { width: 64px; height: 64px; border-radius: 50%; background: rgb(255 255 255 / 0.28); box-shadow: 0 0 0 2px rgb(255 255 255 / 0.65), 0 8px 24px rgb(0 0 0 / 0.45); fill: transparent; stroke: none; filter: none; transform-origin: 50% 50%; }
+.portrait .cursor path { display: none; }
 
-/* Intro: kafelek większy, okno wysokie, kolumny jedna pod drugą */
-.portrait .tile { transform: translate(-50%, -56%) scale(1.15); }
-.portrait .tile.in { transform: translate(-50%, -56%) scale(1.6); }
-.portrait .tile.out { transform: translate(-50%, -56%) scale(2.3); }
-.portrait .win { width: 1000px; height: 1800px; border-radius: 28px; }
+/* Intro: aplikacja w telefonie. Poziomo .app-phone i jego ekran nie istnieją w układzie (display: contents). */
+.app-phone, .app-phone > .phone-screen { display: contents; }
+.app-phone > .phone-frame, .app-phone .phone-island, .app-phone .phone-status { display: none; }
+.portrait .app-phone { display: block; position: absolute; left: 80px; top: 40px; width: 920px; height: 1900px; }
+.portrait .app-phone > .phone-frame { display: block; border-radius: 68px; }
+.portrait .app-phone > .phone-screen { display: block; position: absolute; inset: 12px; border-radius: 58px; overflow: hidden; background: #0b0c0e; }
+.portrait .app-phone .phone-island { display: block; width: 128px; height: 38px; top: 16px; }
+.portrait .app-phone .phone-status { display: flex; top: 22px; font-size: 17px; padding: 0 40px; }
+.portrait .tile { transform: translate(-50%, -56%) scale(1); }
+.portrait .tile.in { transform: translate(-50%, -56%) scale(1.4); }
+.portrait .tile.out { transform: translate(-50%, -56%) scale(2.2); }
+.portrait .win { left: 0; top: 0; width: 100%; height: 100%; border: 0; border-radius: 0; box-shadow: none; padding-top: 58px; transform: scale(0.92); transform-origin: 50% 50%; }
+.portrait .win.in { transform: none; }
 .portrait .win-bar, .portrait .win-body { zoom: 1.9; }
-.portrait .win-bar { grid-template-columns: auto 1fr auto; }
-.portrait .win-right { display: none; }
+.portrait .win-bar { height: 40px; background: var(--white); box-shadow: none; border-bottom: 1px solid var(--line); }
+.portrait .dots, .portrait .win-right { display: none; }
 .portrait .bar { flex-wrap: wrap; gap: 8px 14px; padding: 8px 10px 8px 16px; }
 .portrait .bar #p-explain { flex: 1 1 100%; }
 .portrait .stage { padding: 18px 20px; }
@@ -471,8 +481,16 @@ body { font-family: var(--font-sans); color: var(--ink); -webkit-font-smoothing:
 .portrait .task .steps { font-size: 12.5px; }
 .portrait .term { width: 100%; }
 .portrait .term-out { min-height: 0; font-size: 12.5px; padding: 12px 14px 10px; }
-.portrait .toast { bottom: auto; top: 64px; font-size: 15px; padding: 12px 20px; }   /* jak baner powiadomienia u góry telefonu */
-.portrait .win.dim { opacity: 0.3; filter: blur(3px); transition: opacity 0.6s ease, filter 0.6s ease; }  /* okno gaśnie, gdy wjeżdża telefon */
+.portrait .win.dim { opacity: 0.3; filter: blur(3px); transition: opacity 0.6s ease, filter 0.6s ease; }  /* ekran aplikacji gaśnie, gdy wchodzi strona */
+
+/* Strona klienta: ten sam telefon w tym samym miejscu, więc wygląda to jak przełączenie ekranu */
+.portrait .phone, .portrait .phone.in { left: 80px; top: 40px; width: 920px; height: 1900px; transform: none; }
+.portrait .phone .phone-frame { border-radius: 68px; }
+.portrait .phone .phone-screen { border-radius: 58px; }
+.portrait .phone .phone-island { width: 128px; height: 38px; top: 16px; }
+.portrait .phone .phone-status { top: 22px; font-size: 17px; padding: 0 40px; }
+.portrait .phone .m { zoom: 2.15; }
+.portrait .toast { bottom: auto; top: 74px; font-size: 22px; padding: 16px 28px; }   /* jak baner powiadomienia u góry telefonu */
 
 /* WhatsApp: podpis u góry jako pasek, telefon pod nim na całą szerokość */
 .portrait .wa-cap, .portrait .wa-cap.in, .portrait .wa-cap:not(.in) {

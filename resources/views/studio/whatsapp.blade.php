@@ -23,7 +23,7 @@
         <div class="phone-frame"></div>
         <div class="phone-screen">
             <span class="phone-island"></span>
-            <div class="phone-status"><span>14:32</span><span class="phone-sig"><i></i><i></i><i></i></span></div>
+            <div class="phone-status"><span id="wa-clock">13:37</span><span class="phone-sig"><i></i><i></i><i></i></span></div>
             <div class="wa">
                 <header class="wa-head">
                     <span class="wa-back"><svg viewBox="0 0 12 20" aria-hidden="true"><path d="M10 2 2 10l8 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><b>3</b></span>
