@@ -1,10 +1,14 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AnalyticsController;
 use App\Http\Controllers\BetaController;
 use App\Http\Controllers\LandingController;
 use App\Http\Middleware\AdminBasicAuth;
 use Illuminate\Support\Facades\Route;
+
+// Analytics event proxy (no CSRF: POST from Plausible script).
+Route::post('/api/event', [AnalyticsController::class, 'event'])->withoutMiddleware('web');
 
 Route::get('/', [LandingController::class, 'home'])->name('home');
 Route::get('/polityka-prywatnosci', [LandingController::class, 'privacy'])->name('privacy');

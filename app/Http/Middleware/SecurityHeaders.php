@@ -12,12 +12,10 @@ class SecurityHeaders
     {
         $response = $next($request);
 
-        $plausible = config('beta.plausible.domain') ? parse_url(config('beta.plausible.script'), PHP_URL_HOST) : null;
-        $plausibleOrigin = $plausible ? 'https://'.$plausible : '';
-
-        $scriptSrc = "'self' ".$plausibleOrigin;
+        // First-party Plausible: script and events served from 'self'.
+        $scriptSrc = "'self'";
         $styleSrc = "'self'";
-        $connectSrc = "'self' ".$plausibleOrigin;
+        $connectSrc = "'self'";
 
         // Serwer deweloperski Vite wstrzykuje style i skrypty inline oraz używa websocketa HMR.
         if (app()->environment('local') && is_file(public_path('hot'))) {

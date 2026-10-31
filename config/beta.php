@@ -12,7 +12,7 @@ return [
 
     'plausible' => [
         'domain' => env('PLAUSIBLE_DOMAIN'),
-        'script' => env('PLAUSIBLE_SCRIPT', 'https://plausible.io/js/script.js'),
+        'host' => env('PLAUSIBLE_HOST', 'plausible.io'),
     ],
 
     // Limity zgłoszeń z jednego IP (na minutę).

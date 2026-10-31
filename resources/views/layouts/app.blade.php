@@ -11,7 +11,7 @@
     <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/svg+xml">
     <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
     @if (config('beta.plausible.domain'))
-        <script defer data-domain="{{ config('beta.plausible.domain') }}" src="{{ config('beta.plausible.script') }}"></script>
+        <script defer data-domain="{{ config('beta.plausible.domain') }}" data-api="/api/event" src="{{ asset('js/stats.js') }}"></script>
     @endif
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
