@@ -2,12 +2,12 @@
 <html lang="pl">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=1920">
+    <meta name="viewport" content="width={{ request()->boolean('portrait') ? 1080 : 1920 }}">
     <meta name="robots" content="noindex">
     <title>Studio · WhatsApp</title>
     @vite(['resources/css/studio.css', 'resources/js/studio-whatsapp.js'])
 </head>
-<body class="studio">
+<body class="studio{{ request()->boolean('portrait') ? ' portrait' : '' }}">
 {{--
     Scena 1920×1080 do nagrania drugiego filmu z hero (zakładka „WhatsApp”, npm run record:whatsapp).
     Telefon z rozmową na WhatsAppie: właściciel pyta, jak idzie praca → agent przysyła raport →

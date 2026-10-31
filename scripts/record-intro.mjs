@@ -5,6 +5,7 @@
  *   npm run build                (studio korzysta ze zbudowanych assetów)
  *   npm run record:intro         (scena intro → zakładka „Web” w hero)
  *   npm run record:whatsapp      (scena whatsapp → zakładka „WhatsApp”)
+ *   npm run record:all           (obie sceny, poziomo 1920×1080 i pionowo 1080×1920 → <nazwa>-mobile.* na telefony)
  *
  * Zmienne: STUDIO_URL (domyślnie http://127.0.0.1:8000/studio/<nazwa>), SECONDS (długość filmu; domyślnie tyle, ile trwa scena),
  * POSTER_AT (sekunda plakatu, domyślnie 1.6).
@@ -15,12 +16,14 @@ import { mkdirSync, mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-const name = (process.argv[2] || 'intro').replace(/[^a-z0-9-]/g, '');
-const url = process.env.STUDIO_URL || `http://127.0.0.1:8000/studio/${name}`;
+const scene = (process.argv[2] || 'intro').replace(/[^a-z0-9-]/g, '');
+const isPortrait = process.argv[3] === 'portrait';
+const name = isPortrait ? `${scene}-mobile` : scene;
+const url = process.env.STUDIO_URL || `http://127.0.0.1:8000/studio/${scene}${isPortrait ? '?portrait=1' : ''}`;
 const posterAt = process.env.POSTER_AT || '1.6';
 const seconds = Number(process.env.SECONDS || 0);
 const out = 'public/videos';
-const size = { width: 1920, height: 1080 };
+const size = isPortrait ? { width: 1080, height: 1920 } : { width: 1920, height: 1080 };
 
 mkdirSync(out, { recursive: true });
 const tmp = mkdtempSync(join(tmpdir(), `${name}-`));

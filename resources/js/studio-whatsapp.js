@@ -6,7 +6,7 @@
  * (trend w dzielnicy, kampania Google Ads na 2 tygodnie) → „Tak, ale limit 300 zł” → potwierdzenie → 👍.
  * Lista wiadomości jest przypięta do dołu; nowa wiadomość wsuwa się, a reszta płynnie jedzie w górę (FLIP).
  */
-import { focus, camReset } from './studio-cam.js';
+import { focus, camReset, portrait } from './studio-cam.js';
 
 const ICONS = JSON.parse(document.getElementById('brand-icons')?.textContent || '{}');
 const bi = (id) => ICONS[id] || '';
@@ -167,7 +167,8 @@ export function start() {
     at(reportAt - 200, () => cap(1));
     at(reportAt, () => { typing(false); msg('in', MSG.report, '14:33'); });
     // Zbliżenie na resztę rozmowy: telefon zostaje w miejscu, dolna krawędź równo z kadrem (pasek statusu wychodzi górą).
-    at(reportAt + 450, () => focus($('phone'), 1.12, { ms: 1000, dx: -241, dy: 38 }));
+    // W pionie telefon i tak wypełnia kadr, a nad nim siedzi podpis – kamera stoi.
+    if (!portrait()) at(reportAt + 450, () => focus($('phone'), 1.12, { ms: 1000, dx: -241, bottom: 0 }));
 
     // 3. Decyzja
     const oneAt = reportAt + 5200;
@@ -190,7 +191,7 @@ export function start() {
     at(okAt - 200, () => cap(3));
     let ok;
     at(okAt, () => { typing(false); ok = msg('in', MSG.ok, '14:35'); });
-    at(okAt + 500, () => camReset(1000));
+    if (!portrait()) at(okAt + 500, () => camReset(1000));
     at(okAt + 2600, () => react(ok, '👍'));
     const total = okAt + 2600 + 3400;
 

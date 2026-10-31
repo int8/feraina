@@ -76,11 +76,30 @@ document.querySelectorAll('form[data-beta-start]').forEach((form) => {
 scramble(document.querySelector('[data-scramble-root]'), { startDelay: 150 });
 document.querySelectorAll('[data-reveal]').forEach((h) => reveal(h));
 
-// --- Filmy w hero: przy ograniczonym ruchu zostają na pierwszej klatce ---
+// --- Filmy w hero: na telefonie wersja pionowa (…-mobile), wyżej pozioma. Źródła dopinamy tu, więc ładuje się tylko jedna wersja. ---
 const heroVideos = [...document.querySelectorAll('[data-hero-video]')];
+const mobileDemo = window.matchMedia('(max-width: 767px)').matches;
+const mountHeroVideo = (v) => {
+    if (v.dataset.mounted) return;
+    v.dataset.mounted = '1';
+    const pick = (key) => (mobileDemo && v.dataset[`${key}Mobile`]) || v.dataset[key];
+    if (pick('poster')) v.poster = pick('poster');
+    [['webm', 'video/webm'], ['mp4', 'video/mp4']].forEach(([key, type]) => {
+        const src = pick(key);
+        if (!src) return;
+        const source = document.createElement('source');
+        source.src = src;
+        source.type = type;
+        v.appendChild(source);
+    });
+    v.preload = 'auto';
+    v.load();
+};
 if (reduce) {
+    // Przy ograniczonym ruchu film zostaje na plakacie.
     heroVideos.forEach((v) => { v.removeAttribute('autoplay'); v.pause(); });
 }
+heroVideos.forEach((v) => { if (!v.hidden) mountHeroVideo(v); });
 
 // --- Zakładki nad filmem (Web / WhatsApp): pokazują jeden z filmów, drugi ładuje się dopiero po wyborze ---
 const heroTabs = [...document.querySelectorAll('[data-hero-tab]')];
@@ -95,7 +114,7 @@ const selectHeroTab = (tab) => {
         const on = v.dataset.heroVideo === tab.dataset.heroTab;
         v.hidden = !on;
         if (!on) { v.pause(); return; }
-        if (v.preload === 'none') { v.preload = 'auto'; v.load(); }
+        mountHeroVideo(v);
         if (!reduce) { v.currentTime = 0; v.play().catch(() => {}); }
     });
 };

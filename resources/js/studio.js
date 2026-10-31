@@ -8,10 +8,11 @@
  *   → kamera na dziennik: wpisy, licznik wydatków, raport → odjazd
  *   → kursor klika „Opublikuj stronę" → konsola wdrożenia (linie + pasek postępu) → telefon z mobilną wersją strony, treść wolno przewija.
  *
- * Kamera: focus(el, scale) ustawia transform sceny tak, by element był na środku kadru.
+ * Kamera: focusFit(el, scale) ustawia transform sceny tak, by element był na środku kadru (skala maleje, gdy element nie mieści się w kadrze).
+ * Wersja na telefon (?portrait, kadr 1080×1920): ten sam przebieg, okno ułożone w pionie, kamera jeździ góra–dół.
  */
 
-import { sceneRect, focus, camReset } from './studio-cam.js';
+import { sceneRect, focusFit, camReset, portrait } from './studio-cam.js';
 
 // Ikony marek (inline SVG) przygotowane po stronie PHP – patrz <script type="application/json" id="brand-icons"> w widoku.
 const ICONS = JSON.parse(document.getElementById('brand-icons')?.textContent || '{}');
@@ -186,7 +187,7 @@ function runTask(startAt, index) {
         requestAnimationFrame(() => el.classList.add('in'));
     });
 
-    at(startAt + 140, () => focus(el, 2.05, { ms: index === 0 ? 520 : 480 }));
+    at(startAt + 140, () => focusFit(el, 2.05, { ms: index === 0 ? 520 : 480, pad: 60 }));
 
     steps.forEach((_, i) => {
         at(startAt + 420 + i * STEP_MS, () => {
@@ -240,7 +241,7 @@ export function start() {
         $('panel').hidden = false;
         requestAnimationFrame(() => $('panel').classList.add('in'));
     });
-    at(4400, () => focus($('ask-box'), 1.5, { ms: 1100, dy: -10 }));
+    at(4400, () => focusFit($('ask-box'), 1.5, { ms: 1100, dy: -10 }));
     at(4500, () => $('cursor').classList.remove('show'));
 
     // Opis pomysłu
@@ -258,7 +259,7 @@ export function start() {
 
     // Dziennik
     const logAt = tasksEnd + 100;
-    at(logAt, () => { explain('log'); focus($('col-log'), 1.6, { ms: 700, dx: -150, dy: -40 }); });
+    at(logAt, () => { explain('log'); focusFit($('col-log'), 1.6, { ms: 700, dx: portrait() ? 0 : -150, dy: -40 }); });
     [6, 7, 8].forEach((i, k) => at(logAt + 500 + k * 320, () => logLine(i)));
     at(logAt + 1500, () => { $('p-report').hidden = false; requestAnimationFrame(() => $('p-report').classList.add('in')); });
     at(logAt + 1500, () => { $('p-deploy').disabled = false; $('p-deploy').classList.add('ready'); });
@@ -274,7 +275,7 @@ export function start() {
         show('st-deploy');
         requestAnimationFrame(() => $('term').classList.add('in'));
     });
-    at(deployAt + 1250, () => focus($('term'), 1.45, { ms: 750 }));
+    at(deployAt + 1250, () => focusFit($('term'), 1.45, { ms: 750, pad: 60 }));
     const termStart = deployAt + 1700;
     DEPLOY.forEach(([cls, text, pct], i) => {
         at(termStart + i * DEPLOY_STEP, () => {
@@ -298,8 +299,8 @@ export function start() {
 
     // Telefon z mobilną wersją strony
     const phoneAt = termEnd + 700;
-    at(phoneAt, () => { $('phone').classList.add('in'); });
-    at(phoneAt + 80, () => focus($('phone'), 1.08, { ms: 950, dy: 12 }));
+    at(phoneAt, () => { $('phone').classList.add('in'); $('win').classList.add('dim'); });
+    at(phoneAt + 80, () => focusFit($('phone'), portrait() ? 2 : 1.08, { ms: 950, dy: 12, pad: 100 }));
     at(phoneAt + 900, () => $('toast').classList.add('in'));
     at(phoneAt + 1800, () => {
         // Przewijamy treść telefonu do końca (tyle, ile jej jest), zostawiając miejsce na przycisk u dołu.

@@ -7,7 +7,9 @@
         "dev": "vite",
         "record:intro": "node scripts/record-intro.mjs intro",
         "record:whatsapp": "node scripts/record-intro.mjs whatsapp",
-        "record:all": "npm run record:intro && npm run record:whatsapp",
+        "record:intro:mobile": "node scripts/record-intro.mjs intro portrait",
+        "record:whatsapp:mobile": "node scripts/record-intro.mjs whatsapp portrait",
+        "record:all": "npm run record:intro && npm run record:intro:mobile && npm run record:whatsapp && npm run record:whatsapp:mobile",
         "sync:brands": "node scripts/sync-brands.mjs"
     },
     "devDependencies": {

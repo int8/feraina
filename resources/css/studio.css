@@ -349,7 +349,7 @@ body { font-family: var(--font-sans); color: var(--ink); -webkit-font-smoothing:
 .m-cta span { font-size: 12.5px; font-weight: 600; color: var(--g2); }
 
 .toast {
-    position: absolute; left: 50%; bottom: -58px; transform: translate(-50%, 12px);
+    position: absolute; left: 50%; bottom: -58px; z-index: 10; transform: translate(-50%, 12px);
     padding: 10px 16px; border-radius: 999px; background: var(--ink); color: var(--paper);
     font-family: var(--font-mono); font-size: 12px; white-space: nowrap;
     box-shadow: 0 10px 30px -10px rgb(0 0 0 / 0.8);
@@ -442,3 +442,50 @@ body { font-family: var(--font-sans); color: var(--ink); -webkit-font-smoothing:
 .wa-cap-k .brand-ico { width: 22px; height: 22px; margin: 0; }
 .wa-cap-t { font-size: 50px; font-weight: 510; letter-spacing: -0.032em; line-height: 1.08; color: var(--ink); text-wrap: balance; }
 .wa-cap-s { font-size: 19px; color: var(--ink-soft); max-width: 44ch; }
+
+/* ======================= Wersja pionowa na telefon (body.portrait, kadr 1080×1920) ======================= */
+/* Ten sam przebieg i markup. Okno aplikacji jest ułożone w pionie i powiększone (zoom), żeby tekst był czytelny na małym ekranie. */
+.portrait, .portrait .scene { width: 1080px; height: 1920px; }
+.portrait .menubar { display: none; }
+.portrait .cursor { width: 60px; height: 60px; }
+
+/* Intro: kafelek większy, okno wysokie, kolumny jedna pod drugą */
+.portrait .tile { transform: translate(-50%, -56%) scale(1.15); }
+.portrait .tile.in { transform: translate(-50%, -56%) scale(1.6); }
+.portrait .tile.out { transform: translate(-50%, -56%) scale(2.3); }
+.portrait .win { width: 1000px; height: 1800px; border-radius: 28px; }
+.portrait .win-bar, .portrait .win-body { zoom: 1.9; }
+.portrait .win-bar { grid-template-columns: auto 1fr auto; }
+.portrait .win-right { display: none; }
+.portrait .bar { flex-wrap: wrap; gap: 8px 14px; padding: 8px 10px 8px 16px; }
+.portrait .bar #p-explain { flex: 1 1 100%; }
+.portrait .stage { padding: 18px 20px; }
+.portrait #st-prompt { max-width: none; }
+.portrait .ask-box { font-size: 18px; min-height: 150px; padding: 16px 18px; }
+.portrait .cols2 { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+.portrait .col { padding: 16px 20px; }
+.portrait .hint { display: none; }
+.portrait .col h4 { margin-bottom: 12px; }
+.portrait .col + .col { border-left: 0; border-top: 1px solid var(--line); }
+.portrait .task { font-size: 14px; padding: 10px 12px; }
+.portrait .task .steps { font-size: 12.5px; }
+.portrait .term { width: 100%; }
+.portrait .term-out { min-height: 0; font-size: 12.5px; padding: 12px 14px 10px; }
+.portrait .toast { bottom: auto; top: 64px; font-size: 15px; padding: 12px 20px; }   /* jak baner powiadomienia u góry telefonu */
+.portrait .win.dim { opacity: 0.3; filter: blur(3px); transition: opacity 0.6s ease, filter 0.6s ease; }  /* okno gaśnie, gdy wjeżdża telefon */
+
+/* WhatsApp: podpis u góry jako pasek, telefon pod nim na całą szerokość */
+.portrait .wa-cap, .portrait .wa-cap.in, .portrait .wa-cap:not(.in) {
+    left: 0; right: 0; top: 0; width: auto; height: 250px;
+    padding: 54px 80px 0; align-content: start; gap: 8px;
+    transform: none;
+    background: linear-gradient(180deg, var(--paper) 0%, var(--paper) 78%, transparent 100%);
+    z-index: 5;
+}
+.portrait .wa-cap:not(.in) { opacity: 0; }
+.portrait .wa-cap-k { font-size: 20px; }
+.portrait .wa-cap-k .brand-ico { width: 30px; height: 30px; }
+.portrait .wa-cap-t { font-size: 46px; }
+.portrait .wa-cap-s { font-size: 23px; max-width: none; }
+.portrait .wa-phone { zoom: 1.66; left: 75px; top: 150px; }
+.portrait .wa-phone .phone-frame { box-shadow: 0 0 0 1px rgb(255 255 255 / 0.18), 0 30px 80px -20px rgb(0 0 0 / 0.9), 0 0 100px -30px rgb(var(--glow) / 0.35); }

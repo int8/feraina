@@ -22,7 +22,9 @@ class PagesTest extends TestCase
             'data-hero-tab="web"',
             'data-hero-tab="whatsapp"',
             'videos/intro.mp4',
+            'videos/intro-mobile.mp4',
             'videos/whatsapp.mp4',
+            'videos/whatsapp-mobile.mp4',
             'id="co"',
             'Cztery obszary',
             'id="integracje"',
@@ -115,10 +117,11 @@ class PagesTest extends TestCase
 
     public function test_plausible_script_only_when_configured(): void
     {
-        $this->get('/')->assertDontSee('plausible.io');
+        $this->get('/')->assertDontSee('data-domain=', false);
         config(['beta.plausible.domain' => 'example.pl']);
-        $this->get('/')->assertSee('data-domain="example.pl"', false);
-        $this->assertStringContainsString('https://plausible.io', $this->get('/')->headers->get('Content-Security-Policy'));
+        // Skrypt i zdarzenia idą przez własną domenę (public/js/stats.js + POST /api/event), więc CSP zostaje przy 'self'.
+        $response = $this->get('/')->assertSee('data-domain="example.pl"', false)->assertSee('data-api="/api/event"', false);
+        $this->assertStringNotContainsString('plausible.io', $response->headers->get('Content-Security-Policy'));
     }
 
     private function startSurvey(): void

@@ -504,6 +504,10 @@
     height: 100%;
     object-fit: cover;
 }
+/* Na telefonie film jest pionowy (wersje …-mobile nagrane w kadrze 1080×1920). Ten sam próg co w app.js. */
+@media (max-width: 767px) {
+    .hero-video { aspect-ratio: 9 / 16; }
+}
 @media (max-width: 640px) {
     .hero { padding-top: 36px; }
     .hero-mark { width: 60px; height: 60px; margin-bottom: 22px; }

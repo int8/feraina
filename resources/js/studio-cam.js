@@ -1,8 +1,12 @@
 /**
- * Kamera scen studio (1920×1080): .scene ma transform-origin 0 0, a focus() ustawia translate + scale
+ * Kamera scen studio: .scene ma transform-origin 0 0, a focus() ustawia translate + scale
  * tak, by wybrany element wylądował na środku kadru. Wspólne dla /studio/intro i /studio/whatsapp.
+ * Kadr to rozmiar .scene (1920×1080 poziomo, 1080×1920 w wersji na telefon: body.portrait).
  */
 const scene = () => document.getElementById('scene');
+const frame = () => ({ W: scene().offsetWidth, H: scene().offsetHeight });
+
+export const portrait = () => document.body.classList.contains('portrait');
 
 export function sceneMatrix() {
     const t = getComputedStyle(scene()).transform;
@@ -19,11 +23,23 @@ export function sceneRect(el) {
 }
 
 // dx/dy przesuwają punkt, który ląduje na środku (ujemne dx = element po prawej od środka).
-export function focus(el, s, { ms = 650, dx = 0, dy = 0 } = {}) {
+// bottom: zamiast centrować w pionie, dolna krawędź elementu ląduje `bottom` px nad dolną krawędzią kadru.
+export function focus(el, s, { ms = 650, dx = 0, dy = 0, bottom } = {}) {
     const r = sceneRect(el);
+    const { W, H } = frame();
     const sc = scene();
+    const ty = bottom === undefined ? H / 2 - (r.cy + dy) * s : H - bottom - (r.y + r.h) * s;
     sc.style.setProperty('--cam-ms', `${ms}ms`);
-    sc.style.transform = `translate(${960 - (r.cx + dx) * s}px, ${540 - (r.cy + dy) * s}px) scale(${s})`;
+    sc.style.transform = `translate(${W / 2 - (r.cx + dx) * s}px, ${ty}px) scale(${s})`;
+}
+
+// Jak focus(), ale skala nie przekroczy tej, przy której element (z marginesem pad) mieści się w kadrze.
+export function focusFit(el, maxScale, { pad = 80, ...opts } = {}) {
+    const r = sceneRect(el);
+    const { W, H } = frame();
+    const s = Math.min(maxScale, (W - pad) / r.w, (H - pad) / r.h);
+    focus(el, s, opts);
+    return s;
 }
 
 export function camReset(ms = 650) {

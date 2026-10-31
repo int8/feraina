@@ -23,8 +23,8 @@
         <h1 class="display" aria-label="{{ $heading }}"><span aria-hidden="true" data-scramble-root>{!! $chars !!}<span class="caret"></span></span></h1>
         <p class="hero-sub">{{ str_replace('*', '', $site['hero']['sub_lead']) }}</p>
 
-        {{-- Dwa filmy do wyboru: „Web" (intro z /studio/intro) i „WhatsApp" (rozmowa z agentem z /studio/whatsapp).
-             Nagrywane: npm run record:intro / record:whatsapp. Przełączanie zakładek: app.js. --}}
+        {{-- Dwa filmy do wyboru: „Web" (intro z /studio/intro) i „WhatsApp" (rozmowa z agentem z /studio/whatsapp), każdy w wersji poziomej
+             i pionowej na telefon. Nagrywane: npm run record:all. Przełączanie zakładek: app.js. --}}
         <div class="hero-tabs" role="tablist" aria-label="Jak korzystasz z Udainy" data-hero-tabs>
             <button type="button" role="tab" id="hero-tab-web" class="hero-tab" aria-selected="true" aria-controls="hero-demo" data-hero-tab="web" data-plausible="hero_tab" data-plausible-prop-channel="web">
                 <svg class="hero-tab-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8.5 21h7M12 17.5V21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
@@ -36,15 +36,18 @@
             </button>
         </div>
         <div class="hero-stage">
+        {{-- Film w kanale: na telefonie wersja pionowa (…-mobile, 9:16), na większych ekranach pozioma (16:9).
+             Źródła dopina app.js, więc ładuje się tylko jedna wersja; bez JS zostaje plakat. --}}
         <div class="hero-video" id="hero-demo" role="tabpanel" aria-labelledby="hero-tab-web">
-            <video autoplay loop muted playsinline preload="auto" poster="{{ asset('videos/intro-poster.jpg') }}" aria-hidden="true" tabindex="-1" data-hero-video="web">
-                <source src="{{ asset('videos/intro.webm') }}" type="video/webm">
-                <source src="{{ asset('videos/intro.mp4') }}" type="video/mp4">
-            </video>
-            <video loop muted playsinline preload="none" poster="{{ asset('videos/whatsapp-poster.jpg') }}" aria-hidden="true" tabindex="-1" data-hero-video="whatsapp" hidden>
-                <source src="{{ asset('videos/whatsapp.webm') }}" type="video/webm">
-                <source src="{{ asset('videos/whatsapp.mp4') }}" type="video/mp4">
-            </video>
+            @foreach (['web' => 'intro', 'whatsapp' => 'whatsapp'] as $channel => $base)
+                <video loop muted playsinline aria-hidden="true" tabindex="-1"
+                    @if ($loop->first) autoplay preload="auto" @else preload="none" hidden @endif
+                    poster="{{ asset("videos/{$base}-poster.jpg") }}"
+                    data-hero-video="{{ $channel }}"
+                    data-webm="{{ asset("videos/{$base}.webm") }}" data-mp4="{{ asset("videos/{$base}.mp4") }}"
+                    data-webm-mobile="{{ asset("videos/{$base}-mobile.webm") }}" data-mp4-mobile="{{ asset("videos/{$base}-mobile.mp4") }}"
+                    data-poster-mobile="{{ asset("videos/{$base}-mobile-poster.jpg") }}"></video>
+            @endforeach
         </div>
 
         {{-- Robocik: spaceruje po dolnej krawędzi filmu (prawy róg) i myśli o 🤡 xd. Czysta ozdoba, tylko CSS. --}}
