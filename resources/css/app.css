@@ -524,12 +524,15 @@
 }
 /* Na telefonie film jest pionowy (wersje …-mobile nagrane w kadrze 1080×1920). Ten sam próg co w app.js. */
 @media (max-width: 767px) {
+    /* Telefon: film wyżej, żeby nie trzeba było zjeżdżać: mniejszy znak i ciaśniejsze odstępy w hero. */
+    .hero { padding-top: 24px; }
+    .hero-mark { width: 60px; height: 60px; margin-bottom: 18px; }
+    .hero-sub { margin: 12px auto 28px; }
+    .hero-tabs { margin-top: 0; }
+    .hero-stage { margin-top: 14px; }
     .hero-video { aspect-ratio: 9 / 16; }
 }
 @media (max-width: 640px) {
-    .hero { padding-top: 36px; }
-    .hero-mark { width: 60px; height: 60px; margin-bottom: 22px; }
-    .hero-stage { margin-top: 36px; }
     .hero-video { border-radius: 8px; }
 }
 
