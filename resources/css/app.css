@@ -1022,13 +1022,13 @@ body::before {
     z-index: -1;
     pointer-events: none;
     background:
-        linear-gradient(180deg, rgb(8 9 10 / 0.18) 0%, rgb(8 9 10 / 0.5) 50%, rgb(8 9 10 / 0.9) 100%),
+        linear-gradient(180deg, rgb(8 9 10 / 0.72) 0%, rgb(8 9 10 / 0.84) 50%, rgb(8 9 10 / 0.95) 100%),
         url('/img/bg-skate.jpg') center 22% / cover no-repeat;
 }
 @supports (background-image: image-set(url('a.webp') type('image/webp'))) {
     body::before {
         background-image:
-            linear-gradient(180deg, rgb(8 9 10 / 0.18) 0%, rgb(8 9 10 / 0.5) 50%, rgb(8 9 10 / 0.9) 100%),
+            linear-gradient(180deg, rgb(8 9 10 / 0.72) 0%, rgb(8 9 10 / 0.84) 50%, rgb(8 9 10 / 0.95) 100%),
             image-set(url('/img/bg-skate.webp') type('image/webp'), url('/img/bg-skate.jpg') type('image/jpeg'));
     }
 }
