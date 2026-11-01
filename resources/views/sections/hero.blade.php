@@ -76,13 +76,15 @@
                 <rect x="28" y="78" width="64" height="44" rx="14" fill="#8ea2ff" stroke="#0b0c0e" stroke-width="4"/>
                 <circle class="bot-light" cx="60" cy="99" r="5" fill="#ff7a30"/>
                 <g class="bot-head">
-                    <path d="M60 12V5" stroke="#0b0c0e" stroke-width="4" stroke-linecap="round"/>
-                    <circle class="bot-light" cx="60" cy="5" r="4.5" fill="#ff7a30"/>
+                    <path d="M60 2V-5" stroke="#0b0c0e" stroke-width="4" stroke-linecap="round"/>
+                    <circle class="bot-light" cx="60" cy="-6" r="4.5" fill="#ff7a30"/>
                     <rect x="12" y="32" width="12" height="24" rx="5" fill="#8ea2ff" stroke="#0b0c0e" stroke-width="4"/>
                     <rect x="96" y="32" width="12" height="24" rx="5" fill="#8ea2ff" stroke="#0b0c0e" stroke-width="4"/>
-                    <rect x="22" y="12" width="76" height="62" rx="18" fill="#8ea2ff" stroke="#0b0c0e" stroke-width="4"/>
-                    <rect x="38" y="32" width="46" height="26" rx="9" fill="#e9ecff" stroke="#0b0c0e" stroke-width="4"/>
-                    <path class="bot-eyes" d="M49 45h8M63 45h8" stroke="#0b0c0e" stroke-width="4" stroke-linecap="round"/>
+                    {{-- Głowa: zdjęcie (public/img/bot-face.png, wycięte z tła) przycięte do zaokrąglonego kwadratu --}}
+                    <clipPath id="bot-face-clip"><rect x="20" y="0" width="80" height="80" rx="26"/></clipPath>
+                    <rect x="20" y="0" width="80" height="80" rx="26" fill="#8ea2ff"/>
+                    <image href="{{ asset('img/bot-face.png') }}" x="20" y="0" width="80" height="80" preserveAspectRatio="xMidYMid slice" clip-path="url(#bot-face-clip)"/>
+                    <rect x="20" y="0" width="80" height="80" rx="26" fill="none" stroke="#0b0c0e" stroke-width="4"/>
                 </g>
             </svg>
         </div>

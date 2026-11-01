@@ -239,17 +239,24 @@
     }
 
     /* Pola */
+    /* Pole jak pigułka, w parze z białym przyciskiem: jaśniejsze tło i obrys, żeby nie ginęło na ciemnym panelu. */
     .input {
-        @apply w-full px-3.5 text-ink placeholder:text-stone;
-        height: 44px;
-        font-size: 15px;
-        background: #0f1012;
-        border: 1px solid rgb(255 255 255 / 0.12);
+        @apply w-full text-ink placeholder:text-stone;
+        height: 48px;
+        padding: 0 20px;
+        font-size: 16px; /* 16px: iOS nie przybliża strony po dotknięciu pola */
+        background: rgb(255 255 255 / 0.07);
+        border: 1px solid rgb(255 255 255 / 0.18);
         border-radius: var(--radius-btn);
+        box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.05);
+        transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
     }
+    .input:hover { border-color: rgb(255 255 255 / 0.28); }
     .input:focus {
         outline: none;
-        border-color: var(--color-ink);
+        background: rgb(255 255 255 / 0.09);
+        border-color: var(--color-accent-soft);
+        box-shadow: 0 0 0 3px rgb(var(--glow) / 0.22);
     }
 
     .input-error {
@@ -540,13 +547,12 @@
 }
 @media (min-width: 900px) { .bot { display: block; } }
 .bot-fig { display: block; width: 100%; height: 100%; overflow: visible; animation: bot-bob 0.6s ease-in-out infinite; }
-.bot-leg, .bot-arm, .bot-head, .bot-eyes { transform-box: view-box; }
+.bot-leg, .bot-arm, .bot-head { transform-box: view-box; }
 .bot-leg-l { transform-origin: 46px 118px; animation: bot-swing 0.6s ease-in-out infinite; }
 .bot-leg-r { transform-origin: 74px 118px; animation: bot-swing 0.6s ease-in-out infinite reverse; }
 .bot-arm-l { transform-origin: 30px 86px; animation: bot-swing 0.6s ease-in-out infinite reverse; }
 .bot-arm-r { transform-origin: 90px 86px; animation: bot-swing 0.6s ease-in-out infinite; }
 .bot-head { transform-origin: 60px 72px; animation: bot-tilt 1.2s ease-in-out infinite; }
-.bot-eyes { animation: bot-look 7s ease-in-out infinite; }
 .bot-light { filter: drop-shadow(0 0 4px rgb(var(--glow) / 0.9)); animation: bot-pulse 1.4s ease-in-out infinite; }
 .bot-think {
     position: absolute;
@@ -569,7 +575,6 @@
 @keyframes bot-bob { 0%, 50%, 100% { transform: translateY(0); } 25%, 75% { transform: translateY(-3px); } }
 @keyframes bot-swing { 0%, 100% { transform: rotate(-24deg); } 50% { transform: rotate(24deg); } }
 @keyframes bot-tilt { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
-@keyframes bot-look { 0%, 100% { transform: translateX(-4px); } 45%, 55% { transform: translateX(4px); } }
 @keyframes bot-pulse { 50% { opacity: 0.55; } }
 @keyframes bot-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
 
@@ -978,7 +983,7 @@
     padding: 72px 24px;
     text-align: center;
 }
-.cta-panel .section-title { max-width: 24ch; margin-inline: auto; }
+.cta-panel .section-title { margin-inline: auto; text-wrap: balance; }
 .cta-panel .lead { margin: 14px auto 0; text-align: center; }
 .cta-form { max-width: 30rem; margin: 28px auto 0; }
 .email-form {
@@ -988,7 +993,13 @@
 @media (max-width: 480px) {
     .email-form { flex-direction: column; }
 }
-.email-form .input { flex: 1; }
+.email-form .input { flex: 1 1 auto; } /* podstawa auto: w układzie pionowym pole zachowuje 48px wysokości (flex: 1 zgniatało je do linii tekstu) */
+.email-form .btn-primary { height: 48px; padding: 0 24px; }
+@media (max-width: 640px) {
+    /* Nagłówek ma zostać w jednej linii także na telefonie: mniejszy stopień zamiast łamania. */
+    .cta-panel { padding: 56px 20px; }
+    .cta-panel .section-title { font-size: clamp(1.1rem, 5vw, 1.9rem); text-wrap: nowrap; }
+}
 .email-note {
     margin-top: 12px;
     font-family: var(--font-label);
@@ -996,6 +1007,31 @@
     text-transform: var(--label-transform);
     letter-spacing: var(--label-tracking);
     color: var(--color-stone);
+}
+
+/* ---------- Tło: szkic pod całą stroną (public/img/bg-skate.*: skater, biała kredka na czarnym papierze) ----------
+   Warstwa przypięta do ekranu (nie background-attachment: fixed, bo iOS go nie obsługuje). Gradient przyciemnia szkic
+   coraz mocniej ku dołowi, żeby nagłówek i panele zostały czytelne; z-index -1 chowa ją pod treść, ponad tło body. */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        linear-gradient(180deg, rgb(8 9 10 / 0.18) 0%, rgb(8 9 10 / 0.5) 50%, rgb(8 9 10 / 0.9) 100%),
+        url('/img/bg-skate.jpg') center 22% / cover no-repeat;
+}
+@supports (background-image: image-set(url('a.webp') type('image/webp'))) {
+    body::before {
+        background-image:
+            linear-gradient(180deg, rgb(8 9 10 / 0.18) 0%, rgb(8 9 10 / 0.5) 50%, rgb(8 9 10 / 0.9) 100%),
+            image-set(url('/img/bg-skate.webp') type('image/webp'), url('/img/bg-skate.jpg') type('image/jpeg'));
+    }
+}
+@media (min-width: 768px) {
+    /* Na większych ekranach szkic powiększony ponad kadr: skater rośnie za nagłówkiem. */
+    body::before { background-size: auto, 115% auto; background-position: center, 50% 30%; }
 }
 
 /* ---------- Okno zapisu do bety ---------- */
@@ -1008,7 +1044,9 @@
     border-radius: var(--radius-panel);
     background: linear-gradient(180deg, rgb(255 255 255 / 0.03), transparent 60%), var(--color-white);
     color: var(--color-ink);
-    position: relative;
+    /* fixed + inset 0: okno zawsze na środku ekranu, także gdy strona jest przewinięta (relative zostawiało je u góry dokumentu). */
+    position: fixed;
+    inset: 0;
 }
 .beta-modal::backdrop { background: rgb(0 0 0 / 0.7); }
 .beta-modal:not([open]) { display: none; }
