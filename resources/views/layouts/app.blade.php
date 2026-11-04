@@ -7,6 +7,7 @@
     <meta name="description" content="{{ $content->fill($site['product']['meta_description']) }}">
     <meta name="color-scheme" content="dark">
     <meta name="theme-color" content="#08090a">
+    <meta name="google-site-verification" content="5Zmy13zM6VZVUmd1iiSAaBBa5rt_4AK6f1_xefW8-J4">
     <link rel="icon" href="{{ asset('favicon-32.png') }}" sizes="32x32" type="image/png">
     <link rel="icon" href="{{ asset('favicon-192.png') }}" sizes="192x192" type="image/png">
     <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/svg+xml">
