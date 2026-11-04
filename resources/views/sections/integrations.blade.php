@@ -13,7 +13,7 @@
         <div class="panel-grey">
             <div>
                 <p class="eyebrow">{{ $site['integrations']['eyebrow'] }}</p>
-                <h2 class="section-title sm" data-reveal>{{ $site['integrations']['heading'] }}</h2>
+                <h2 class="section-title sm">{{ $site['integrations']['heading'] }}</h2>
                 <p class="lead">{!! \App\Support\Brands::mark($site['integrations']['lead']) !!}</p>
             </div>
             <div>
@@ -28,7 +28,6 @@
                         </div>
                     @endforeach
                 </div>
-                <p class="marquee-note">{!! \App\Support\Brands::mark($site['integrations']['note']) !!}</p>
             </div>
         </div>
     </div>

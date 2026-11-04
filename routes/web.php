@@ -14,14 +14,14 @@ Route::get('/', [LandingController::class, 'home'])->name('home');
 Route::get('/polityka-prywatnosci', [LandingController::class, 'privacy'])->name('privacy');
 Route::get('/regulamin', [LandingController::class, 'terms'])->name('terms');
 
-Route::get('/beta', [BetaController::class, 'show'])->name('beta.show');
-Route::post('/beta', [BetaController::class, 'start'])->middleware('throttle:beta-start')->name('beta.start');
-Route::get('/beta/ankieta', [BetaController::class, 'survey'])->name('beta.survey');
-Route::post('/beta/ankieta/postep', [BetaController::class, 'progress'])->middleware('throttle:beta-progress')->name('beta.progress');
-Route::post('/beta/ankieta', [BetaController::class, 'finish'])->middleware('throttle:beta-start')->name('beta.finish');
-Route::get('/beta/dziekujemy', [BetaController::class, 'thanks'])->name('beta.thanks');
-Route::get('/beta/potwierdz/{token}', [BetaController::class, 'confirm'])->name('beta.confirm');
-Route::match(['get', 'post'], '/wypisz/{token}', [BetaController::class, 'unsubscribe'])->name('unsubscribe');
+Route::get('/signup', [BetaController::class, 'show'])->name('beta.show');
+Route::post('/signup', [BetaController::class, 'start'])->middleware('throttle:beta-start')->name('beta.start');
+Route::get('/signup/survey', [BetaController::class, 'survey'])->name('beta.survey');
+Route::post('/signup/progress', [BetaController::class, 'progress'])->middleware('throttle:beta-progress')->name('beta.progress');
+Route::post('/signup/survey', [BetaController::class, 'finish'])->middleware('throttle:beta-start')->name('beta.finish');
+Route::get('/signup/thanks', [BetaController::class, 'thanks'])->name('beta.thanks');
+Route::get('/signup/confirm/{token}', [BetaController::class, 'confirm'])->name('beta.confirm');
+Route::match(['get', 'post'], '/unsubscribe/{token}', [BetaController::class, 'unsubscribe'])->name('unsubscribe');
 
 Route::middleware(AdminBasicAuth::class)->prefix('panel')->name('admin.')->group(function () {
     Route::get('/', [AdminController::class, 'dashboard'])->name('dashboard');

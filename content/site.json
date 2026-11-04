@@ -7,23 +7,19 @@
     "meta_description": "AI codziennie prowadzi bieżące sprawy małej firmy w internecie: stronę, reklamy, komunikację z klientami i faktury. Ustalasz miesięczny budżet, a każdego ranka otrzymujesz raport z działań i listę decyzji do zatwierdzenia."
   },
   "company": {
-    "name": "udaina.com",
-    "address": "[ADRES]",
-    "email": "[E-MAIL KONTAKTOWY]"
+    "name": "Udaina",
+    "address": "ul. Zwycięstwa 241/9, 81-521 Gdynia",
+    "email": "hello@udaina.com"
   },
   "nav": {
     "links": [
       {
-        "label": "Co robi",
+        "label": "Możliwości",
         "href": "#co"
       },
       {
         "label": "Narzędzia",
         "href": "#integracje"
-      },
-      {
-        "label": "Przykładowy dzień pracy",
-        "href": "#dzien"
       },
       {
         "label": "Cennik",
@@ -34,17 +30,16 @@
         "href": "#faq"
       }
     ],
-    "cta": "Wypróbuj"
+    "cta": "Zacznij"
   },
   "hero": {
     "heading": "Biznes w *pięć* minut",
-    "sub_lead": "Ty wyznaczasz kierunek. Agenci AI robią resztę.",
+    "sub_lead": "Ty wyznaczasz kierunek. Nasi agenci AI robią resztę.",
     "cta_primary": "Zapisz",
     "cta_secondary": "Jak działa Udaina",
     "email_placeholder": "Twój adres e-mail",
-    "note": "Zapis do bety jest bezpłatny.",
-    "modal_heading": "Zapisz się",
-    "modal_text": "Zostaw adres e-mail. W kolejnym kroku zapytamy o profil firmy i narzędzia, z których korzystasz."
+    "note": "Zapis jest bezpłatny.",
+    "modal_heading": "Zapisz się"
   },
   "features": {
     "eyebrow": "Zakres działania",
@@ -92,12 +87,12 @@
       {
         "name": "Marketing",
         "tools": "Facebook i Instagram · Google Ads · Google Business Profile · LinkedIn",
-        "status": "w becie"
+        "status": "działa"
       },
       {
         "name": "Komunikacja",
         "tools": "Gmail · Outlook · Messenger · WhatsApp · SMSAPI",
-        "status": "w becie"
+        "status": "działa"
       },
       {
         "name": "Faktury i księgowość",
@@ -107,55 +102,17 @@
       {
         "name": "Płatności",
         "tools": "Przelewy24 · BLIK · PayU · Stripe",
-        "status": "w becie"
+        "status": "działa"
       },
       {
         "name": "Sprzedaż i e-commerce",
         "tools": "Allegro · BaseLinker · Shopify · WooCommerce · Shoper · IdoSell",
-        "status": "w becie"
+        "status": "działa"
       },
       {
         "name": "Wysyłka",
         "tools": "InPost · DPD · Furgonetka · Apaczka",
-        "status": "w becie"
-      }
-    ],
-    "note": "+ każde inne narzędzie przez e-mail lub API"
-  },
-  "day": {
-    "eyebrow": "Przykładowy dzień pracy",
-    "heading": "Co się dzieje, kiedy Ty prowadzisz firmę",
-    "lead": "Agenci pracują w tle od rana do wieczora. Ty dostajesz krótki raport i listę rzeczy do zatwierdzenia.",
-    "entries": [
-      {
-        "time": "07:00",
-        "title": "Raport poranny",
-        "text": "Co zrobiono wczoraj, ile wydano, co czeka na Twoją decyzję."
-      },
-      {
-        "time": "09:30",
-        "title": "Klienci",
-        "text": "Odpowiedzi na maile i Messengera w tonie Twojej firmy. Sprawy nietypowe trafiają do Ciebie."
-      },
-      {
-        "time": "12:00",
-        "title": "Reklamy",
-        "text": "Wyłączone słowa kluczowe bez zapisów, budżet przeniesiony tam, gdzie działa."
-      },
-      {
-        "time": "15:00",
-        "title": "Faktury",
-        "text": "Wystawione faktury, przypomnienie do klienta po terminie, KSeF odhaczony."
-      },
-      {
-        "time": "18:00",
-        "title": "Treści",
-        "text": "Post na profilu firmy i poprawka nagłówka na stronie po wynikach z tygodnia."
-      },
-      {
-        "time": "23:00",
-        "title": "Podsumowanie",
-        "text": "Dziennik zamknięty. Rano dostaniesz jedną wiadomość zamiast dziesięciu."
+        "status": "działa"
       }
     ]
   },
@@ -168,70 +125,114 @@
       {
         "name": "Start",
         "price": "99 zł",
+        "for": "Dla jednoosobowej firmy, która chce być widoczna w internecie.",
         "features": [
-          "Strona internetowa",
-          "Podstawowe reklamy",
-          "Raport tygodniowy"
+          {
+            "title": "Strona internetowa",
+            "text": "Agent buduje stronę z Twojej opowieści o firmie, publikuje ją pod Twoją domeną i poprawia treści, kiedy coś się zmienia."
+          },
+          {
+            "title": "Reklamy lokalne w Google",
+            "text": "Proste kampanie dla klientów z Twojej okolicy, w ramach budżetu, który ustalasz. Agent wyłącza te, które nie przynoszą zapytań."
+          },
+          {
+            "title": "Raport tygodniowy",
+            "text": "Raz w tygodniu na WhatsAppie: co się wydarzyło, ile kosztowało i co agent proponuje na kolejny tydzień."
+          }
         ]
       },
       {
         "name": "Biznes",
         "price": "259 zł",
         "featured": true,
+        "for": "Dla firmy, która codziennie rozmawia z klientami.",
         "features": [
-          "Strona internetowa",
-          "Reklamy na Facebooku i Google",
-          "Obsługa klientów",
-          "Raport dzienny"
+          {
+            "title": "Wszystko z planu Start"
+          },
+          {
+            "title": "Reklamy na Facebooku, Instagramie i w Google",
+            "text": "Agent pisze teksty, przygotowuje grafiki i testuje warianty. Wyłącza reklamy, które nie przynoszą klientów, i nie wyda więcej, niż ustaliliście."
+          },
+          {
+            "title": "Obsługa klientów",
+            "text": "Odpowiada na e-maile, Messengera i opinie w Google w tonie Twojej firmy. Zna cennik i kalendarz, więc odpowiada konkretnie. Reklamacje i sprawy nietypowe przekazuje Tobie."
+          },
+          {
+            "title": "Raport dzienny i decyzje do zatwierdzenia",
+            "text": "Co rano krótki raport na WhatsAppie i lista spraw, które czekają na Twoje „tak”. Odpowiadasz jednym słowem."
+          }
         ]
       },
       {
         "name": "Pro",
         "price": "459 zł",
+        "for": "Dla firmy, która chce oddać też faktury i płatności.",
         "features": [
-          "Wszystko z planu Biznes",
-          "Faktury i płatności",
-          "Pełna automatyzacja",
-          "Priorytetowe wsparcie"
+          {
+            "title": "Wszystko z planu Biznes"
+          },
+          {
+            "title": "Faktury i płatności",
+            "text": "Wystawia faktury po każdej sprzedaży, pilnuje terminów i przypomina klientom o zaległościach. Dane trafiają do programu księgowego, z którego już korzystasz."
+          },
+          {
+            "title": "Działanie bez codziennego zatwierdzania",
+            "text": "Zasady i budżet ustalasz raz, a agent w ich ramach działa sam. Każdą zmianę widzisz w dzienniku i możesz cofnąć jednym kliknięciem."
+          },
+          {
+            "title": "Priorytetowe wsparcie",
+            "text": "Osobny kanał do zespołu Udainy. Odpowiadamy tego samego dnia roboczego."
+          }
         ]
       }
     ]
   },
   "faq": {
-    "eyebrow": "Najczęstsze pytania",
-    "heading": "Co warto wiedzieć przed zapisem",
+    "eyebrow": "FAQ",
+    "heading": "Zanim zapytasz",
     "items": [
       {
-        "question": "Czy AI zastąpi księgową lub agencję marketingową?",
-        "answer": "Księgowości nie. AI wystawia faktury i monitoruje płatności, ale rozliczenia pozostają po stronie Twojej księgowej. W zakresie podstawowego marketingu (publikacje, kampanie, poprawki na stronie) może zastąpić agencję."
+        "question": "Nie mam strony ani fanpage'a. Od czego zaczynacie?",
+        "answer": "Od rozmowy. Opisujesz firmę po ludzku, agent buduje stronę, zakłada profil w Google i proponuje pierwszą kampanię. Pierwszą wersję strony widzisz tego samego dnia."
       },
       {
-        "question": "Co się dzieje, gdy AI popełni błąd?",
-        "answer": "Każda zmiana jest zapisana w dzienniku i można ją cofnąć jednym kliknięciem. Wydatki i publikacje poza zatwierdzonym planem wymagają Twojej zgody, więc błąd nie generuje kosztów."
+        "question": "Mam już stronę i konta reklamowe. Mogę je zostawić?",
+        "answer": "Tak. Agent podpina się pod to, co masz, i pracuje w Twoich kontach."
       },
       {
-        "question": "Kto odpowiada za treści wysyłane do klientów?",
-        "answer": "AI przygotowuje treści w imieniu Twojej firmy i w jej stylu, ale nadawcą pozostajesz Ty. Dlatego reklamacje, sprawy nietypowe i wszystko, co niesie ryzyko, trafia do Twojej decyzji."
+        "question": "Ile czasu muszę na to poświęcać?",
+        "answer": "Kilka minut dziennie. Rano dostajesz raport na WhatsAppie i listę decyzji. Odpowiadasz „tak”, „zmień” albo „czekaj”. Reszta dzieje się sama."
       },
       {
-        "question": "Gdzie przechowywane są moje dane i dane moich klientów?",
-        "answer": "Na serwerach w Unii Europejskiej, zgodnie z RODO. Dane nie są sprzedawane ani wykorzystywane do trenowania modeli dla innych firm."
+        "question": "Co, jeśli agent zrobi coś głupiego?",
+        "answer": "Cofasz to jednym kliknięciem, każda zmiana jest w dzienniku. Wydatki i publikacje poza ustalonym planem czekają na Twoją zgodę, więc błąd zatrzymuje się, zanim zacznie kosztować."
       },
       {
-        "question": "Czy mogę zakończyć współpracę i zachować stronę oraz treści?",
-        "answer": "Tak. Strona, treści i historia zmian należą do Ciebie. Eksport jest możliwy w dowolnym momencie."
+        "question": "Kto odpowiada za to, co agent pisze do moich klientów?",
+        "answer": "Ty, agent pisze w imieniu firmy i w jej stylu. Reklamacje, sprawy nietypowe i wszystko, co niesie ryzyko, trafia do Twojej decyzji."
       },
       {
-        "question": "Kiedy rusza beta i ile kosztuje?",
-        "answer": "Liczba miejsc w becie jest ograniczona. Abonament wynosi 459 zł netto miesięcznie. Zapis na listę jest bezpłatny."
+        "question": "Czy mogę zwolnić agencję i księgową?",
+        "answer": "Agencję od publikacji, kampanii i poprawek na stronie tak. Księgową zostaw: agent wystawia faktury i pilnuje płatności, a ona dostaje gotowe dane do rozliczeń."
+      },
+      {
+        "question": "Gdzie są moje dane i dane klientów?",
+        "answer": "Na serwerach w Unii Europejskiej, zgodnie z RODO. Służą wyłącznie Twojej firmie."
+      },
+      {
+        "question": "A jak zrezygnuję?",
+        "answer": "Strona, treści i historia zmian są Twoje. Eksport w dowolnym momencie."
       }
-    ],
-    "lead": "Krótko o tym, co zwykle budzi wątpliwości przed zapisem."
+    ]
   },
   "beta": {
-    "heading": "Wypróbuj jako jeden z pierwszych",
-    "subheading": "Zostaw adres e-mail. W kolejnym kroku zapytamy o profil firmy i narzędzia, z których korzystasz. Zajmie to około minuty.",
+    "heading": "Tylko nikomu nie mów.",
     "note": "Bez opłat. Bez karty."
+  },
+  "whatsapp": {
+    "eyebrow": "WhatsApp",
+    "heading": "Twój pracownik, który nigdy nie śpi"
   },
   "footer": {
     "links": [

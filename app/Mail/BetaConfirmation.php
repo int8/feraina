@@ -18,7 +18,7 @@ class BetaConfirmation extends Mailable
 
     public function envelope(): Envelope
     {
-        return new Envelope(subject: 'Potwierdź zapis do bety');
+        return new Envelope(subject: 'Potwierdź zgłoszenie do Udainy');
     }
 
     public function headers(): Headers

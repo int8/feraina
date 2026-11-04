@@ -1,5 +1,5 @@
 import { initWizard } from './wizard.js';
-import { scramble, reveal } from './fx.js';
+import { scramble } from './fx.js';
 
 document.documentElement.classList.remove('no-js');
 
@@ -60,6 +60,13 @@ if (betaModal && typeof betaModal.showModal === 'function') {
     if (betaModal.hasAttribute('data-open')) openBeta();
 }
 
+// --- Linki do zapisu (#signup, np. „Zacznij” w pasku i przyciski w cenniku): po dojechaniu kursor ląduje w polu e-mail ---
+document.querySelectorAll('a[href$="#signup"]:not([data-open-beta])').forEach((a) => {
+    a.addEventListener('click', () => {
+        window.setTimeout(() => document.getElementById('beta-email-footer')?.focus({ preventScroll: true }), reduce ? 0 : 650);
+    });
+});
+
 // --- UTM i referrer do ukrytych pól formularza ---
 const params = new URLSearchParams(window.location.search);
 document.querySelectorAll('form[data-beta-start]').forEach((form) => {
@@ -72,14 +79,14 @@ document.querySelectorAll('form[data-beta-start]').forEach((form) => {
     form.addEventListener('submit', () => track('beta_start', { location: form.dataset.betaStart || 'unknown' }));
 });
 
-// --- Efekty tekstu: nagłówek hero i nagłówki sekcji ---
+// --- Efekt tekstu: nagłówek hero (litery układają się po wejściu) ---
 scramble(document.querySelector('[data-scramble-root]'), { startDelay: 150 });
-document.querySelectorAll('[data-reveal]').forEach((h) => reveal(h));
 
-// --- Filmy w hero: na telefonie wersja pionowa (…-mobile), wyżej pozioma. Źródła dopinamy tu, więc ładuje się tylko jedna wersja. ---
-const heroVideos = [...document.querySelectorAll('[data-hero-video]')];
+// --- Filmy demo (hero: intro, sekcja WhatsApp): na telefonie wersja pionowa (…-mobile), wyżej pozioma. Źródła dopinamy tu, więc ładuje się
+//     tylko jedna wersja; film w hero od razu (data-demo-eager), pozostałe dopiero gdy zbliżają się do ekranu. ---
+const demoVideos = [...document.querySelectorAll('[data-demo-video]')];
 const mobileDemo = window.matchMedia('(max-width: 767px)').matches;
-const mountHeroVideo = (v) => {
+const mountDemoVideo = (v) => {
     if (v.dataset.mounted) return;
     v.dataset.mounted = '1';
     const pick = (key) => (mobileDemo && v.dataset[`${key}Mobile`]) || v.dataset[key];
@@ -96,37 +103,19 @@ const mountHeroVideo = (v) => {
     v.load();
 };
 if (reduce) {
-    // Przy ograniczonym ruchu film zostaje na plakacie.
-    heroVideos.forEach((v) => { v.removeAttribute('autoplay'); v.pause(); });
+    // Przy ograniczonym ruchu filmy zostają na plakacie.
+    demoVideos.forEach((v) => { v.removeAttribute('autoplay'); v.pause(); });
 }
-heroVideos.forEach((v) => { if (!v.hidden) mountHeroVideo(v); });
-
-// --- Zakładki nad filmem (Web / WhatsApp): pokazują jeden z filmów, drugi ładuje się dopiero po wyborze ---
-const heroTabs = [...document.querySelectorAll('[data-hero-tab]')];
-const selectHeroTab = (tab) => {
-    heroTabs.forEach((t) => {
-        const on = t === tab;
-        t.setAttribute('aria-selected', String(on));
-        t.tabIndex = on ? 0 : -1;
-    });
-    document.getElementById('hero-demo')?.setAttribute('aria-labelledby', tab.id);
-    heroVideos.forEach((v) => {
-        const on = v.dataset.heroVideo === tab.dataset.heroTab;
-        v.hidden = !on;
-        if (!on) { v.pause(); return; }
-        mountHeroVideo(v);
-        if (!reduce) { v.currentTime = 0; v.play().catch(() => {}); }
-    });
-};
-heroTabs.forEach((tab, i) => {
-    tab.addEventListener('click', () => selectHeroTab(tab));
-    tab.addEventListener('keydown', (e) => {
-        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-        e.preventDefault();
-        const next = heroTabs[(i + (e.key === 'ArrowRight' ? 1 : heroTabs.length - 1)) % heroTabs.length];
-        next.focus();
-        selectHeroTab(next);
-    });
+const nearScreen = 'IntersectionObserver' in window
+    ? new IntersectionObserver((entries) => entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        mountDemoVideo(e.target);
+        nearScreen.unobserve(e.target);
+    }), { rootMargin: '600px 0px' })
+    : null;
+demoVideos.forEach((v) => {
+    if (v.hasAttribute('data-demo-eager') || !nearScreen) mountDemoVideo(v);
+    else nearScreen.observe(v);
 });
 
 // --- Ankieta bety ---

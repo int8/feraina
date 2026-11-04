@@ -2,7 +2,7 @@
     <section class="section">
         <div class="container-x">
             <div class="flex flex-wrap items-center justify-between gap-4">
-                <h1 class="text-3xl font-bold tracking-tight">Zgłoszenia do bety</h1>
+                <h1 class="text-3xl font-bold tracking-tight">Zgłoszenia</h1>
                 <a href="{{ route('admin.export') }}" class="btn-primary">Pobierz CSV</a>
             </div>
 

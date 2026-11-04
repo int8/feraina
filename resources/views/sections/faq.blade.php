@@ -3,8 +3,7 @@
         <div class="faq-grid">
             <div class="sec-head">
                 <p class="eyebrow">{{ $site['faq']['eyebrow'] }}</p>
-                <h2 class="section-title" data-reveal>{{ $site['faq']['heading'] }}</h2>
-                <p class="lead">{{ $site['faq']['lead'] }}</p>
+                <h2 class="section-title">{{ $site['faq']['heading'] }}</h2>
             </div>
             <div class="faq-list">
                 @foreach ($site['faq']['items'] as $i => $item)

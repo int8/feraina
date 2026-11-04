@@ -40,8 +40,9 @@ class BetaController extends Controller
         $email = BetaLead::normalizeEmail($request->string('email'));
         $lead = BetaLead::query()->where('email', $email)->first();
 
+        // Adres już zapisany: bez komunikatu o błędzie, po prostu strona z podziękowaniem (nie zdradzamy też, kto jest na liście).
         if ($lead && $lead->isOnList()) {
-            return back()->withInput()->withErrors(['email' => 'Ten adres jest już na liście.'], 'beta');
+            return redirect()->route('beta.thanks');
         }
 
         if (! $lead) {

@@ -59,7 +59,6 @@
     --label-weight: 500;
     --label-tracking: 0;
     --label-transform: none;
-    --reveal-from: #ff8f52;
     --glow: 255 122 48;
     --tile-a: #1c1e22;
     --tile-b: #121316;
@@ -370,17 +369,27 @@
 @media (min-width: 768px) {
     .nav-inner { justify-content: center; }
 }
-.nav-cta {
+/* Pasek: logo z lewej, linki na środku, „Zacznij” z prawej; na telefonie logo, a przycisk i hamburger razem po prawej. */
+.nav-logo {
     order: 0;
 }
+.nav-cta {
+    order: 1;
+    margin-left: auto;
+}
+.nav-toggle {
+    order: 2;
+}
 @media (min-width: 768px) {
+    .nav-logo {
+        position: absolute;
+        left: 0;
+    }
     .nav-cta {
         position: absolute;
         right: 0;
+        margin-left: 0;
     }
-}
-.nav-toggle {
-    order: 1;
 }
 .logo {
     display: inline-flex;
@@ -426,13 +435,8 @@
 /* ---------- Hero ---------- */
 .hero {
     padding-top: 56px;
-    padding-bottom: 40px;
+    padding-bottom: 16px;
     text-align: center;
-}
-.hero-mark {
-    width: 84px;
-    height: 84px;
-    margin: 0 auto 32px;
 }
 /* Słowo z akcentem w nagłówku (site.json: *pięć*) świeci jak znak. */
 .display .hl {
@@ -444,21 +448,13 @@
     max-width: 16ch;
 }
 .hero-sub {
-    margin: 18px auto 60px;
+    margin: 18px auto 0;
     max-width: 48rem;
     font-family: var(--font-label);
     font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
     line-height: 1.4;
     color: var(--color-ink-soft);
     text-wrap: balance;
-}
-.hero-actions {
-    margin-top: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
 }
 .hero-link {
     font: 400 0.75rem/1 var(--font-label);
@@ -470,42 +466,13 @@
     color: rgb(255 255 255 / 0.65);
 }
 /* Zakładki nad filmem: Web / WhatsApp (pigułka jak segmented control) */
-.hero-tabs {
-    margin-top: 48px;
-    display: inline-flex;
-    gap: 4px;
-    padding: 4px;
-    border-radius: var(--radius-btn);
-    background: rgb(255 255 255 / 0.05);
-    border: 1px solid rgb(255 255 255 / 0.08);
-}
-.hero-tab {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    height: 38px;
-    padding: 0 18px;
-    border: 0;
-    border-radius: var(--radius-btn);
-    background: transparent;
-    color: var(--color-ink-soft);
-    font: 500 14px/1 var(--font-label);
-    letter-spacing: -0.005em;
-    cursor: pointer;
-    transition: background 0.2s ease, color 0.2s ease;
-}
-.hero-tab:hover { color: var(--color-ink); }
-.hero-tab[aria-selected="true"] {
-    background: var(--color-ink);
-    color: var(--color-paper);
-    box-shadow: 0 6px 20px -8px rgb(var(--glow) / 0.5);
-}
-.hero-tab:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
-.hero-tab-ico { width: 16px; height: 16px; flex: none; }
-.hero-tabs + .hero-stage { margin-top: 16px; }
-.hero-video video[hidden] { display: none; }
 
-.hero-stage { position: relative; margin-top: 56px; }
+.hero-stage { position: relative; margin-top: 40px; }
+/* Sekcja z drugą animacją (WhatsApp): nagłówek na środku, pod nim film w tej samej ramce co w hero. */
+.demo-section .sec-head { text-align: center; margin-bottom: 28px; }
+.demo-section .eyebrow { display: inline-flex; align-items: center; gap: 8px; }
+.demo-section .eyebrow::before { content: none; }
+.eyebrow-ico { width: 14px; height: 14px; }
 .hero-video {
     position: relative;
     aspect-ratio: 16 / 9;
@@ -525,11 +492,9 @@
 /* Na telefonie film jest pionowy (wersje …-mobile nagrane w kadrze 1080×1920). Ten sam próg co w app.js. */
 @media (max-width: 767px) {
     /* Telefon: film wyżej, żeby nie trzeba było zjeżdżać: mniejszy znak i ciaśniejsze odstępy w hero. */
-    .hero { padding-top: 24px; }
-    .hero-mark { width: 60px; height: 60px; margin-bottom: 18px; }
-    .hero-sub { margin: 12px auto 28px; }
-    .hero-tabs { margin-top: 0; }
-    .hero-stage { margin-top: 14px; }
+    .hero { padding-top: 28px; }
+    .hero-sub { margin: 12px auto 0; }
+    .hero-stage { margin-top: 22px; }
     .hero-video { aspect-ratio: 9 / 16; }
 }
 @media (max-width: 640px) {
@@ -538,48 +503,6 @@
 
 /* Robocik w prawym dolnym rogu filmu: spaceruje po dolnej krawędzi ramki, nogi i ręce machają, w chmurce 🤡 xd.
    Sam CSS; przy prefers-reduced-motion stoi w miejscu. Na wąskich ekranach schowany, bo zasłaniałby film. */
-.bot {
-    position: absolute;
-    right: 40px;
-    bottom: 0;
-    width: 90px;
-    height: 112px;
-    display: none;
-    animation: bot-walk 7s ease-in-out infinite;
-    filter: drop-shadow(0 14px 18px rgb(0 0 0 / 0.55));
-}
-@media (min-width: 900px) { .bot { display: block; } }
-.bot-fig { display: block; width: 100%; height: 100%; overflow: visible; animation: bot-bob 0.6s ease-in-out infinite; }
-.bot-leg, .bot-arm, .bot-head { transform-box: view-box; }
-.bot-leg-l { transform-origin: 46px 118px; animation: bot-swing 0.6s ease-in-out infinite; }
-.bot-leg-r { transform-origin: 74px 118px; animation: bot-swing 0.6s ease-in-out infinite reverse; }
-.bot-arm-l { transform-origin: 30px 86px; animation: bot-swing 0.6s ease-in-out infinite reverse; }
-.bot-arm-r { transform-origin: 90px 86px; animation: bot-swing 0.6s ease-in-out infinite; }
-.bot-head { transform-origin: 60px 72px; animation: bot-tilt 1.2s ease-in-out infinite; }
-.bot-light { filter: drop-shadow(0 0 4px rgb(var(--glow) / 0.9)); animation: bot-pulse 1.4s ease-in-out infinite; }
-.bot-think {
-    position: absolute;
-    left: 50%;
-    bottom: calc(100% + 24px);
-    padding: 7px 12px 7px 10px;
-    border-radius: 999px;
-    background: #fff;
-    color: var(--color-paper);
-    font: 600 15px/1 var(--font-label);
-    letter-spacing: -0.01em;
-    white-space: nowrap;
-    box-shadow: 0 12px 30px -12px rgb(0 0 0 / 0.8);
-    animation: bot-float 2.6s ease-in-out infinite;
-}
-.bot-think::before, .bot-think::after { content: ""; position: absolute; border-radius: 50%; background: #fff; }
-.bot-think::before { left: 6px; bottom: -11px; width: 9px; height: 9px; }
-.bot-think::after { left: 0; bottom: -21px; width: 5px; height: 5px; }
-@keyframes bot-walk { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-110px); } }
-@keyframes bot-bob { 0%, 50%, 100% { transform: translateY(0); } 25%, 75% { transform: translateY(-3px); } }
-@keyframes bot-swing { 0%, 100% { transform: rotate(-24deg); } 50% { transform: rotate(24deg); } }
-@keyframes bot-tilt { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
-@keyframes bot-pulse { 50% { opacity: 0.55; } }
-@keyframes bot-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
 
 /* Nagłówek hero: każda litera dostaje przez chwilę losowy znak (::before), prawdziwa jest ukryta. */
 [data-scramble] {
@@ -838,37 +761,6 @@
 .panel-dark .eyebrow { color: #eeeeee; }
 .panel-dark .section-title { color: #f5f3f2; margin-top: 18px; }
 .panel-dark .lead { color: #b8b3b0; font-size: 14px; }
-.day-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0 28px;
-}
-@media (max-width: 600px) {
-    .day-grid { grid-template-columns: 1fr; }
-}
-.day-grid > div {
-    padding: 18px 0 20px;
-    border-top: 1px solid var(--color-night-line);
-}
-.day-grid time {
-    font-family: var(--font-label);
-    font-size: calc(var(--label-size) - 1px);
-    font-weight: var(--label-weight);
-    letter-spacing: var(--label-tracking);
-    color: var(--color-accent-soft);
-}
-.day-grid h3 {
-    margin-top: 6px;
-    font-size: 15px;
-    font-weight: 500;
-    color: #f5f3f2;
-}
-.day-grid p {
-    margin-top: 4px;
-    font-size: 13px;
-    line-height: 1.5;
-    color: #b8b3b0;
-}
 
 /* ---------- Cennik ---------- */
 .plans {
@@ -915,16 +807,20 @@
     letter-spacing: var(--label-tracking);
     color: var(--color-stone);
 }
+.plan-for { margin-top: 14px; font-size: 13.5px; line-height: 1.5; color: var(--color-ink-soft); }
 .plan ul {
     list-style: none;
-    margin: 22px 0 26px;
+    margin: 20px 0 26px;
     padding: 0;
     display: grid;
-    gap: 9px;
+    gap: 14px;
     font-size: 13.5px;
     color: var(--color-ink-soft);
 }
 .plan li { display: flex; gap: 10px; }
+/* Punkt planu: tytuł + jedno-dwa zdania opisu (treść w content/site.json → pricing.plans[].features). */
+.plan li strong { display: block; font-weight: 600; color: var(--color-ink); }
+.plan li .plan-desc { display: block; margin-top: 3px; font-size: 13px; line-height: 1.5; color: var(--color-stone); }
 .plan li::before {
     content: "";
     flex: none;
@@ -979,13 +875,13 @@
 }
 
 /* ---------- Zapis ---------- */
+/* Zapis bez kafla: tekst i formularz leżą bezpośrednio na tle strony. */
 .cta-panel {
-    background: linear-gradient(180deg, #16181b, #0f1012);
-    border: 1px solid rgb(255 255 255 / 0.06);
-    border-radius: var(--radius-panel);
-    padding: 72px 24px;
+    padding: 8px 0;
     text-align: center;
 }
+/* Zapis siedzi tuż pod filmem w hero: krótszy górny odstęp niż zwykły margines sekcji (my-20/lg:my-30). */
+.hero + .section { margin-top: 24px; }
 .cta-panel .section-title { margin-inline: auto; text-wrap: balance; }
 .cta-panel .lead { margin: 14px auto 0; text-align: center; }
 .cta-form { max-width: 30rem; margin: 28px auto 0; }
@@ -1000,8 +896,8 @@
 .email-form .btn-primary { height: 48px; padding: 0 24px; }
 @media (max-width: 640px) {
     /* Nagłówek ma zostać w jednej linii także na telefonie: mniejszy stopień zamiast łamania. */
-    .cta-panel { padding: 56px 20px; }
-    .cta-panel .section-title { font-size: clamp(1.1rem, 5vw, 1.9rem); text-wrap: nowrap; }
+    .cta-panel { padding: 0; }
+    .cta-panel .section-title { font-size: clamp(0.95rem, 5vw, 1.9rem); text-wrap: nowrap; }
 }
 .email-note {
     margin-top: 12px;
@@ -1089,7 +985,6 @@ body::before {
 @media (prefers-reduced-motion: reduce) {
     .lamp { animation: none; }
     .display .caret { animation: none; }
-    .bot, .bot *, .bot-think { animation: none; }
     .marquee-row { animation: none; }
     .marquee { mask-image: none; -webkit-mask-image: none; overflow-x: auto; }
 }

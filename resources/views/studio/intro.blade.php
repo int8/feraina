@@ -48,7 +48,7 @@
             <div class="start" id="start">
                 <x-logo-mark class="lamp" />
                 <h2>Zacznijmy od Twojej firmy</h2>
-                <p>Opisz pomysł po ludzku. Agenci AI zajmą się resztą.</p>
+                <p>Opisz pomysł po ludzku. Nasi agenci AI zajmą się resztą.</p>
                 <button type="button" class="start-btn" id="start-btn">Utwórz firmę</button>
             </div>
 

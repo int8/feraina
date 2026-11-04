@@ -1,7 +1,7 @@
-Potwierdź zapis do bety
+Potwierdź zgłoszenie do Udainy
 
-Dziękujemy za zapis. Otwórz ten link, żeby potwierdzić swój adres e-mail i zakończyć zapis na listę bety:
+Dziękujemy za zgłoszenie. Otwórz ten link, żeby potwierdzić swój adres e-mail. Potem przyjrzymy się zgłoszeniu i odezwiemy się wkrótce:
 {{ $confirmUrl }}
 
-Jeśli to nie Ty zapisywałeś się do bety, zignoruj tę wiadomość.
-Wypisanie z listy (usuwa Twój adres): {{ $unsubscribeUrl }}
+Jeśli to zgłoszenie nie pochodzi od Ciebie, zignoruj tę wiadomość.
+Usunięcie Twojego adresu (nie dostaniesz od nas więcej wiadomości): {{ $unsubscribeUrl }}

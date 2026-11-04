@@ -2,7 +2,6 @@
  * Efekty tekstu.
  * - scramble(): litery nagłówka hero przez chwilę pokazują losowe znaki (na zmianę font pikselowy i zwykły), potem właściwą literę.
  *   Po ustawieniu się liter zostaje już tylko migający podkreślnik (CSS: .display .caret).
- * - reveal(): nagłówki sekcji dzielimy na litery; po wejściu w viewport każda wjeżdża od dołu, z pomarańczowego do koloru docelowego.
  * Oba efekty wyłączone przy prefers-reduced-motion.
  */
 
@@ -45,56 +44,4 @@ export function scramble(root, { startDelay = 0, charStagger = 20, scrambleMs = 
         if (pending) requestAnimationFrame(frame);
     };
     requestAnimationFrame(frame);
-}
-
-export function reveal(el, { duration = 500, stagger = 15, y = 50, from = null, threshold = 0.3, rootMargin = '0px 0px -100px 0px' } = {}) {
-    if (!el || el.dataset.revealReady) return;
-    const text = el.textContent.replace(/\s+/g, ' ').trim();
-    if (!el.hasAttribute('aria-label')) el.setAttribute('aria-label', text);
-
-    const frag = document.createDocumentFragment();
-    text.split(' ').forEach((word, i) => {
-        if (i) frag.appendChild(document.createTextNode(' '));
-        const w = document.createElement('span');
-        w.className = 'rv-w';
-        w.setAttribute('aria-hidden', 'true');
-        for (const ch of word) {
-            const c = document.createElement('span');
-            c.className = 'rv-c';
-            c.textContent = ch;
-            w.appendChild(c);
-        }
-        frag.appendChild(w);
-    });
-    el.replaceChildren(frag);
-    el.dataset.revealReady = '1';
-
-    if (reduce || !('IntersectionObserver' in window)) return;
-    const chars = [...el.querySelectorAll('.rv-c')];
-    chars.forEach((c) => { c.style.opacity = '0'; });
-
-    const run = () => {
-        // Kolory czytamy dopiero teraz: zależą od aktywnego motywu (--reveal-from, kolor nagłówka).
-        const start = from || getComputedStyle(document.documentElement).getPropertyValue('--reveal-from').trim() || '#ef6f2e';
-        const to = el.dataset.revealTo || getComputedStyle(el).color;
-        chars.forEach((c, i) => {
-            const anim = c.animate(
-                [
-                    { opacity: 0, transform: `translateY(${y}px)`, color: start },
-                    { opacity: 1, transform: 'translateY(0)', color: to },
-                ],
-                { duration, delay: i * stagger, easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)', fill: 'forwards' },
-            );
-            // Po animacji litera wraca do zwykłych stylów, więc zmiana motywu przemaluje ją jak resztę tekstu.
-            anim.onfinish = () => { c.style.removeProperty('opacity'); anim.cancel(); };
-        });
-    };
-
-    const io = new IntersectionObserver((entries) => {
-        if (entries.some((e) => e.isIntersecting)) {
-            run();
-            io.disconnect();
-        }
-    }, { threshold, rootMargin });
-    io.observe(el);
 }

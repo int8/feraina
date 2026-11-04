@@ -4,7 +4,6 @@
         <x-icon name="close" class="size-5" />
     </button>
     <h2 id="beta-modal-title" class="section-title sm">{{ $site['hero']['modal_heading'] }}</h2>
-    <p class="lead">{{ $site['hero']['modal_text'] }}</p>
     <div class="mt-6">
         <x-email-form location="modal" inputId="beta-email-modal" :site="$site" :cta="$site['hero']['cta_primary']" :note="$site['hero']['note']" />
     </div>

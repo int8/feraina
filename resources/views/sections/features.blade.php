@@ -2,7 +2,7 @@
     <div class="wrap">
         <div class="sec-head">
             <p class="eyebrow">{{ $site['features']['eyebrow'] }}</p>
-            <h2 class="section-title" data-reveal>{{ $site['features']['heading'] }}</h2>
+            <h2 class="section-title">{{ $site['features']['heading'] }}</h2>
         </div>
 
         <div class="tiles">

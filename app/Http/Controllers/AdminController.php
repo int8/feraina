@@ -85,6 +85,6 @@ class AdminController extends Controller
                 }
             });
             fclose($out);
-        }, 'zgloszenia-beta-'.now()->format('Y-m-d').'.csv', ['Content-Type' => 'text/csv; charset=UTF-8']);
+        }, 'zgloszenia-'.now()->format('Y-m-d').'.csv', ['Content-Type' => 'text/csv; charset=UTF-8']);
     }
 }

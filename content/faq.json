@@ -20,10 +20,6 @@
     {
       "question": "Czy mogę odejść i zabrać stronę oraz treści?",
       "answer": "Tak. Strona, teksty i dane są Twoje, dostajesz je w [FORMAT / SPOSÓB EKSPORTU]. Umowy nie ma, więc rezygnujesz w każdej chwili."
-    },
-    {
-      "question": "Kiedy ruszy beta i ile kosztuje?",
-      "answer": "Start bety planujemy na [DATA]. Dla pierwszych [X] firm cena to [CENA BETA] zł miesięcznie, na stałe. Zapis nie wymaga karty ani zobowiązań."
     }
   ]
 }

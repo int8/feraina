@@ -1,16 +1,15 @@
-<x-layouts.app :site="$site" title="Zapisz się do bety">
+<x-layouts.app :site="$site" title="Zapisz się">
     <section class="section">
         <div class="container-x max-w-2xl" data-wizard
              data-progress-url="{{ route('beta.progress') }}"
              data-csrf="{{ csrf_token() }}"
-             data-start-step="{{ min(max((int) $lead->last_step, 1), 4) }}">
+             data-start-step="{{ min(max((int) $lead->last_step, 1), 3) }}">
 
             <p class="text-sm text-stone">Zapis dla <strong class="text-ink">{{ $lead->email }}</strong></p>
-            <h1 class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">{{ $content->fill($form['heading']) }}</h1>
 
             <div class="wizard-progress mt-6">
-                <p class="text-sm font-medium" data-progress-text aria-live="polite">Krok 1 z 4</p>
-                <div class="mt-2 h-2 overflow-hidden rounded-full bg-line" role="progressbar" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1" aria-label="Postęp ankiety">
+                <p class="text-sm font-medium" data-progress-text aria-live="polite">Krok 1 z 3</p>
+                <div class="mt-2 h-2 overflow-hidden rounded-full bg-line" role="progressbar" aria-valuemin="1" aria-valuemax="3" aria-valuenow="1" aria-label="Postęp ankiety">
                     <div class="h-full w-1/4 rounded-full bg-moss transition-[width]" data-progress-bar></div>
                 </div>
             </div>
@@ -72,36 +71,14 @@
                     @error('integrations.*') <p class="field-error" role="alert" data-server-error>{{ $message }}</p> @enderror
                 </fieldset>
 
-                {{-- Krok 3: czego brakuje + wydatki --}}
-                <fieldset class="wizard-step" hidden>
-                    <legend class="sr-only">Kilka dodatkowych pytań</legend>
-                    <h2 class="text-xl font-semibold" aria-hidden="true">Kilka dodatkowych pytań</h2>
-                    <div class="mt-4" data-field>
-                        <label for="missing_text" class="block font-medium">Czego brakuje na liście? <span class="font-normal text-stone">(opcjonalnie)</span></label>
-                        <textarea id="missing_text" name="missing_text" rows="3" maxlength="300" class="input mt-2 {{ $errors->has('missing_text') ? 'input-error' : '' }}">{{ old('missing_text', $lead->missing_text) }}</textarea>
-                        <p class="mt-1 text-right text-xs text-stone" data-charcount="missing_text"></p>
-                        @error('missing_text') <p class="field-error" role="alert" data-server-error>{{ $message }}</p> @enderror
-                    </div>
-                    <div class="mt-6" data-field>
-                        <label for="spend_range" class="block font-medium">Ile dziś wydajesz miesięcznie na marketing lub obsługę klienta? <span class="font-normal text-stone">(opcjonalnie)</span></label>
-                        <select id="spend_range" name="spend_range" class="input mt-2">
-                            <option value="">Wybierz</option>
-                            @foreach ($form['spend_ranges'] as $range)
-                                <option value="{{ $range['id'] }}" @selected(old('spend_range', $lead->spend_range) === $range['id'])>{{ $range['label'] }}</option>
-                            @endforeach
-                        </select>
-                        @error('spend_range') <p class="field-error" role="alert" data-server-error>{{ $message }}</p> @enderror
-                    </div>
-                </fieldset>
-
-                {{-- Krok 4: zgody --}}
+                {{-- Krok 3: zgody --}}
                 <fieldset class="wizard-step" hidden>
                     <legend class="sr-only">Zgody</legend>
                     <h2 class="text-xl font-semibold" aria-hidden="true">Ostatni krok: zgody</h2>
                     <div class="mt-4 space-y-3">
                         <div data-field>
                             <label class="choice">
-                                <input type="checkbox" name="consent_contact" value="1" required data-required-message="Zgoda na kontakt w sprawie bety jest wymagana." @checked(old('consent_contact'))>
+                                <input type="checkbox" name="consent_contact" value="1" required data-required-message="Zgoda na kontakt jest wymagana." @checked(old('consent_contact'))>
                                 <span class="text-sm leading-relaxed">{{ $content->fill($form['consents']['contact']) }} <span class="text-stone">(wymagane)</span></span>
                             </label>
                             @error('consent_contact') <p class="field-error" role="alert" data-server-error>{{ $message }}</p> @enderror
@@ -116,7 +93,7 @@
                     <p class="mt-6 text-xs leading-relaxed text-stone">
                         {{ $content->fill($form['rodo_clause']) }}
                         <a href="{{ route('privacy') }}" class="underline">Polityka prywatności</a> ·
-                        <a href="{{ route('terms') }}" class="underline">Regulamin bety</a>
+                        <a href="{{ route('terms') }}" class="underline">Regulamin</a>
                     </p>
                 </fieldset>
 

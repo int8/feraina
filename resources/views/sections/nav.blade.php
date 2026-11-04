@@ -1,6 +1,10 @@
 <header class="nav">
     <nav class="wrap nav-inner" aria-label="Główna">
-        <a href="#zapis" class="btn-primary nav-cta" data-plausible="cta_click" data-plausible-prop-location="nav">{{ $site['nav']['cta'] }}</a>
+        <a href="{{ route('home') }}" class="logo nav-logo" aria-label="Udaina – strona główna">
+            <x-logo-mark class="h-6 w-6 lamp" aria-hidden="true" />
+            <span>Udaina</span>
+        </a>
+        <a href="#signup" class="btn-primary nav-cta" data-plausible="cta_click" data-plausible-prop-location="nav">{{ $site['nav']['cta'] }}</a>
 
         <ul class="nav-links hidden items-center gap-7 md:flex">
             @foreach ($site['nav']['links'] as $link)

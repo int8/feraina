@@ -83,7 +83,7 @@ class BetaSignupTest extends TestCase
         $this->assertSame('cpc', $lead->utm_medium);
         $this->assertSame('https://google.pl/', $lead->referrer);
         $this->assertNotNull($lead->consent_contact_at);
-        $this->assertStringContainsString('zapisu do bety', $lead->consent_contact_text);
+        $this->assertStringContainsString('zapisu do Udainy', $lead->consent_contact_text);
         $this->assertNotNull($lead->consent_marketing_at);
         $this->assertNotNull($lead->consent_marketing_text);
         $this->assertSame(5, $lead->last_step);
@@ -139,10 +139,10 @@ class BetaSignupTest extends TestCase
         $this->startSignup();
         $this->post(route('beta.finish'), $this->validSurvey());
 
+        // Ponowny zapis tego samego adresu: bez błędu i bez drugiego wiersza, od razu podziękowanie.
         $this->from('/')->startSignup('JAN@example.pl')
-            ->assertRedirect('/')
-            ->assertSessionHasErrorsIn('beta', ['email']);
-        $this->assertSame('Ten adres jest już na liście.', session('errors')->getBag('beta')->first('email'));
+            ->assertRedirect(route('beta.thanks'))
+            ->assertSessionDoesntHaveErrors();
         $this->assertDatabaseCount('beta_leads', 1);
     }
 
@@ -177,7 +177,7 @@ class BetaSignupTest extends TestCase
         $this->post(route('beta.finish'), $this->validSurvey());
         $lead = BetaLead::firstOrFail();
 
-        $this->get(route('beta.confirm', $lead->confirm_token))->assertOk()->assertSee('zapis potwierdzony');
+        $this->get(route('beta.confirm', $lead->confirm_token))->assertOk()->assertSee('adres potwierdzony');
         $this->assertSame(BetaLead::STATUS_CONFIRMED, $lead->fresh()->status);
         $this->assertNotNull($lead->fresh()->confirmed_at);
 
@@ -194,7 +194,7 @@ class BetaSignupTest extends TestCase
         $mail->assertSeeInHtml(route('beta.confirm', $lead->confirm_token));
         $mail->assertSeeInHtml(route('unsubscribe', $lead->unsubscribe_token));
         $mail->assertSeeInText(route('unsubscribe', $lead->unsubscribe_token));
-        $mail->assertHasSubject('Potwierdź zapis do bety');
+        $mail->assertHasSubject('Potwierdź zgłoszenie do Udainy');
     }
 
     public function test_unsubscribe_anonymizes_lead(): void
