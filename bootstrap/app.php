@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\PolishTypography;
 use App\Http\Middleware\SecurityHeaders;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -13,8 +14,8 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->web(append: [SecurityHeaders::class]);
-        $middleware->validateCsrfTokens(except: ['wypisz/*']); // List-Unsubscribe-Post z klientów poczty
+        $middleware->web(append: [SecurityHeaders::class, PolishTypography::class]);
+        $middleware->validateCsrfTokens(except: ['unsubscribe/*']); // List-Unsubscribe-Post z klientów poczty
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(
